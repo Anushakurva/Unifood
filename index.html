@@ -40,36 +40,53 @@
         </div>
     </header>
 
-    <section id="hero" class="min-h-screen pt-24 flex items-center relative overflow-hidden px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
-            <div class="lg:col-span-6 space-y-6 anim-hero-left">
-                <span class="text-[#C75B39] font-semibold tracking-widest text-xs uppercase bg-[#C75B39]/10 px-3 py-1 rounded-full">
+    <section id="hero" class="relative min-h-screen pt-24 flex items-center overflow-hidden px-6">
+        <div id="hero-bg" class="absolute inset-0 bg-cover bg-center" style="background-image: url('photo10.jpeg');"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#1A1512]/92 via-[#1A1512]/80 to-[#1A1512]/55"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#1A1512]/70 via-transparent to-transparent"></div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full relative">
+            <div id="hero-text" class="lg:col-span-7 space-y-6">
+                <span class="text-[#EEA47F] font-semibold tracking-widest text-xs uppercase bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10">
                     <i class="fa-solid fa-star mr-1"></i> Mahbubnagar's Finest Multi-Cuisine
                 </span>
-                <h1 class="font-['Playfair_Display'] text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-[#2C3A2B]">
+                <h1 class="font-['Playfair_Display'] text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white">
                     Taste the Royal <br>
-                    <span class="text-[#C75B39] italic">Hyderabad Dum Biryani</span>
+                    <span class="text-[#EEA47F] italic">Hyderabad Dum Biryani</span>
                 </h1>
-                <p class="text-[#7C7973] text-base md:text-lg max-w-lg leading-relaxed">
+                <p class="text-stone-200 text-base md:text-lg max-w-lg leading-relaxed">
                     Experience a grand symphony of authentic spices, premium long-grain basmati rice, and ultra-tender meats cooked to perfection.
                 </p>
                 <div class="flex flex-wrap gap-4 pt-2">
                     <a href="menu.html" class="bg-[#C75B39] text-white px-8 py-3.5 rounded-full font-semibold hover:bg-[#A84A2D] transition-all shadow-md">
                         Explore Full Menu
                     </a>
-                    <a href="#book-table" class="border border-[#3A4D39] text-[#3A4D39] px-8 py-3.5 rounded-full font-semibold hover:bg-[#3A4D39] hover:text-white transition-all">
+                    <a href="#book-table" class="border border-white/50 text-white px-8 py-3.5 rounded-full font-semibold hover:bg-white hover:text-[#2C3A2B] transition-all">
                         <i class="fa-solid fa-utensils mr-2"></i> Book a Table
                     </a>
                 </div>
             </div>
 
-            <div class="lg:col-span-6 relative flex justify-center lg:justify-end anim-hero-right">
-                <div class="absolute inset-0 bg-[#3A4D39]/5 rounded-full blur-3xl -z-10 transform scale-75"></div>
-                <div class="w-[320px] h-[420px] sm:w-[420px] sm:h-[540px] rounded-tl-[160px] rounded-tr-[40px] rounded-bl-[40px] rounded-br-[200px] overflow-hidden border-8 border-white shadow-2xl relative bg-[#3A4D39]">
-                    
-            <img src="photo8.jpeg"
-     alt="Unifood Hub Setup"
-     class="w-full h-full object-cover">    
+            <div id="hero-card" class="lg:col-span-5 flex justify-center lg:justify-end">
+                <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-[32px] p-8 space-y-5 w-full max-w-sm shadow-2xl">
+                    <div class="flex items-center space-x-2 text-[#EEA47F] text-sm font-semibold tracking-wide uppercase">
+                        <i class="fa-solid fa-shop"></i>
+                        <span>Indian &middot; Arabian &middot; Moghlai &middot; Chinese</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="border-l-2 border-white/20 pl-3">
+                            <p class="font-['Playfair_Display'] text-2xl font-bold text-white">100+</p>
+                            <p class="text-xs text-stone-300 mt-1">Dishes on the menu</p>
+                        </div>
+                        <div class="border-l-2 border-white/20 pl-3">
+                            <p class="font-['Playfair_Display'] text-2xl font-bold text-white">12PM–11PM</p>
+                            <p class="text-xs text-stone-300 mt-1">Open daily</p>
+                        </div>
+                    </div>
+                    <div class="border-t border-white/15 pt-4 flex items-start space-x-3">
+                        <i class="fa-solid fa-location-dot text-[#EEA47F] text-sm mt-1"></i>
+                        <p class="text-xs text-stone-300 leading-relaxed">Bhoothpur Road, Christianpally, Mahbubnagar</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -514,7 +531,25 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            ScrollReveal().reveal('.anim-hero-left', { origin: 'left', distance: '50px', duration: 800 });
+            ScrollReveal().reveal('.anim-reveal-up', { origin: 'bottom', distance: '40px', duration: 800, interval: 100 });
+            ScrollReveal().reveal('.anim-reveal-left', { origin: 'left', distance: '40px', duration: 800 });
+            ScrollReveal().reveal('.anim-reveal-right', { origin: 'right', distance: '40px', duration: 800 });
+
+            // --- GSAP: Hero background entrance (scoped to #hero only) ---
+            if (window.gsap) {
+                gsap.context(() => {
+                    gsap.set("#hero-bg", { scale: 1.18 });
+                    gsap.set(["#hero-text > *", "#hero-card"], { opacity: 0, y: 30 });
+
+                    const heroTl = gsap.timeline({ defaults: { ease: "power2.out" } });
+
+                    heroTl
+                        .to("#hero-bg", { scale: 1, duration: 2.2, ease: "power1.out" }, 0)
+                        .to("#hero-text > *", { opacity: 1, y: 0, duration: 0.7, stagger: 0.12 }, 0.3)
+                        .to("#hero-card", { opacity: 1, y: 0, duration: 0.8 }, 0.6);
+                }, "#hero");
+            }
+
             // --- GSAP: Flavor Moment background reveal (scoped to #flavor-moment only) ---
             if (window.gsap && window.ScrollTrigger) {
                 gsap.registerPlugin(ScrollTrigger);
@@ -593,11 +628,6 @@
 
                 window.open(`https://api.whatsapp.com/send?phone=919885397871&text=${encodeURIComponent(msg)}`, '_blank');
             };
-
-            ScrollReveal().reveal('.anim-hero-right', { origin: 'right', distance: '50px', duration: 800, delay: 200 });
-            ScrollReveal().reveal('.anim-reveal-up', { origin: 'bottom', distance: '40px', duration: 800, interval: 100 });
-            ScrollReveal().reveal('.anim-reveal-left', { origin: 'left', distance: '40px', duration: 800 });
-            ScrollReveal().reveal('.anim-reveal-right', { origin: 'right', distance: '40px', duration: 800 });
 
             // Ambiance Slider Implementation
             let currentSlideIndex = 0;

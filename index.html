@@ -43,56 +43,39 @@
     <section id="hero" class="relative h-[190vh]">
         <div class="sticky top-0 h-screen pt-24 flex items-center overflow-hidden px-6">
             <div id="hero-bg" class="absolute inset-0 bg-cover bg-center" style="background-image: url('photo10.jpeg');"></div>
-            <div class="absolute inset-0 bg-gradient-to-r from-[#1A1512]/92 via-[#1A1512]/80 to-[#1A1512]/55"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#1A1512]/70 via-transparent to-transparent"></div>
+            <div id="hero-bg-veil" class="absolute inset-0 bg-[#FBF9F4]"></div>
  
             <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full relative">
-                <div id="hero-text" class="lg:col-span-7 space-y-6">
-                    <span class="text-[#EEA47F] font-semibold tracking-widest text-xs uppercase bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10">
+                <div class="lg:col-span-6 space-y-6 anim-hero-left">
+                    <span class="text-[#C75B39] font-semibold tracking-widest text-xs uppercase bg-[#C75B39]/10 px-3 py-1 rounded-full">
                         <i class="fa-solid fa-star mr-1"></i> Mahbubnagar's Finest Multi-Cuisine
                     </span>
-                    <h1 class="font-['Playfair_Display'] text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-white">
+                    <h1 class="font-['Playfair_Display'] text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-[#2C3A2B]">
                         Taste the Royal <br>
-                        <span class="text-[#EEA47F] italic">Hyderabad Dum Biryani</span>
+                        <span class="text-[#C75B39] italic">Hyderabad Dum Biryani</span>
                     </h1>
-                    <p class="text-stone-200 text-base md:text-lg max-w-lg leading-relaxed">
+                    <p class="text-[#7C7973] text-base md:text-lg max-w-lg leading-relaxed">
                         Experience a grand symphony of authentic spices, premium long-grain basmati rice, and ultra-tender meats cooked to perfection.
                     </p>
                     <div class="flex flex-wrap gap-4 pt-2">
                         <a href="menu.html" class="bg-[#C75B39] text-white px-8 py-3.5 rounded-full font-semibold hover:bg-[#A84A2D] transition-all shadow-md">
                             Explore Full Menu
                         </a>
-                        <a href="#book-table" class="border border-white/50 text-white px-8 py-3.5 rounded-full font-semibold hover:bg-white hover:text-[#2C3A2B] transition-all">
+                        <a href="#book-table" class="border border-[#3A4D39] text-[#3A4D39] px-8 py-3.5 rounded-full font-semibold hover:bg-[#3A4D39] hover:text-white transition-all">
                             <i class="fa-solid fa-utensils mr-2"></i> Book a Table
                         </a>
                     </div>
                 </div>
  
-                <div id="hero-card" class="lg:col-span-5 flex justify-center lg:justify-end">
-                    <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-[32px] p-8 space-y-5 w-full max-w-sm shadow-2xl">
-                        <div class="flex items-center space-x-2 text-[#EEA47F] text-sm font-semibold tracking-wide uppercase">
-                            <i class="fa-solid fa-shop"></i>
-                            <span>Indian &middot; Arabian &middot; Moghlai &middot; Chinese</span>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="border-l-2 border-white/20 pl-3">
-                                <p class="font-['Playfair_Display'] text-2xl font-bold text-white">100+</p>
-                                <p class="text-xs text-stone-300 mt-1">Dishes on the menu</p>
-                            </div>
-                            <div class="border-l-2 border-white/20 pl-3">
-                                <p class="font-['Playfair_Display'] text-2xl font-bold text-white">12PM–11PM</p>
-                                <p class="text-xs text-stone-300 mt-1">Open daily</p>
-                            </div>
-                        </div>
-                        <div class="border-t border-white/15 pt-4 flex items-start space-x-3">
-                            <i class="fa-solid fa-location-dot text-[#EEA47F] text-sm mt-1"></i>
-                            <p class="text-xs text-stone-300 leading-relaxed">Bhoothpur Road, Christianpally, Mahbubnagar</p>
-                        </div>
+                <div class="lg:col-span-6 relative flex justify-center lg:justify-end anim-hero-right">
+                    <div class="absolute inset-0 bg-[#3A4D39]/5 rounded-full blur-3xl -z-10 transform scale-75"></div>
+                    <div class="w-[320px] h-[420px] sm:w-[420px] sm:h-[540px] rounded-tl-[160px] rounded-tr-[40px] rounded-bl-[40px] rounded-br-[200px] overflow-hidden border-8 border-white shadow-2xl relative bg-[#3A4D39]">
+                        <img src="photo8.jpeg" alt="Unifood Hub Setup" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
  
-            <div id="hero-scroll-cue" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70 text-xs tracking-widest uppercase flex flex-col items-center space-y-2">
+            <div id="hero-scroll-cue" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#7C7973] text-xs tracking-widest uppercase flex flex-col items-center space-y-2">
                 <span>Scroll</span>
                 <i class="fa-solid fa-chevron-down"></i>
             </div>
@@ -538,37 +521,33 @@
  
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            ScrollReveal().reveal('.anim-hero-left', { origin: 'left', distance: '50px', duration: 800 });
+            ScrollReveal().reveal('.anim-hero-right', { origin: 'right', distance: '50px', duration: 800, delay: 200 });
             ScrollReveal().reveal('.anim-reveal-up', { origin: 'bottom', distance: '40px', duration: 800, interval: 100 });
             ScrollReveal().reveal('.anim-reveal-left', { origin: 'left', distance: '40px', duration: 800 });
             ScrollReveal().reveal('.anim-reveal-right', { origin: 'right', distance: '40px', duration: 800 });
  
-            // --- GSAP: Hero background stays pinned, reveals as you scroll (ScrollSmoother-style) ---
+            // --- GSAP: hero photo stays pinned behind the page; a cream veil over it
+            // slowly fades away as you scroll, uncovering the photo. The text/photo
+            // card up front are untouched — they just sit on top the whole time. ---
             if (window.gsap && window.ScrollTrigger) {
                 gsap.registerPlugin(ScrollTrigger);
                 gsap.context(() => {
-                    gsap.set("#hero-bg", { scale: 1.35, filter: "blur(8px) brightness(0.55)" });
-                    gsap.set(["#hero-text > *", "#hero-card"], { opacity: 0, y: 40 });
+                    gsap.set("#hero-bg", { scale: 1.12 });
+                    gsap.set("#hero-bg-veil", { opacity: 1 });
                     gsap.set("#hero-scroll-cue", { opacity: 1 });
  
-                    const heroTl = gsap.timeline({
+                    gsap.timeline({
                         scrollTrigger: {
                             trigger: "#hero",
                             start: "top top",
                             end: "bottom top",
                             scrub: 0.6
                         }
-                    });
- 
-                    heroTl
-                        // image itself stays put (pinned by the sticky wrapper) and only
-                        // sharpens/settles in place as the person scrolls slowly
-                        .to("#hero-bg", { scale: 1, filter: "blur(0px) brightness(1)", ease: "none" }, 0)
-                        .to("#hero-scroll-cue", { opacity: 0, ease: "none" }, 0)
-                        .to("#hero-text > *", { opacity: 1, y: 0, ease: "none", stagger: 0.08 }, 0.08)
-                        .to("#hero-card", { opacity: 1, y: 0, ease: "none" }, 0.2)
-                        // as the person keeps scrolling past the reveal, content fades out
-                        // before the pin releases into "Our Story"
-                        .to(["#hero-text > *", "#hero-card"], { opacity: 0, y: -30, ease: "none" }, 0.75);
+                    })
+                        .to("#hero-bg", { scale: 1, ease: "none" }, 0)
+                        .to("#hero-bg-veil", { opacity: 0.15, ease: "none" }, 0)
+                        .to("#hero-scroll-cue", { opacity: 0, ease: "none" }, 0);
                 }, "#hero");
             }
  
@@ -713,21 +692,3 @@
 </body>
 </html>
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

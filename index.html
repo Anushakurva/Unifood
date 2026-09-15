@@ -9,17 +9,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght=300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <!-- GSAP & ScrollTrigger Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-[#FBF9F4] text-[#2C2A29] font-['Plus_Jakarta_Sans'] overflow-x-hidden">
 
-    <header class="fixed top-0 left-0 w-full z-40 bg-[#FBF9F4]/90 backdrop-blur-md border-b border-[#EAE6DF]">
+    <!-- NAVIGATION HEADER -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#FBF9F4]/90 backdrop-blur-md border-b border-[#EAE6DF]">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="index.html" class="font-['Playfair_Display'] text-2xl font-bold tracking-tight text-[#3A4D39]">
-                Unifood<span class="text-[#C75B39]">Multi-Cuisine</span>
+                Unifood<span class="text-[#C75B39]">.</span>
             </a>
             
             <nav class="hidden md:flex items-center space-x-7 font-medium text-sm tracking-wide text-[#5C5A54]">
@@ -40,48 +43,75 @@
         </div>
     </header>
 
-    <section id="hero" class="min-h-screen pt-24 flex items-center relative overflow-hidden px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
-            <div class="lg:col-span-6 space-y-6 anim-hero-left">
-                <span class="text-[#C75B39] font-semibold tracking-widest text-xs uppercase bg-[#C75B39]/10 px-3 py-1 rounded-full">
+    <!-- HERO SECTION -->
+    <section id="hero" class="min-h-screen pt-20 flex items-center relative overflow-hidden px-6 bg-[#0a0a0a]">
+        <!-- Background Wrapper -->
+        <div id="hero-bg-wrapper" class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <img 
+                id="hero-bg-img"
+                src="photo10.jpeg" 
+                alt="Unifood Restaurant Exterior" 
+                class="w-full h-full object-cover object-center opacity-70 contrast-110 brightness-95"
+            />
+            <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/30"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-black/60"></div>
+        </div>
+
+        <!-- Content Layer -->
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full relative z-10 py-16">
+            <div class="lg:col-span-7 space-y-6">
+                <span id="hero-badge" class="inline-block text-[#FF8A65] font-semibold tracking-widest text-xs uppercase bg-[#FF8A65]/20 border border-[#FF8A65]/40 px-4 py-1.5 rounded-full backdrop-blur-md">
                     <i class="fa-solid fa-star mr-1"></i> Mahbubnagar's Finest Multi-Cuisine
                 </span>
-                <h1 class="font-['Playfair_Display'] text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-[#2C3A2B]">
+                
+                <h1 id="hero-title" class="font-['Playfair_Display'] text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.15] text-white drop-shadow-lg">
                     Taste the Royal <br>
-                    <span class="text-[#C75B39] italic">Hyderabad Dum Biryani</span>
+                    <span class="text-[#FF7A59] italic drop-shadow-xl">Mattbor Biryani</span>
                 </h1>
-                <p class="text-[#7C7973] text-base md:text-lg max-w-lg leading-relaxed">
+                
+                <p id="hero-desc" class="text-stone-200 text-base md:text-lg max-w-xl leading-relaxed font-normal">
                     Experience a grand symphony of authentic spices, premium long-grain basmati rice, and ultra-tender meats cooked to perfection.
                 </p>
-                <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="menu.html" class="bg-[#C75B39] text-white px-8 py-3.5 rounded-full font-semibold hover:bg-[#A84A2D] transition-all shadow-md">
+                
+                <div id="hero-cta" class="flex flex-wrap gap-4 pt-4">
+                    <a href="menu.html" class="bg-[#C75B39] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#A84A2D] transition-all shadow-lg hover:shadow-orange-950/50 transform hover:-translate-y-0.5">
                         Explore Full Menu
                     </a>
-                    <a href="#book-table" class="border border-[#3A4D39] text-[#3A4D39] px-8 py-3.5 rounded-full font-semibold hover:bg-[#3A4D39] hover:text-white transition-all">
+                    <a href="#book-table" class="border border-white/50 bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#2C3A2B] transition-all shadow-md">
                         <i class="fa-solid fa-utensils mr-2"></i> Book a Table
                     </a>
                 </div>
             </div>
 
-            <div class="lg:col-span-6 relative flex justify-center lg:justify-end anim-hero-right">
-                <div class="absolute inset-0 bg-[#3A4D39]/5 rounded-full blur-3xl -z-10 transform scale-75"></div>
-                <div class="w-[320px] h-[420px] sm:w-[420px] sm:h-[540px] rounded-tl-[160px] rounded-tr-[40px] rounded-bl-[40px] rounded-br-[200px] overflow-hidden border-8 border-white shadow-2xl relative bg-[#3A4D39]">
-                    
-            <img src="photo8.jpeg"
-     alt="Unifood Hub Setup"
-     class="w-full h-full object-cover">    
+            <!-- Floating Special Card (High Clarity & Dynamic Image) -->
+            <div id="hero-card" class="lg:col-span-5 flex justify-center lg:justify-end">
+                <div class="w-full max-w-sm rounded-3xl overflow-hidden border border-white/20 bg-stone-900/90 shadow-2xl p-4">
+                    <div class="h-64 rounded-2xl overflow-hidden relative bg-stone-800">
+                        <img 
+                            src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80" 
+                            alt="Special Mattbor Dum Biryani" 
+                            class="w-full h-full object-cover object-center"
+                        />
+                        <span class="absolute top-3 right-3 bg-black/80 text-amber-400 text-xs font-bold px-3 py-1 rounded-full border border-amber-400/40 shadow-md">
+                            Chef's Special
+                        </span>
+                    </div>
+                    <div class="p-4 space-y-2">
+                        <h3 class="text-white font-['Playfair_Display'] text-xl font-bold tracking-wide">Special Mattbor Dum Biryani</h3>
+                        <p class="text-stone-300 text-xs leading-relaxed">Slow dum-cooked with aromatic basmati rice &amp; secret house spices.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- OUR STORY SECTION -->
     <section id="our-story" class="py-24 bg-[#FBF9F4] px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
             <div class="lg:col-span-6 relative anim-reveal-left order-2 lg:order-1">
                 <div class="absolute -top-6 -left-6 w-32 h-32 rounded-full bg-[#C75B39]/10 -z-10"></div>
                 <div class="w-full h-[360px] sm:h-[440px] rounded-[40px] overflow-hidden border-8 border-white shadow-2xl bg-[#2C3A2B]">
-                    <img src="photo7.jpeg" alt="Unifood Multi Cuisine Restaurant, Mahbubnagar" class="w-full h-full object-cover">
+                    <img src="assets/photo7.jpeg" alt="Unifood Multi Cuisine Restaurant, Mahbubnagar" class="w-full h-full object-cover">
                 </div>
                 <div class="hidden sm:flex absolute -bottom-8 -right-6 bg-white rounded-3xl shadow-xl border border-[#EAE6DF] px-6 py-5 items-center space-x-4">
                     <span class="font-['Playfair_Display'] text-3xl font-bold text-[#C75B39]">4</span>
@@ -117,10 +147,10 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
+    <!-- FLAVOR MOMENT SECTION -->
     <section id="flavor-moment" class="relative py-32 px-6 overflow-hidden">
         <div id="flavor-bg" class="absolute inset-0 bg-cover bg-center scale-110" style="background-image: url('assets/food-sesame-wings.jpg');"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-[#1A1512]/95 via-[#1A1512]/70 to-[#1A1512]/40"></div>
@@ -135,6 +165,7 @@
         </div>
     </section>
 
+    <!-- WHY CHOOSE US -->
     <section id="why-choose-us" class="py-24 bg-[#F5F2EA] px-6 border-y border-[#EAE6DF]">
         <div class="max-w-7xl mx-auto text-center mb-16 anim-reveal-up">
             <span class="text-[#C75B39] font-bold tracking-widest text-xs uppercase">The Unifood Standard</span>
@@ -160,10 +191,10 @@
         </div>
     </section>
 
+    <!-- AMBIANCE SECTION -->
     <section id="ambiance" class="py-24 bg-[#FBF9F4] px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
                 <div class="lg:col-span-5 space-y-6 anim-reveal-left">
                     <span class="text-[#3A4D39] font-bold tracking-widest text-xs uppercase bg-[#3A4D39]/10 px-3 py-1 rounded-full">
                         <i class="fa-solid fa-leaf mr-1"></i> Unique Open-Air Dining
@@ -179,7 +210,7 @@
                     <div class="space-y-3 pt-2">
                         <div class="flex items-center space-x-3 text-sm font-semibold text-[#2C2A29]">
                             <i class="fa-solid fa-door-closed text-[#3A4D39] bg-[#E8F0EA] p-2.5 rounded-xl text-xs"></i>
-                            <span>Private & Cozy Family Cabin Layouts</span>
+                            <span>Private &amp; Cozy Family Cabin Layouts</span>
                         </div>
                         <div class="flex items-center space-x-3 text-sm font-semibold text-[#2C2A29]">
                             <i class="fa-solid fa-moon text-[#3A4D39] bg-[#E8F0EA] p-2.5 rounded-xl text-xs"></i>
@@ -190,9 +221,8 @@
 
                 <div class="lg:col-span-7 relative group anim-reveal-right">
                     <div class="w-full h-[320px] sm:h-[460px] rounded-[40px] overflow-hidden border-8 border-white shadow-2xl relative bg-[#2C3A2B]">
-                        
                         <div class="slider-slide absolute inset-0 opacity-100 transition-opacity duration-1000 ease-in-out">
-                            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80" alt="Unifood Hub Setup">
+                            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80" alt="Unifood Hub Setup" class="w-full h-full object-cover">
                             <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6 pt-12">
                                 <p class="text-white font-bold text-lg">Welcome to Unifood</p>
                                 <p class="text-stone-300 text-xs">Our premium reception and multi-cuisine counter operations.</p>
@@ -200,7 +230,7 @@
                         </div>
 
                         <div class="slider-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-                            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="Garden Courtyard Seating">
+                            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="Garden Courtyard Seating" class="w-full h-full object-cover">
                             <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6 pt-12">
                                 <p class="text-white font-bold text-lg">Open Air Garden</p>
                                 <p class="text-stone-300 text-xs">Spacious layouts beautifully arranged on fresh gravel terrain floors.</p>
@@ -208,7 +238,7 @@
                         </div>
 
                         <div class="slider-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-                            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80" alt="Private Bamboo Cabin">
+                            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80" alt="Private Bamboo Cabin" class="w-full h-full object-cover">
                             <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6 pt-12">
                                 <p class="text-white font-bold text-lg">Exclusive Bamboo Huts</p>
                                 <p class="text-stone-300 text-xs">Thatch-roofed custom private spaces tailored perfectly for families.</p>
@@ -216,26 +246,10 @@
                         </div>
 
                         <div class="slider-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=80" alt="Interior Seating Ambience">
+                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=80" alt="Interior Seating Ambience" class="w-full h-full object-cover">
                             <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6 pt-12">
                                 <p class="text-white font-bold text-lg">Vibrant Hanging Drops</p>
                                 <p class="text-stone-300 text-xs">Warm ambient drops matched with decorative ceiling lattice work layers.</p>
-                            </div>
-                        </div>
-
-                        <div class="slider-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-                            <img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?auto=format&fit=crop&w=1200&q=80" alt="Full Garden Layout Night View">
-                            <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6 pt-12">
-                                <p class="text-white font-bold text-lg">Grand Night Illumination</p>
-                                <p class="text-stone-300 text-xs">Bright beautiful night dynamics to celebrate grand unforgettable meals.</p>
-                            </div>
-                        </div>
-
-                        <div class="slider-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-                           <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80" alt="Restaurant Food" class="w-full h-full object-cover">
-                            <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6 pt-12">
-                                <p class="text-white font-bold text-lg">Premium Garden Walkways</p>
-                                <p class="text-stone-300 text-xs">Impeccable dining setup seamlessly engineered within nature landscapes.</p>
                             </div>
                         </div>
 
@@ -253,6 +267,7 @@
         </div>
     </section>
 
+    <!-- GALLERY SECTION -->
     <section id="gallery" class="py-24 bg-[#FBF9F4] px-6">
         <div class="max-w-7xl mx-auto text-center mb-16 anim-reveal-up">
             <span class="text-[#3A4D39] font-bold tracking-widest text-xs uppercase">A Taste, A Table, A Setting</span>
@@ -261,28 +276,28 @@
         </div>
 
         <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[160px] md:auto-rows-[200px]" id="gallery-grid">
-            <button data-caption="Chicken Biryani, slow dum-cooked" class="gallery-item row-span-2 col-span-1 md:col-span-1 anim-reveal-up">
-                <img src="photo2.jpeg" alt="Chicken biryani served with a spoon, steam rising">
+            <button data-caption="Chicken Biryani, slow dum-cooked" class="gallery-item row-span-2 col-span-1 md:col-span-1 anim-reveal-up overflow-hidden rounded-2xl">
+                <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80" alt="Biryani" class="w-full h-full object-cover">
             </button>
-            <button data-caption="Mandi-style chicken over basmati" class="gallery-item col-span-1 anim-reveal-up">
-                <img src="photo3.jpeg" alt="Chicken drumsticks over spiced rice">
+            <button data-caption="Mandi-style chicken over basmati" class="gallery-item col-span-1 anim-reveal-up overflow-hidden rounded-2xl">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Mandi" class="w-full h-full object-cover">
             </button>
-            <button data-caption="Sesame chilli wings starter" class="gallery-item col-span-1 anim-reveal-up">
-                <img src="photo4.jpeg" alt="Sesame chilli chicken wings in a bowl">
+            <button data-caption="Sesame chilli wings starter" class="gallery-item col-span-1 anim-reveal-up overflow-hidden rounded-2xl">
+                <img src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=800&q=80" alt="Wings" class="w-full h-full object-cover">
             </button>
-            <button data-caption="Wok-fired starters, flame finished" class="gallery-item row-span-2 col-span-1 anim-reveal-up">
-                <img src="photo5.jpeg" alt="Flames rising from a wok on the stove">
+            <button data-caption="Wok-fired starters" class="gallery-item row-span-2 col-span-1 anim-reveal-up overflow-hidden rounded-2xl">
+                <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80" alt="Chinese Wok" class="w-full h-full object-cover">
             </button>
-            <button data-caption="Kadai-style curry in copper" class="gallery-item col-span-1 anim-reveal-up">
-                <img src="photo6.jpeg" alt="Spiced curry served in a copper bowl">
+            <button data-caption="Kadai-style curry in copper" class="gallery-item col-span-1 anim-reveal-up overflow-hidden rounded-2xl">
+                <img src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=800&q=80" alt="Kadai Curry" class="w-full h-full object-cover">
             </button>
-            <button data-caption="House-made garlic pickle" class="gallery-item col-span-1 anim-reveal-up">
-                <img src="photo7.jpeg" alt="Jar of house-made garlic pickle">
+            <button data-caption="House-made garlic pickle" class="gallery-item col-span-1 anim-reveal-up overflow-hidden rounded-2xl">
+                <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80" alt="Pickle" class="w-full h-full object-cover">
             </button>
-            
         </div>
     </section>
 
+    <!-- LIGHTBOX -->
     <div id="lightbox" class="fixed inset-0 bg-black/90 z-[60] hidden items-center justify-center px-6">
         <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-2xl w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center">
             <i class="fa-solid fa-xmark"></i>
@@ -293,9 +308,9 @@
         </div>
     </div>
 
+    <!-- BOOK A TABLE SECTION -->
     <section id="book-table" class="py-24 bg-[#F5F2EA] px-6 border-y border-[#EAE6DF]">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
             <div class="lg:col-span-6 space-y-6 anim-reveal-left">
                 <span class="text-[#C75B39] font-semibold tracking-widest text-xs uppercase bg-[#C75B39]/10 px-3 py-1 rounded-full">
                     <i class="fa-solid fa-chair mr-1"></i> Reserve Your Table
@@ -326,13 +341,13 @@
 
             <div class="lg:col-span-6 relative anim-reveal-right">
                 <div class="w-full h-[360px] sm:h-[440px] rounded-[40px] overflow-hidden border-8 border-white shadow-2xl bg-[#2C3A2B]">
-                    <img src="photo2.jpeg" alt="Unifood dining hall with booth seating" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Unifood dining hall" class="w-full h-full object-cover">
                 </div>
             </div>
-
         </div>
     </section>
 
+    <!-- BANQUET HALL SECTION -->
     <section id="banquet-hall" class="py-24 bg-[#FBF9F4] px-6">
         <div class="max-w-7xl mx-auto text-center mb-16 anim-reveal-up">
             <span class="text-[#3A4D39] font-bold tracking-widest text-xs uppercase">Celebrations, Handled</span>
@@ -342,10 +357,10 @@
 
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="rounded-[32px] overflow-hidden border-8 border-white shadow-xl h-[320px] anim-reveal-left">
-                <img src="photo1.jpeg" alt="Unifood banquet hall set up for an event" class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80" alt="Banquet Setup" class="w-full h-full object-cover">
             </div>
             <div class="rounded-[32px] overflow-hidden border-8 border-white shadow-xl h-[320px] anim-reveal-right">
-                <img src="photo5.jpeg" alt="Unifood banquet hall, open floor and seating" class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80" alt="Banquet Seating" class="w-full h-full object-cover">
             </div>
         </div>
 
@@ -356,6 +371,7 @@
         </div>
     </section>
 
+    <!-- TESTIMONIALS SECTION -->
     <section id="testimonials" class="py-24 bg-[#F5F2EA] px-6 border-t border-[#EAE6DF]">
         <div class="max-w-7xl mx-auto text-center mb-16 anim-reveal-up">
             <span class="text-[#C75B39] font-bold tracking-widest text-xs uppercase">Guest Reviews</span>
@@ -368,7 +384,6 @@
         <div class="max-w-5xl mx-auto relative px-4 group">
             <div class="overflow-hidden">
                 <div id="testimonial-track" class="flex transition-transform duration-500 ease-in-out gap-6" style="transform: translateX(0%);">
-                    
                     <div class="w-full md:w-[calc(50%-12px)] shrink-0 bg-white p-8 rounded-[32px] border border-[#EAE6DF] shadow-sm flex flex-col justify-between space-y-6">
                         <div class="space-y-4">
                             <div class="text-amber-500 flex space-x-1">
@@ -416,23 +431,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="w-full md:w-[calc(50%-12px)] shrink-0 bg-white p-8 rounded-[32px] border border-[#EAE6DF] shadow-sm flex flex-col justify-between space-y-6">
-                        <div class="space-y-4">
-                            <div class="text-amber-500 flex space-x-1">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
-                            <p class="text-sm text-[#5C5A54] leading-relaxed italic">"Unifood has completely changed the food standard setup in Mahbubnagar. Extremely clean, gorgeous nighttime lights, and pristine flavors on all starters."</p>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <div class="w-10 h-10 rounded-full bg-blue-700 text-white font-bold flex items-center justify-center text-sm">K</div>
-                            <div>
-                                <h4 class="text-sm font-bold text-[#2C3A2B]">Kiran Kumar</h4>
-                                <p class="text-[11px] text-gray-400">Regular Diner</p>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
 
@@ -445,9 +443,9 @@
         </div>
     </section>
 
+    <!-- FIND US SECTION -->
     <section id="find-us" class="py-24 bg-[#FBF9F4] px-6 border-t border-[#EAE6DF]">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
             <div class="lg:col-span-5 space-y-6 anim-reveal-left">
                 <span class="text-[#3A4D39] font-bold tracking-widest text-xs uppercase bg-[#3A4D39]/10 px-3 py-1 rounded-full">
                     <i class="fa-solid fa-map-pin mr-1"></i> Visit the Hub
@@ -489,46 +487,52 @@
                     </iframe>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <footer id="contact" class="bg-[#2C3A2B] text-white pt-16 pb-8 px-6">
+    <!-- FOOTER WITH GSAP BOUNCE SCROLLTRIGGER -->
+    <footer id="main-footer" class="bg-[#2C3A2B] text-white pt-16 pb-8 px-6 relative overflow-hidden">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-white/10">
-            <div class="space-y-4">
+            <div class="space-y-4 footer-anim-item">
                 <h3 class="font-['Playfair_Display'] text-2xl font-bold">Unifood Multi Cuisine</h3>
                 <p class="text-sm text-stone-400">Serving unforgettable aromatic flavors daily in Mahbubnagar, Telangana.</p>
             </div>
-            <div class="space-y-4">
+            <div class="space-y-4 footer-anim-item">
                 <h4 class="font-semibold text-lg text-[#EEA47F]">Visit Us</h4>
                 <p class="text-sm text-stone-300"><i class="fa-solid fa-location-dot mr-2 text-[#C75B39]"></i> Bhoothpur Road, Christianpally, Mahbubnagar, 509002</p>
                 <p class="text-sm text-stone-300"><i class="fa-solid fa-clock mr-2 text-[#C75B39]"></i> 12:00 PM - 11:00 PM</p>
             </div>
-            <div class="space-y-4">
-                <h4 class="font-semibold text-lg text-[#EEA47F]">Reservations & Delivery</h4>
+            <div class="space-y-4 footer-anim-item">
+                <h4 class="font-semibold text-lg text-[#EEA47F]">Reservations &amp; Delivery</h4>
                 <p class="text-sm text-stone-300"><i class="fa-solid fa-phone mr-2 text-[#EEA47F]"></i> +91 98853 97871</p>
-                <a><i class="fa-solid fa-whatsup mr-2 text-xs"></i>Meet The Designer Anusha-6305680949</a>
+                <p class="text-sm text-stone-300"><i class="fa-brands fa-whatsapp mr-2 text-green-400"></i> Meet The Designer Anusha-6305680949</p>
             </div>
         </div>
     </footer>
 
+    <!-- SCRIPT ENGINE -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            ScrollReveal().reveal('.anim-hero-left', { origin: 'left', distance: '50px', duration: 800 });
-            // --- GSAP: Flavor Moment background reveal (scoped to #flavor-moment only) ---
-            if (window.gsap && window.ScrollTrigger) {
-                gsap.registerPlugin(ScrollTrigger);
+            // --- GSAP Animations ---
+            if (window.gsap) {
+                if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+
+                // Hero Entrance Animation
+                const heroTimeline = gsap.timeline({ defaults: { ease: "power3.out" } });
+                heroTimeline
+                    .fromTo("#hero-bg-img", { scale: 1.3, opacity: 0 }, { scale: 1, opacity: 0.7, duration: 1.5 })
+                    .fromTo("#hero-badge", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.8 }, "-=1.0")
+                    .fromTo("#hero-title", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8 }, "-=0.6")
+                    .fromTo("#hero-desc", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8 }, "-=0.6")
+                    .fromTo("#hero-cta", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8 }, "-=0.6")
+                    .fromTo("#hero-card", { opacity: 0, x: 50, scale: 0.9 }, { opacity: 1, x: 0, scale: 1, duration: 1.0 }, "-=0.8");
+
+                // Flavor Moment Animation
                 gsap.context(() => {
                     gsap.set(["#flavor-eyebrow", "#flavor-heading", "#flavor-copy"], { opacity: 0, y: 30 });
-
                     const flavorTl = gsap.timeline({
-                        scrollTrigger: {
-                            trigger: "#flavor-moment",
-                            start: "top 70%",
-                            once: true
-                        }
+                        scrollTrigger: { trigger: "#flavor-moment", start: "top 70%", once: true }
                     });
-
                     flavorTl
                         .to("#flavor-bg", { scale: 1, duration: 1.6, ease: "power2.out" })
                         .to("#flavor-eyebrow", { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, "-=1.1")
@@ -536,19 +540,38 @@
                         .to("#flavor-copy", { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, "-=0.35");
 
                     gsap.to("#flavor-bg", {
-                        yPercent: 12,
-                        ease: "none",
-                        scrollTrigger: {
-                            trigger: "#flavor-moment",
-                            start: "top bottom",
-                            end: "bottom top",
-                            scrub: true
-                        }
+                        yPercent: 12, ease: "none",
+                        scrollTrigger: { trigger: "#flavor-moment", start: "top bottom", end: "bottom top", scrub: true }
                     });
                 }, "#flavor-moment");
+
+                // Footer Bounce Animation
+                if (window.ScrollTrigger) {
+                    gsap.fromTo("#main-footer", 
+                        { y: 120, opacity: 0, scale: 0.94 }, 
+                        {
+                            y: 0, opacity: 1, scale: 1, duration: 1.2, ease: "back.out(1.7)",
+                            scrollTrigger: { trigger: "#main-footer", start: "top 90%", toggleActions: "play none none reverse" }
+                        }
+                    );
+                    gsap.fromTo(".footer-anim-item", 
+                        { y: 30, opacity: 0 }, 
+                        {
+                            y: 0, opacity: 1, duration: 0.7, stagger: 0.15, ease: "bounce.out",
+                            scrollTrigger: { trigger: "#main-footer", start: "top 85%", toggleActions: "play none none reverse" }
+                        }
+                    );
+                }
             }
 
-            // --- Photo Gallery Lightbox ---
+            // ScrollReveal Fallbacks
+            if (window.ScrollReveal) {
+                ScrollReveal().reveal('.anim-reveal-up', { origin: 'bottom', distance: '40px', duration: 800, interval: 100 });
+                ScrollReveal().reveal('.anim-reveal-left', { origin: 'left', distance: '40px', duration: 800 });
+                ScrollReveal().reveal('.anim-reveal-right', { origin: 'right', distance: '40px', duration: 800 });
+            }
+
+            // Lightbox Gallery
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
             const lightboxCaption = document.getElementById('lightbox-caption');
@@ -569,14 +592,10 @@
                 lightbox.classList.remove('flex');
             };
 
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) closeLightbox();
-            });
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') closeLightbox();
-            });
+            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 
-            // --- Book a Table -> WhatsApp ---
+            // WhatsApp Reservation Handler
             window.sendBookingToWhatsApp = function(e) {
                 e.preventDefault();
                 const name = document.getElementById('book-name').value.trim();
@@ -585,21 +604,11 @@
                 const time = document.getElementById('book-time').value;
                 const guests = document.getElementById('book-guests').value;
 
-                let msg = `*Table Booking Request - Unifood*\n`;
-                msg += `--------------------------------------\n`;
-                msg += `*Name:* ${name}\n*Phone:* ${phone}\n`;
-                msg += `*Date:* ${date}\n*Time:* ${time}\n*Guests:* ${guests}\n`;
-                msg += `--------------------------------------\n`;
-
+                let msg = `*Table Booking Request - Unifood*\n*Name:* ${name}\n*Phone:* ${phone}\n*Date:* ${date}\n*Time:* ${time}\n*Guests:* ${guests}\n`;
                 window.open(`https://api.whatsapp.com/send?phone=919885397871&text=${encodeURIComponent(msg)}`, '_blank');
             };
 
-            ScrollReveal().reveal('.anim-hero-right', { origin: 'right', distance: '50px', duration: 800, delay: 200 });
-            ScrollReveal().reveal('.anim-reveal-up', { origin: 'bottom', distance: '40px', duration: 800, interval: 100 });
-            ScrollReveal().reveal('.anim-reveal-left', { origin: 'left', distance: '40px', duration: 800 });
-            ScrollReveal().reveal('.anim-reveal-right', { origin: 'right', distance: '40px', duration: 800 });
-
-            // Ambiance Slider Implementation
+            // Ambiance Slider
             let currentSlideIndex = 0;
             const slides = document.querySelectorAll('.slider-slide');
             const dotsContainer = document.getElementById('slider-dots');
@@ -625,23 +634,23 @@
                         dots[idx].className = "h-1.5 rounded-full transition-all duration-300 bg-gray-300 w-3";
                     }
                 });
-            }
+            };
 
             window.shiftSlide = function(direction) {
                 currentSlideIndex += direction;
                 if (currentSlideIndex >= slides.length) currentSlideIndex = 0;
                 if (currentSlideIndex < 0) currentSlideIndex = slides.length - 1;
                 updateSliderUI();
-            }
+            };
 
             window.jumpToSlide = function(index) {
                 currentSlideIndex = index;
                 updateSliderUI();
-            }
+            };
 
-            let autoCycleTimer = setInterval(() => shiftSlide(1), 4000);
+            setInterval(() => shiftSlide(1), 4000);
 
-            // Testimonial Slider System Engine
+            // Testimonial Engine
             let reviewIdx = 0;
             window.shiftReview = function(direction) {
                 const track = document.getElementById('testimonial-track');
@@ -655,7 +664,7 @@
                 
                 let shiftingWidth = isMobile ? (reviewIdx * 100) : (reviewIdx * 51);
                 track.style.transform = `translateX(-${shiftingWidth}%)`;
-            }
+            };
         });
     </script>
 </body>

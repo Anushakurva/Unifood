@@ -1,41 +1,278 @@
 const menuData = [
-    // --- SOUPS ---
-    { name: "Tomato Kothimira Rasam", price: 110, type: "Vegetarian", category: "Soups" },
-    { name: "Corn Soup", price: 110, type: "Vegetarian", category: "Soups" },
-    { name: "Miriyala Rasam", price: 110, type: "Vegetarian", category: "Soups" },
-    { name: "Veg Manchow Rasam", price: 110, type: "Vegetarian", category: "Soups" },
-    { name: "Veg Hot & Sour Rasam", price: 110, type: "Vegetarian", category: "Soups" },
-    { name: "Velulli Kodi Charu", price: 130, type: "Non-Vegetarian", category: "Soups" },
-    { name: "Chicken Manchow Soup", price: 130, type: "Non-Vegetarian", category: "Soups" },
-    { name: "Chicken Hot & Sour Soup", price: 130, type: "Non-Vegetarian", category: "Soups" },
+    // --- VEGETARIAN SOUPS ---
+    { name: "Tomato Soup", price: 100, type: "Vegetarian", category: "Soups" },
+    { name: "Veg. Manchow Soup", price: 110, type: "Vegetarian", category: "Soups" },
+    { name: "Veg. Hot & Sour Soup", price: 110, type: "Vegetarian", category: "Soups" },
+    { name: "Veg. Sweet Corn Soup", price: 120, type: "Vegetarian", category: "Soups" },
+    { name: "Mashroom Soup", price: 130, type: "Vegetarian", category: "Soups" },
+    { name: "Cream off Mashroom Soup", price: 140, type: "Vegetarian", category: "Soups" },
 
-    // --- STARTERS ---
-    { name: "Crispy Veg", price: 249, type: "Vegetarian", category: "Starters" },
-    { name: "Pachimirchi Gobi", price: 199, type: "Vegetarian", category: "Starters" },
-    { name: "Veg Manchurian", price: 229, type: "Vegetarian", category: "Starters" },
-    { name: "Babycorn - Salt & Pepper / 65 / Chilli", price: 249, type: "Vegetarian", category: "Starters" },
-    { name: "Mushroom - Karvepaku / Salt & Pepper", price: 249, type: "Vegetarian", category: "Starters" },
-    { name: "Paneer - 65 / Chilli / Majestic / Schezwan", price: 259, type: "Vegetarian", category: "Starters" },
+    // --- NON VEGETARIAN SOUPS ---
+    { name: "Chicken Hot & Sour Soup", price: 140, type: "Non-Vegetarian", category: "Soups" },
+    { name: "Chicken Manchow Soup", price: 140, type: "Non-Vegetarian", category: "Soups" },
+    { name: "Chicken Sweet Corn Soup", price: 140, type: "Non-Vegetarian", category: "Soups" },
+    { name: "Mutton Hot & Sour Soup", price: 170, type: "Non-Vegetarian", category: "Soups" },
+    { name: "Mutton Manchow Soup", price: 170, type: "Non-Vegetarian", category: "Soups" },
+    { name: "Mutton Sweet Corn Soup", price: 170, type: "Non-Vegetarian", category: "Soups" },
+    { name: "Mandi Soup", price: 80, type: "Non-Vegetarian", category: "Soups" },
+
+    // --- VEG. STARTERS & DRY ITEMS ---
+    { name: "Veg. Manchuria", price: 120, type: "Vegetarian", category: "Starters" },
+    { name: "Crispy Corn", price: 130, type: "Vegetarian", category: "Starters" },
+    { name: "Gobi 65", price: 150, type: "Vegetarian", category: "Starters" },
+    { name: "Gobi Chilly", price: 150, type: "Vegetarian", category: "Starters" },
+    { name: "Gobi Manchuria", price: 150, type: "Vegetarian", category: "Starters" },
+    { name: "Mashroom 65", price: 180, type: "Vegetarian", category: "Starters" },
+    { name: "Mashroom Chilly", price: 180, type: "Vegetarian", category: "Starters" },
+    { name: "Mashroom Manchuria", price: 180, type: "Vegetarian", category: "Starters" },
+    { name: "Paneer 65", price: 180, type: "Vegetarian", category: "Starters" },
+    { name: "Paneer Chilly", price: 180, type: "Vegetarian", category: "Starters" },
+    { name: "Paneer Manchuria", price: 180, type: "Vegetarian", category: "Starters" },
+
+    // --- SEA FOOD STARTER & DRY ITEMS ---
+    { name: "Apollo Fish", price: 250, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Fish Fry", price: 250, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Fish Tikka", price: 300, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Fish Chilly", price: 250, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Fish Manchuria", price: 250, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Fish 65", price: 250, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Prawn's Fry", price: 280, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Prawn's Chilly", price: 280, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Prawn's 65", price: 280, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Prawn's Manchuria", price: 280, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Prawn's Pepper Fry", price: 350, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Loose Prawns", price: 350, type: "Non-Vegetarian", category: "Starters" },
+
+    // --- EGG ITEMS ---
+    { name: "Egg Omlet", price: 40, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Double Egg Omlet", price: 60, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Egg Manchuria", price: 150, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Egg 65", price: 150, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Egg Chilly", price: 150, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Egg Curry", price: 140, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Egg Bhurji", price: 120, type: "Non-Vegetarian", category: "Starters" },
+
+    // --- MUTTON STARTERS & DRY ---
+    { name: "Mutton Fry", price: 300, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Mutton 65", price: 300, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Mutton Chilly", price: 300, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Mutton Manchuria", price: 300, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Mutton Roast", price: 300, type: "Non-Vegetarian", category: "Starters" },
+
+    // --- CHICKEN STARTERS & DRY ---
+    { name: "Chicken 65", price: 200, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Chicken Manchuria", price: 200, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Chicken Chilly", price: 200, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Ginger Chicken", price: 220, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Garlic Chicken", price: 220, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Chicken Lollipops (6 PCS)", price: 240, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Chicken Drumsticks (6 PCS)", price: 240, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Chicken Majestic (Boneless)", price: 260, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Chicken 555 (Boneless)", price: 260, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Crispy Pepper Chicken", price: 300, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Chicken Roast", price: 220, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Chicken Fry", price: 220, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Chicken Drumsticks (3 PCS)", price: 140, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Chicken Lollipops (3 PCS)", price: 140, type: "Non-Vegetarian", category: "Starters" },
+
+    // --- TANDOORI ITEMS ---
+    { name: "Tandoori Chicken Full", price: 450, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Tandoori Chicken Half", price: 250, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Chicken Tangdi Kabab Full", price: 150, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Chicken Tangdi Kabab Single", price: 90, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Chicken Tikka", price: 280, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Chicken Haryali", price: 280, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Chicken Russian Tikka", price: 300, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Chicken Laisani Tikka", price: 280, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Chicken Malai Kabab", price: 300, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Achari Tikka", price: 280, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Garlic Tikka", price: 280, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Pahadi Tikka", price: 280, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Lemon Tikka", price: 280, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Reshmi Tikka", price: 300, type: "Non-Vegetarian", category: "Starters" },
+    { name: "Paneer Tikka Kabab", price: 250, type: "Vegetarian", category: "Starters" },
+    { name: "Special Platter", price: 700, type: "Non-Vegetarian", category: "Starters" },
+
+    // --- CURRIES & MAIN COURSE ---
+    { name: "Fish Curry", price: 280, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Prawn's Curry", price: 300, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Dal Fry", price: 150, type: "Vegetarian", category: "Main Course" },
+    { name: "Dal Tadka", price: 150, type: "Vegetarian", category: "Main Course" },
+    { name: "Kaju Curry", price: 250, type: "Vegetarian", category: "Main Course" },
+    { name: "Kaju Paneer Curry", price: 280, type: "Vegetarian", category: "Main Course" },
+    { name: "Malai Kofta", price: 350, type: "Vegetarian", category: "Main Course" },
+    { name: "Mashroom Curry", price: 200, type: "Vegetarian", category: "Main Course" },
+    { name: "Mashroom Hyderabadi", price: 220, type: "Vegetarian", category: "Main Course" },
+    { name: "Mashroom Kolhapuri", price: 220, type: "Vegetarian", category: "Main Course" },
+    { name: "Mashroom Masala", price: 200, type: "Vegetarian", category: "Main Course" },
+    { name: "Kadai Mashroom", price: 200, type: "Vegetarian", category: "Main Course" },
+    { name: "Kadai Paneer", price: 200, type: "Vegetarian", category: "Main Course" },
+    { name: "Palak Paneer", price: 200, type: "Vegetarian", category: "Main Course" },
+    { name: "Paneer Butter Masala", price: 220, type: "Vegetarian", category: "Main Course" },
+    { name: "Paneer Chat Pata", price: 220, type: "Vegetarian", category: "Main Course" },
+    { name: "Paneer Tikka Masala", price: 300, type: "Vegetarian", category: "Main Course" },
+    { name: "Kadai Veg. Curry", price: 180, type: "Vegetarian", category: "Main Course" },
+    { name: "Mix. Veg. Curry", price: 180, type: "Vegetarian", category: "Main Course" },
+    { name: "Veg Chat Pata", price: 180, type: "Vegetarian", category: "Main Course" },
+    { name: "Veg. Hyderabadi", price: 180, type: "Vegetarian", category: "Main Course" },
+    { name: "Veg. Kolhapuri", price: 180, type: "Vegetarian", category: "Main Course" },
+    { name: "Chicken Masala", price: 230, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Chicken Curry", price: 230, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Kadai Chicken", price: 230, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Dum ka Chicken", price: 280, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Mughlai Chicken", price: 280, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Afghani Chicken", price: 280, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Butter Chicken", price: 280, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Chicken Kolhapuri", price: 240, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Chicken Achari", price: 240, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Chicken Chatpata", price: 240, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Chicken Hyderabadi", price: 240, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Methi Chicken", price: 240, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Chicken Nawabi", price: 300, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Mutton Masala", price: 320, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Mutton Curry", price: 320, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Kadai Mutton", price: 320, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Dum ka Mutton", price: 320, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Mutton Mughlai", price: 350, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Kheema Curry", price: 350, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Kheema Fry", price: 350, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Mutton Afghani", price: 350, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Mutton Kalimirchi", price: 300, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Mutton Roghan Josh", price: 350, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Mutton Methi", price: 320, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Mutton Curry Boneless", price: 450, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Mutton Nawabi", price: 400, type: "Non-Vegetarian", category: "Main Course" },
+    { name: "Mutton Fry Boneless", price: 400, type: "Non-Vegetarian", category: "Main Course" },
+
+    // --- MANDI ---
+    { name: "Mutton Mandi (1 Person)", price: 350, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Mutton Mandi (2 Persons)", price: 600, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Mutton Mandi (3 Persons)", price: 850, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Mutton Mandi (4 Persons)", price: 1100, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Mutton Juicy Mandi (1 Person)", price: 400, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Mutton Juicy Mandi (2 Persons)", price: 750, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Mutton Juicy Mandi (3 Persons)", price: 1000, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Mutton Juicy Mandi (4 Persons)", price: 1300, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Mutton Mandi Extra (1 Piece)", price: 220, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Mutton Juicy Mandi Extra (1 Piece)", price: 280, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Mutton 65 Mandi", price: 350, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Mutton Manchurian Mandi", price: 350, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Chicken Mandi (1 Person)", price: 260, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Chicken Mandi (2 Persons)", price: 500, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Chicken Mandi (3 Persons)", price: 700, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Chicken Mandi (4 Persons)", price: 880, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Chicken Juicy Mandi (1 Person)", price: 300, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Chicken Juicy Mandi (2 Persons)", price: 550, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Chicken Juicy Mandi (3 Persons)", price: 850, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Chicken Juicy Mandi (4 Persons)", price: 1100, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Chicken Mandi Extra (1 Piece)", price: 150, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Chicken Juicy Mandi Extra (1 Piece)", price: 250, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Chicken 65 Mandi", price: 280, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Chicken Lollipops Mandi (4 Pcs)", price: 300, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Chicken Drumsticks Mandi (4 Pcs)", price: 300, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Chicken Manchurian Mandi", price: 280, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Chicken Chilly Mandi", price: 280, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Half Tandoori Chicken Mandi", price: 500, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Full Tandoori Chicken Mandi", price: 900, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Fish Mandi", price: 300, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Fish 65 Mandi", price: 300, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Fish Manchurian Mandi", price: 300, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Prawn's 65 Mandi", price: 330, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Prawn's Manchurian Mandi", price: 330, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Fish Mandi Extra (1 Piece)", price: 200, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Mix Mandi (1 Piece Chicken 1 Piece Mutton)", price: 600, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Mix Mandi (2 Piece Chicken 1 Piece Mutton)", price: 750, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Mix Mandi (2 Piece Chicken 2 Piece Mutton)", price: 850, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Mix Mandi (2 Piece Chicken 2 Piece Mutton)", price: 1000, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Unifood Special Mix Mandi", price: 1600, type: "Non-Vegetarian", category: "Mandi" },
 
     // --- BIRYANI ---
-    { name: "Chicken Biryani Single", price: 229, type: "Non-Vegetarian", category: "Biryani" },
-    { name: "Mutton Biryani Single", price: 325, type: "Non-Vegetarian", category: "Biryani" },
-    { name: "Egg Biryani", price: 182, type: "Non-Vegetarian", category: "Biryani" },
-    { name: "Chicken Biryani Full", price: 419, type: "Non-Vegetarian", category: "Biryani" },
-    { name: "Mutton Biryani Full", price: 585, type: "Non-Vegetarian", category: "Biryani" },
-    
-    // --- MANDI ---
-    { name: "Chicken Mandi (1 Person)", price: 338, type: "Non-Vegetarian", category: "Mandi" },
-    { name: "Mutton Mandi (1 Person)", price: 455, type: "Non-Vegetarian", category: "Mandi" },
-    { name: "Chicken Juicy Mandi (1 Person)", price: 390, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Mutton Biryani Single", price: 250, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Mutton Biryani Full", price: 450, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Mutton Biryani Family Pack", price: 800, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Mutton Biryani Jumbo Pack", price: 1000, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Mutton Kheema Biryani Single", price: 300, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Mutton Kheema Biryani Full", price: 500, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Chicken Biryani Single", price: 180, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Chicken Biryani Full", price: 320, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Chicken Biryani Family Pack", price: 650, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Chicken Biryani Jumbo Pack", price: 800, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Chicken 65 Biryani Single", price: 200, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Chicken 65 Biryani Full", price: 350, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Chicken Lollipops Biryani (3 Pcs)", price: 300, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Egg Biryani", price: 140, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Fish Biryani Single", price: 200, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Fish Biryani Full", price: 350, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Fish Biryani Family Pack", price: 700, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Prawn's Biryani Single", price: 250, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Prawn's Biryani Full", price: 400, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Prawn's Biryani Family Pack", price: 850, type: "Non-Vegetarian", category: "Biryani" },
+    { name: "Veg. Biryani Single", price: 150, type: "Vegetarian", category: "Biryani" },
+    { name: "Veg. Biryani Full", price: 250, type: "Vegetarian", category: "Biryani" },
+    { name: "Veg. Biryani Family Pack", price: 500, type: "Vegetarian", category: "Biryani" },
+    { name: "Paneer Biryani Single", price: 200, type: "Vegetarian", category: "Biryani" },
+    { name: "Paneer Biryani Full", price: 350, type: "Vegetarian", category: "Biryani" },
+    { name: "Paneer Biryani Family Pack", price: 650, type: "Vegetarian", category: "Biryani" },
+    { name: "Mashroom Biryani Single", price: 200, type: "Vegetarian", category: "Biryani" },
+    { name: "Mashroom Biryani Full", price: 350, type: "Vegetarian", category: "Biryani" },
+    { name: "Kaju Biryani Single", price: 220, type: "Vegetarian", category: "Biryani" },
+    { name: "Kaju Paneer Biryani Single", price: 250, type: "Vegetarian", category: "Biryani" },
+    { name: "Kaju Mashroom Biryani Single", price: 250, type: "Vegetarian", category: "Biryani" },
 
-    // --- BEVERAGES ---
-    { name: "Water 500 Ml", price: 13, type: "Vegetarian", category: "Bevarages" },
-    { name: "Thums Up Tin", price: 52, type: "Vegetarian", category: "Bevarages" },
+    // --- FRIED RICE & NOODLES ---
+    { name: "Veg Fried Rice", price: 100, type: "Vegetarian", category: "Rice & Noodles" },
+    { name: "Egg Fried Rice", price: 120, type: "Non-Vegetarian", category: "Rice & Noodles" },
+    { name: "Paneer Fried Rice", price: 150, type: "Vegetarian", category: "Rice & Noodles" },
+    { name: "Chicken Fried Rice", price: 150, type: "Non-Vegetarian", category: "Rice & Noodles" },
+    { name: "Mutton Fried Rice", price: 200, type: "Non-Vegetarian", category: "Rice & Noodles" },
+    { name: "Fish Fried Rice", price: 180, type: "Non-Vegetarian", category: "Rice & Noodles" },
+    { name: "Prawn's Fried Rice", price: 180, type: "Non-Vegetarian", category: "Rice & Noodles" },
+    { name: "Chicken Triple Rice", price: 250, type: "Non-Vegetarian", category: "Rice & Noodles" },
+    { name: "Chicken Shezwan Fried Rice", price: 160, type: "Non-Vegetarian", category: "Rice & Noodles" },
+    { name: "Veg. Manchurian Fried Rice", price: 200, type: "Vegetarian", category: "Rice & Noodles" },
+    { name: "Chicken Manchurian Fried Rice", price: 250, type: "Non-Vegetarian", category: "Rice & Noodles" },
+    { name: "Mutton Manchurian Fried Rice", price: 300, type: "Non-Vegetarian", category: "Rice & Noodles" },
+    { name: "Zeera Rice", price: 150, type: "Vegetarian", category: "Rice & Noodles" },
+    { name: "Curd Rice", price: 150, type: "Vegetarian", category: "Rice & Noodles" },
+    { name: "Tomato Rice", price: 150, type: "Vegetarian", category: "Rice & Noodles" },
+    { name: "Lemon Rice", price: 150, type: "Vegetarian", category: "Rice & Noodles" },
+    { name: "Ghee Rice", price: 180, type: "Vegetarian", category: "Rice & Noodles" },
+    { name: "Kaju Fried Rice", price: 180, type: "Vegetarian", category: "Rice & Noodles" },
+    { name: "Mashroom Fried Rice", price: 180, type: "Vegetarian", category: "Rice & Noodles" },
+    { name: "Veg. Shezwan Rice", price: 140, type: "Vegetarian", category: "Rice & Noodles" },
+    { name: "Veg Noodles", price: 100, type: "Vegetarian", category: "Rice & Noodles" },
+    { name: "Egg Noodles", price: 120, type: "Non-Vegetarian", category: "Rice & Noodles" },
+    { name: "Paneer Noodles", price: 150, type: "Vegetarian", category: "Rice & Noodles" },
+    { name: "Chicken Noodles", price: 150, type: "Non-Vegetarian", category: "Rice & Noodles" },
+    { name: "Mutton Noodles", price: 200, type: "Non-Vegetarian", category: "Rice & Noodles" },
+    { name: "Fish Noodles", price: 180, type: "Non-Vegetarian", category: "Rice & Noodles" },
+    { name: "Prawn's Noodles", price: 180, type: "Non-Vegetarian", category: "Rice & Noodles" },
+    { name: "Chicken Hakka Noodles", price: 180, type: "Non-Vegetarian", category: "Rice & Noodles" },
+    { name: "Veg Manchurian Noodles", price: 200, type: "Vegetarian", category: "Rice & Noodles" },
+
+    // --- BREADS & ROTIS ---
+    { name: "Rumali Roti", price: 20, type: "Vegetarian", category: "Breads" },
+    { name: "Tandoori Roti", price: 20, type: "Vegetarian", category: "Breads" },
+    { name: "Plain Naan", price: 30, type: "Vegetarian", category: "Breads" },
+    { name: "Butter Naan", price: 40, type: "Vegetarian", category: "Breads" },
+    { name: "Cheese Naan", price: 50, type: "Vegetarian", category: "Breads" },
+    { name: "Garlic Naan", price: 50, type: "Vegetarian", category: "Breads" },
+    { name: "Kulcha Naan", price: 50, type: "Vegetarian", category: "Breads" },
+    { name: "Butter Roti", price: 25, type: "Vegetarian", category: "Breads" },
 
     // --- DESSERTS ---
-    { name: "Double Ka Meetha", price: 91, type: "Vegetarian", category: "Desserts" },
-    { name: "Kaddu Ki Kheer", price: 100, type: "Vegetarian", category: "Desserts" }
+    { name: "Qurbani Ka Meetha", price: 70, type: "Vegetarian", category: "Desserts" },
+    { name: "Kaddu Ki Kheer", price: 80, type: "Vegetarian", category: "Desserts" },
+    { name: "Double ka Meetha", price: 70, type: "Vegetarian", category: "Desserts" },
+    { name: "Rabdi", price: 80, type: "Vegetarian", category: "Desserts" },
+
+    // --- EXTRAS ---
+    { name: "Mayonnaise", price: 40, type: "Vegetarian", category: "Extras" },
+    { name: "Extra Mandi Rice", price: 140, type: "Vegetarian", category: "Extras" },
+    { name: "Extra Biryani Rice", price: 120, type: "Vegetarian", category: "Extras" },
+    { name: "Extra Boiled Egg", price: 15, type: "Non-Vegetarian", category: "Extras" },
+    { name: "Extra Curd", price: 40, type: "Vegetarian", category: "Extras" },
+    { name: "Pudina Chutney", price: 30, type: "Vegetarian", category: "Extras" }
 ];
 
 let cart = [];
@@ -46,12 +283,14 @@ function buildMenuUI() {
 
     wrapper.innerHTML = "";
 
-    const searchStr = document.getElementById("menu-search").value.toLowerCase();
-    const vegChecked = document.getElementById("veg-toggle").checked;
-    const nonVegChecked = document.getElementById("nonveg-toggle").checked;
-    const activeCategory = document.querySelector(".category-strip-btn.active").dataset.cat;
+    const searchStr = document.getElementById("menu-search") ? document.getElementById("menu-search").value.toLowerCase() : "";
+    const vegChecked = document.getElementById("veg-toggle") ? document.getElementById("veg-toggle").checked : true;
+    const nonVegChecked = document.getElementById("nonveg-toggle") ? document.getElementById("nonveg-toggle").checked : true;
+    
+    const activeBtn = document.querySelector(".category-strip-btn.active");
+    const activeCategory = activeBtn ? activeBtn.dataset.cat : "all";
 
-    const categories = ["Soups", "Starters", "Biryani", "Mandi", "Bevarages", "Desserts"];
+    const categories = ["Soups", "Starters", "Main Course", "Mandi", "Biryani", "Rice & Noodles", "Breads", "Desserts", "Extras"];
 
     categories.forEach(category => {
         if (activeCategory !== "all" && activeCategory !== category) return;
@@ -143,8 +382,8 @@ function updateCartUI() {
 
     if (cart.length === 0) {
         box.innerHTML = `<p class="text-sm text-gray-400 text-center py-12">Your basket is currently empty.</p>`;
-        countBadge.textContent = "0";
-        costLabel.textContent = "₹0.00";
+        if (countBadge) countBadge.textContent = "0";
+        if (costLabel) costLabel.textContent = "₹0.00";
         return;
     }
 
@@ -171,13 +410,16 @@ function updateCartUI() {
         box.appendChild(row);
     });
 
-    countBadge.textContent = units;
-    costLabel.textContent = `₹${cost}.00`;
+    if (countBadge) countBadge.textContent = units;
+    if (costLabel) costLabel.textContent = `₹${cost}.00`;
 }
 
 function sendOrderToWhatsApp() {
-    const name = document.getElementById("cust-name").value.trim();
-    const address = document.getElementById("cust-address").value.trim();
+    const nameEl = document.getElementById("cust-name");
+    const addressEl = document.getElementById("cust-address");
+    
+    const name = nameEl ? nameEl.value.trim() : "";
+    const address = addressEl ? addressEl.value.trim() : "";
 
     if (cart.length === 0) {
         alert("Your basket is empty!");
@@ -209,9 +451,15 @@ function sendOrderToWhatsApp() {
 document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById("category-sections-wrapper")) {
         buildMenuUI();
-        document.getElementById("menu-search").addEventListener("input", buildMenuUI);
-        document.getElementById("veg-toggle").addEventListener("change", buildMenuUI);
-        document.getElementById("nonveg-toggle").addEventListener("change", buildMenuUI);
+        
+        const searchEl = document.getElementById("menu-search");
+        if (searchEl) searchEl.addEventListener("input", buildMenuUI);
+        
+        const vegEl = document.getElementById("veg-toggle");
+        if (vegEl) vegEl.addEventListener("change", buildMenuUI);
+        
+        const nonVegEl = document.getElementById("nonveg-toggle");
+        if (nonVegEl) nonVegEl.addEventListener("change", buildMenuUI);
 
         document.querySelectorAll(".category-strip-btn").forEach(btn => {
             btn.addEventListener("click", (e) => {

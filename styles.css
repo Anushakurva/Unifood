@@ -101,3 +101,10 @@ body.menu-open { overflow: hidden; }
         padding: 9px 16px;
     }
 }
+@media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#3A4D39">
+    <title>Unifood Menu | Order Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#FBF9F4] text-[#2C2A29] font-['Plus_Jakarta_Sans'] pt-[152px] md:pt-[136px]">
+
+    <!-- ================= HEADER ================= -->
+    <header class="fixed top-0 left-0 w-full z-40 bg-white border-b border-[#EAE6DF] shadow-sm">
+        <!-- Row 1: Back + Search + Toggles/Hamburger -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-auto md:h-20 py-3 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+
+            <!-- Top row on mobile / everything on desktop -->
+            <div class="flex items-center justify-between w-full md:w-auto md:gap-6">
+                <a href="index.html" class="font-bold text-sm text-[#3A4D39] shrink-0 hover:text-[#C75B39] transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-left text-xs"></i>
+                    <span>Back</span>
+                </a>
+
+                <!-- Mobile: toggles inline -->
+                <div class="flex md:hidden items-center gap-4">
+                    <label class="flex items-center gap-1.5 cursor-pointer select-none">
+                        <input type="checkbox" id="veg-toggle-mobile" checked class="hidden peer">
+                        <div class="w-8 h-4 bg-gray-200 peer-checked:bg-green-600 rounded-full relative transition-colors after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:w-3 after:h-3 after:rounded-full after:transition-all peer-checked:after:translate-x-4"></div>
+                        <span class="text-[10px] font-bold text-green-700">Veg</span>
+                    </label>
+                    <label class="flex items-center gap-1.5 cursor-pointer select-none">
+                        <input type="checkbox" id="nonveg-toggle-mobile" checked class="hidden peer">
+                        <div class="w-8 h-4 bg-gray-200 peer-checked:bg-red-600 rounded-full relative transition-colors after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:w-3 after:h-3 after:rounded-full after:transition-all peer-checked:after:translate-x-4"></div>
+                        <span class="text-[10px] font-bold text-red-700">Non-Veg</span>
+                    </label>
+
+                    <!-- Hamburger menu on menu.html too -->
+                    <button id="hamburger-btn" aria-label="Open menu" aria-expanded="false"
+                            class="w-10 h-10 rounded-full bg-[#3A4D39] text-white flex items-center justify-center active:scale-95 transition-all shadow-md">
+                        <i class="fa-solid fa-bars text-base"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search (full width on mobile) -->
+            <div class="relative w-full md:max-w-md md:mx-6 md:flex-1">
+                <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                <input type="text" id="menu-search" placeholder="Search dish name..." class="w-full pl-11 pr-4 py-2.5 rounded-full border border-gray-200 outline-none focus:border-[#3A4D39] text-sm bg-[#F5F2EA]">
+            </div>
+
+            <!-- Desktop: full toggles + hamburger hidden (menu has its own nav) -->
+            <div class="hidden md:flex items-center gap-6 shrink-0">
+                <label class="flex items-center gap-2 cursor-pointer select-none">
+                    <input type="checkbox" id="veg-toggle" checked class="hidden peer">
+                    <div class="w-9 h-5 bg-gray-200 peer-checked:bg-green-600 rounded-full relative transition-colors after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:w-4 after:h-4 after:rounded-full after:transition-all peer-checked:after:translate-x-4"></div>
+                    <span class="text-xs font-bold text-green-700 flex items-center"><i class="fa-solid fa-square-caret-up mr-1 text-sm"></i> Veg</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer select-none">
+                    <input type="checkbox" id="nonveg-toggle" checked class="hidden peer">
+                    <div class="w-9 h-5 bg-gray-200 peer-checked:bg-red-600 rounded-full relative transition-colors after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:w-4 after:h-4 after:rounded-full after:transition-all peer-checked:after:translate-x-4"></div>
+                    <span class="text-xs font-bold text-red-700 flex items-center"><i class="fa-solid fa-square-caret-up mr-1 text-sm rotate-180"></i> Non-Veg</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Category Strip -->
+        <div class="bg-gray-50 border-t border-[#EAE6DF] overflow-x-auto whitespace-nowrap scrollbar-none py-2.5 px-4 sm:px-6">
+            <div class="max-w-7xl mx-auto flex gap-2.5" id="sticky-category-strip">
+                <button class="category-strip-btn active" data-cat="all">All Items</button>
+                <button class="category-strip-btn" data-cat="Soups">Soups</button>
+                <button class="category-strip-btn" data-cat="Starters">Starters</button>
+                <button class="category-strip-btn" data-cat="Main Course">Main Course</button>
+                <button class="category-strip-btn" data-cat="Biryani">Rice &amp; Biryani</button>
+                <button class="category-strip-btn" data-cat="Mandi">Mandi Spreads</button>
+                <button class="category-strip-btn" data-cat="Rice & Noodles">Fried Rice</button>
+                <button class="category-strip-btn" data-cat="Breads">Breads</button>
+                <button class="category-strip-btn" data-cat="Desserts">Desserts</button>
+                <button class="category-strip-btn" data-cat="Extras">Extras</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= MOBILE DRAWER (same as index) ================= -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+
+    <aside id="mobile-drawer"
+           class="fixed top-0 right-0 h-full w-[82%] max-w-[340px] bg-[#2C3A2B] text-white z-[70] translate-x-full transition-transform duration-300 ease-out md:hidden flex flex-col">
+
+        <div class="flex items-center justify-between p-5 border-b border-white/10">
+            <span class="font-['Playfair_Display'] text-xl font-bold">
+                Unifood<span class="text-[#EEA47F]">.</span>
+            </span>
+            <button id="close-drawer-btn" aria-label="Close menu"
+                    class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white active:scale-95 transition-all">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <nav class="flex-1 overflow-y-auto px-5 py-5">
+            <ul class="space-y-1">
+                <li><a href="index.html" class="drawer-link flex items-center gap-3 px-3 py-3.5 rounded-xl hover:bg-white/5 active:bg-white/10 transition-colors text-[15px] font-medium"><i class="fa-solid fa-house w-5 text-[#EEA47F]"></i> Home</a></li>
+                <li><a href="index.html#our-story" class="drawer-link flex items-center gap-3 px-3 py-3.5 rounded-xl hover:bg-white/5 active:bg-white/10 transition-colors text-[15px] font-medium"><i class="fa-solid fa-book-open w-5 text-[#EEA47F]"></i> Our Story</a></li>
+                <li><a href="index.html#ambiance" class="drawer-link flex items-center gap-3 px-3 py-3.5 rounded-xl hover:bg-white/5 active:bg-white/10 transition-colors text-[15px] font-medium"><i class="fa-solid fa-leaf w-5 text-[#EEA47F]"></i> Ambiance</a></li>
+                <li><a href="index.html#gallery" class="drawer-link flex items-center gap-3 px-3 py-3.5 rounded-xl hover:bg-white/5 active:bg-white/10 transition-colors text-[15px] font-medium"><i class="fa-solid fa-images w-5 text-[#EEA47F]"></i> Gallery</a></li>
+                <li><a href="index.html#book-table" class="drawer-link flex items-center gap-3 px-3 py-3.5 rounded-xl hover:bg-white/5 active:bg-white/10 transition-colors text-[15px] font-medium"><i class="fa-solid fa-utensils w-5 text-[#EEA47F]"></i> Book a Table</a></li>
+                <li><a href="index.html#banquet-hall" class="drawer-link flex items-center gap-3 px-3 py-3.5 rounded-xl hover:bg-white/5 active:bg-white/10 transition-colors text-[15px] font-medium"><i class="fa-solid fa-champagne-glasses w-5 text-[#EEA47F]"></i> Banquet Hall</a></li>
+                <li><a href="index.html#testimonials" class="drawer-link flex items-center gap-3 px-3 py-3.5 rounded-xl hover:bg-white/5 active:bg-white/10 transition-colors text-[15px] font-medium"><i class="fa-solid fa-comment-dots w-5 text-[#EEA47F]"></i> Reviews</a></li>
+                <li><a href="menu.html" class="drawer-link flex items-center gap-3 px-3 py-3.5 rounded-xl bg-white/10 text-[15px] font-medium"><i class="fa-solid fa-bowl-food w-5 text-[#EEA47F]"></i> Menu</a></li>
+                <li><a href="index.html#find-us" class="drawer-link flex items-center gap-3 px-3 py-3.5 rounded-xl hover:bg-white/5 active:bg-white/10 transition-colors text-[15px] font-medium"><i class="fa-solid fa-location-dot w-5 text-[#EEA47F]"></i> Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="p-5 border-t border-white/10 space-y-3">
+            <a href="tel:09885397871" class="flex items-center justify-center gap-2 w-full bg-white/5 hover:bg-white/10 border border-white/15 text-white font-medium py-3 rounded-xl transition-colors text-sm">
+                <i class="fa-solid fa-phone text-[#EEA47F]"></i> +91 98853 97871
+            </a>
+        </div>
+    </aside>
+
+    <!-- ================= MAIN MENU CONTENT ================= -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 pb-24">
+        <div id="category-sections-wrapper" class="space-y-10 sm:space-y-12"></div>
+    </main>
+
+    <!-- Floating Cart Button -->
+    <button onclick="toggleCart()" class="fixed bottom-5 right-5 z-40 bg-[#3A4D39] text-white px-4 py-3 md:px-6 md:py-4 rounded-full shadow-2xl flex items-center gap-2 md:gap-3 transform hover:scale-105 active:scale-95 transition-all">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <span class="font-bold text-sm hidden sm:inline">View Basket</span>
+        <span id="cart-count" class="bg-[#C75B39] text-white text-xs w-6 h-6 rounded-full flex items-center justify-center font-bold">0</span>
+    </button>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-full sm:w-[450px] bg-white z-50 shadow-2xl border-l border-[#EAE6DF] translate-x-full transition-transform duration-300 flex flex-col justify-between hidden">
+        <div class="p-5 sm:p-6 border-b border-[#EAE6DF] flex items-center justify-between bg-[#FBF9F4]">
+            <h3 class="font-bold text-lg text-[#2C3A2B]"><i class="fa-solid fa-basket-shopping text-[#C75B39] mr-2"></i> Current Basket</h3>
+            <button onclick="toggleCart()" class="text-gray-400 hover:text-black text-xl p-2"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div id="cart-items-container" class="p-5 sm:p-6 flex-1 overflow-y-auto space-y-4">
+            <p class="text-sm text-gray-400 text-center py-12">Your basket is currently empty.</p>
+        </div>
+
+        <div class="p-5 sm:p-6 border-t border-[#EAE6DF] bg-[#FBF9F4] space-y-4">
+            <div class="flex justify-between items-center font-bold text-lg text-[#2C3A2B]">
+                <span>Grand Total:</span>
+                <span id="cart-total">₹0.00</span>
+            </div>
+            <div class="space-y-2">
+                <input type="text" id="cust-name" placeholder="Your Name" class="w-full text-sm p-3 rounded-xl border border-gray-200 outline-none focus:border-[#3A4D39] bg-white">
+                <input type="text" id="cust-address" placeholder="Delivery Address or Table Number" class="w-full text-sm p-3 rounded-xl border border-gray-200 outline-none focus:border-[#3A4D39] bg-white">
+            </div>
+            <button onclick="sendOrderToWhatsApp()" class="w-full bg-[#25D366] text-white font-bold py-3.5 rounded-xl hover:bg-[#20ba5a] transition-all flex items-center justify-center gap-2 text-sm shadow-md active:scale-[0.98]">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Send via WhatsApp Order</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        /* Hamburger drawer logic — menu.html copy */
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburger = document.getElementById('hamburger-btn');
+            const drawer = document.getElementById('mobile-drawer');
+            const overlay = document.getElementById('mobile-overlay');
+            const closeBtn = document.getElementById('close-drawer-btn');
+
+            function openDrawer() {
+                drawer.classList.remove('translate-x-full');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                hamburger.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeDrawer() {
+                drawer.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+            hamburger?.addEventListener('click', openDrawer);
+            closeBtn?.addEventListener('click', closeDrawer);
+            overlay?.addEventListener('click', closeDrawer);
+            document.querySelectorAll('.drawer-link').forEach(l => l.addEventListener('click', closeDrawer));
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+            window.addEventListener('pageshow', () => { document.body.style.overflow = ''; });
+        });
+    </script>
+</body>
+</html>

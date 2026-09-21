@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#2C3A2B">
+    <title>Book a Table | Unifood Multi Cuisine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=400..900&family=Plus+Jakarta+Sans:wght=300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#FBF9F4] text-[#2C2A29] font-['Plus_Jakarta_Sans'] overflow-x-hidden">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-[#FBF9F4]/95 backdrop-blur-md border-b border-[#EAE6DF]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-['Playfair_Display'] text-lg sm:text-xl font-bold tracking-tight text-[#3A4D39] whitespace-nowrap">
+                Unifood<span class="text-[#C75B39]"> Multi-Cuisine</span>
+            </a>
+            <button id="hamburger-btn" aria-label="Open menu"
+                    class="md:hidden w-11 h-11 rounded-full bg-[#3A4D39] text-white flex items-center justify-center active:scale-95 transition-transform shadow-md shrink-0">
+                <i class="fa-solid fa-bars text-lg"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- DRAWER -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+
+    <aside id="mobile-drawer"
+           class="fixed top-0 right-0 h-full w-[82%] max-w-[340px] bg-[#2C3A2B] text-white z-[70] translate-x-full transition-transform duration-300 ease-out md:hidden flex flex-col">
+
+        <div class="flex items-center justify-between p-5 border-b border-white/10">
+            <span class="font-['Playfair_Display'] text-xl font-bold">
+                Unifood<span class="text-[#EEA47F]">.</span>
+            </span>
+            <button id="close-drawer-btn" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white active:scale-95 transition-transform">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <nav class="flex-1 overflow-y-auto px-5 py-5">
+            <ul class="space-y-1">
+                <li><a href="index.html" class="drawer-link"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="index.html#our-story" class="drawer-link"><i class="fa-solid fa-book-open"></i> Our Story</a></li>
+                <li><a href="index.html#ambiance" class="drawer-link"><i class="fa-solid fa-leaf"></i> Ambiance</a></li>
+                <li><a href="gallery.html" class="drawer-link"><i class="fa-solid fa-images"></i> Gallery</a></li>
+                <li><a href="book-table.html" class="drawer-link active-link"><i class="fa-solid fa-chair"></i> Book a Table</a></li>
+                <li><a href="index.html#testimonials" class="drawer-link"><i class="fa-solid fa-comment-dots"></i> Reviews</a></li>
+                <li><a href="index.html#find-us" class="drawer-link"><i class="fa-solid fa-location-dot"></i> Find Us</a></li>
+                <li><a href="menu.html" class="drawer-link"><i class="fa-solid fa-bowl-food"></i> Menu</a></li>
+            </ul>
+        </nav>
+
+        <div class="p-5 border-t border-white/10 space-y-3">
+            <a href="menu.html" class="flex items-center justify-center gap-2 w-full bg-[#C75B39] text-white font-semibold py-3.5 rounded-xl text-sm active:scale-95 transition-transform">
+                <i class="fa-solid fa-bag-shopping"></i> Order Online
+            </a>
+            <a href="tel:09885397871" class="flex items-center justify-center gap-2 w-full bg-white/5 border border-white/15 text-white font-medium py-3 rounded-xl text-sm active:scale-95 transition-transform">
+                <i class="fa-solid fa-phone text-[#EEA47F]"></i> +91 98853 97871
+            </a>
+        </div>
+    </aside>
+
+    <!-- BOOK A TABLE -->
+    <section class="pt-24 pb-16 px-5 sm:px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+
+            <!-- Form side -->
+            <div class="space-y-5">
+                <span class="inline-block text-[#C75B39] font-semibold tracking-widest text-[10px] uppercase bg-[#C75B39]/10 px-3 py-1 rounded-full">
+                    <i class="fa-solid fa-chair mr-1"></i> Reserve Your Table
+                </span>
+
+                <h1 class="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-bold text-[#2C3A2B] leading-tight">
+                    Book a Table, <span class="text-[#C75B39] italic">Skip the Wait</span>
+                </h1>
+
+                <p class="text-[#7C7973] text-sm leading-relaxed">
+                    Quiet dinner in the main hall or a bamboo cabin in the garden — tell us your date, time, and party size and we'll have it ready when you walk in.
+                </p>
+
+                <form id="booking-form" class="bg-white rounded-3xl border border-[#EAE6DF] p-5 sm:p-6 space-y-4 shadow-sm" onsubmit="sendBookingToWhatsApp(event)">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <input type="text" id="book-name" required placeholder="Your Name"
+                               class="w-full text-sm p-3.5 rounded-xl border border-gray-200 outline-none focus:border-[#3A4D39] bg-[#FBF9F4]">
+                        <input type="tel" id="book-phone" required placeholder="Phone Number"
+                               class="w-full text-sm p-3.5 rounded-xl border border-gray-200 outline-none focus:border-[#3A4D39] bg-[#FBF9F4]">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <input type="date" id="book-date" required
+                               class="w-full text-sm p-3.5 rounded-xl border border-gray-200 outline-none focus:border-[#3A4D39] text-[#5C5A54] bg-[#FBF9F4]">
+                        <input type="time" id="book-time" required
+                               class="w-full text-sm p-3.5 rounded-xl border border-gray-200 outline-none focus:border-[#3A4D39] text-[#5C5A54] bg-[#FBF9F4]">
+                        <input type="number" id="book-guests" min="1" required placeholder="Guests"
+                               class="w-full text-sm p-3.5 rounded-xl border border-gray-200 outline-none focus:border-[#3A4D39] bg-[#FBF9F4]">
+                    </div>
+
+                    <button type="submit"
+                            class="w-full bg-[#3A4D39] text-white font-bold py-4 rounded-xl hover:bg-[#2C3A2B] transition-all flex items-center justify-center gap-2 text-sm shadow-md active:scale-[0.98]">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Request via WhatsApp</span>
+                    </button>
+                </form>
+
+                <p class="text-xs text-[#7C7973] text-center sm:text-left">
+                    <i class="fa-solid fa-circle-info mr-1 text-[#C75B39]"></i>
+                    We'll confirm your booking within a few minutes on WhatsApp.
+                </p>
+            </div>
+
+            <!-- Image side -->
+            <div class="mt-4 lg:mt-0">
+                <div class="w-full h-[260px] sm:h-[420px] rounded-3xl overflow-hidden border-4 sm:border-8 border-white shadow-2xl bg-[#2C3A2B]">
+                    <img src="photo2.jpeg" alt="Unifood dining hall" class="w-full h-full object-cover" loading="lazy">
+                </div>
+
+                <!-- Quick info chips -->
+                <div class="grid grid-cols-2 gap-3 mt-4">
+                    <div class="bg-[#F5F2EA] rounded-2xl border border-[#EAE6DF] p-4 text-center">
+                        <p class="text-[10px] uppercase tracking-widest text-[#7C7973] font-bold">Open Daily</p>
+                        <p class="text-sm font-bold text-[#2C3A2B] mt-1">12 PM – 11 PM</p>
+                    </div>
+                    <div class="bg-[#F5F2EA] rounded-2xl border border-[#EAE6DF] p-4 text-center">
+                        <p class="text-[10px] uppercase tracking-widest text-[#7C7973] font-bold">Capacity</p>
+                        <p class="text-sm font-bold text-[#2C3A2B] mt-1">100+ Guests</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ALTERNATE CONTACT -->
+    <section class="px-5 sm:px-6 pb-16">
+        <div class="max-w-3xl mx-auto bg-[#F5F2EA] rounded-3xl border border-[#EAE6DF] p-6 sm:p-8 text-center">
+            <h3 class="font-['Playfair_Display'] text-xl font-bold text-[#2C3A2B]">Prefer to call?</h3>
+            <p class="text-sm text-[#7C7973] mt-2">Talk to us directly and we'll sort it in seconds.</p>
+            <a href="tel:09885397871"
+               class="inline-flex items-center gap-2 mt-5 bg-[#C75B39] text-white font-semibold px-6 py-3.5 rounded-full text-sm active:scale-95 transition-transform shadow-md">
+                <i class="fa-solid fa-phone"></i> Call +91 98853 97871
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#2C3A2B] text-white py-8 px-5 text-center">
+        <p class="text-xs text-stone-400">
+            © <span id="year"></span> Unifood Multi Cuisine · <a href="index.html" class="text-[#EEA47F] underline">Back to Home</a>
+        </p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            const hamburger = document.getElementById('hamburger-btn');
+            const drawer = document.getElementById('mobile-drawer');
+            const overlay = document.getElementById('mobile-overlay');
+            const closeBtn = document.getElementById('close-drawer-btn');
+            const openDrawer = () => {
+                drawer.classList.remove('translate-x-full');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'hidden';
+            };
+            const closeDrawer = () => {
+                drawer.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = '';
+            };
+            hamburger.addEventListener('click', openDrawer);
+            closeBtn.addEventListener('click', closeDrawer);
+            overlay.addEventListener('click', closeDrawer);
+            document.querySelectorAll('.drawer-link').forEach(l => l.addEventListener('click', closeDrawer));
+            document.addEventListener('keydown', e => e.key === 'Escape' && closeDrawer());
+            window.addEventListener('pageshow', () => { document.body.style.overflow = ''; });
+
+            /* iOS-safe WhatsApp */
+            window.sendBookingToWhatsApp = function(e) {
+                e.preventDefault();
+                const name = document.getElementById('book-name').value.trim();
+                const phone = document.getElementById('book-phone').value.trim();
+                const date = document.getElementById('book-date').value;
+                const time = document.getElementById('book-time').value;
+                const guests = document.getElementById('book-guests').value;
+
+                let msg = `*Table Booking Request - Unifood*\n--------------------------------------\n`;
+                msg += `*Name:* ${name}\n*Phone:* ${phone}\n*Date:* ${date}\n*Time:* ${time}\n*Guests:* ${guests}\n`;
+                msg += `--------------------------------------\n`;
+
+                window.location.href = `https://api.whatsapp.com/send?phone=919885397871&text=${encodeURIComponent(msg)}`;
+            };
+        });
+    </script>
+</body>
+</html>

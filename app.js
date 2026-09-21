@@ -1,13 +1,11 @@
 const menuData = [
-    // --- VEGETARIAN SOUPS ---
+    // SOUPS
     { name: "Tomato Soup", price: 100, type: "Vegetarian", category: "Soups" },
     { name: "Veg. Manchow Soup", price: 110, type: "Vegetarian", category: "Soups" },
     { name: "Veg. Hot & Sour Soup", price: 110, type: "Vegetarian", category: "Soups" },
     { name: "Veg. Sweet Corn Soup", price: 120, type: "Vegetarian", category: "Soups" },
     { name: "Mashroom Soup", price: 130, type: "Vegetarian", category: "Soups" },
     { name: "Cream off Mashroom Soup", price: 140, type: "Vegetarian", category: "Soups" },
-
-    // --- NON VEGETARIAN SOUPS ---
     { name: "Chicken Hot & Sour Soup", price: 140, type: "Non-Vegetarian", category: "Soups" },
     { name: "Chicken Manchow Soup", price: 140, type: "Non-Vegetarian", category: "Soups" },
     { name: "Chicken Sweet Corn Soup", price: 140, type: "Non-Vegetarian", category: "Soups" },
@@ -16,7 +14,7 @@ const menuData = [
     { name: "Mutton Sweet Corn Soup", price: 170, type: "Non-Vegetarian", category: "Soups" },
     { name: "Mandi Soup", price: 80, type: "Non-Vegetarian", category: "Soups" },
 
-    // --- VEG. STARTERS ---
+    // VEG STARTERS
     { name: "Veg. Manchuria", price: 120, type: "Vegetarian", category: "Starters" },
     { name: "Crispy Corn", price: 130, type: "Vegetarian", category: "Starters" },
     { name: "Gobi 65", price: 150, type: "Vegetarian", category: "Starters" },
@@ -29,7 +27,7 @@ const menuData = [
     { name: "Paneer Chilly", price: 180, type: "Vegetarian", category: "Starters" },
     { name: "Paneer Manchuria", price: 180, type: "Vegetarian", category: "Starters" },
 
-    // --- SEA FOOD ---
+    // SEA FOOD
     { name: "Apollo Fish", price: 250, type: "Non-Vegetarian", category: "Starters" },
     { name: "Fish Fry", price: 250, type: "Non-Vegetarian", category: "Starters" },
     { name: "Fish Tikka", price: 300, type: "Non-Vegetarian", category: "Starters" },
@@ -43,7 +41,7 @@ const menuData = [
     { name: "Prawn's Pepper Fry", price: 350, type: "Non-Vegetarian", category: "Starters" },
     { name: "Loose Prawns", price: 350, type: "Non-Vegetarian", category: "Starters" },
 
-    // --- EGG ITEMS ---
+    // EGG
     { name: "Egg Omlet", price: 40, type: "Non-Vegetarian", category: "Starters" },
     { name: "Double Egg Omlet", price: 60, type: "Non-Vegetarian", category: "Starters" },
     { name: "Egg Manchuria", price: 150, type: "Non-Vegetarian", category: "Starters" },
@@ -52,14 +50,14 @@ const menuData = [
     { name: "Egg Curry", price: 140, type: "Non-Vegetarian", category: "Main Course" },
     { name: "Egg Bhurji", price: 120, type: "Non-Vegetarian", category: "Starters" },
 
-    // --- MUTTON STARTERS ---
+    // MUTTON STARTERS
     { name: "Mutton Fry", price: 300, type: "Non-Vegetarian", category: "Starters" },
     { name: "Mutton 65", price: 300, type: "Non-Vegetarian", category: "Starters" },
     { name: "Mutton Chilly", price: 300, type: "Non-Vegetarian", category: "Starters" },
     { name: "Mutton Manchuria", price: 300, type: "Non-Vegetarian", category: "Starters" },
     { name: "Mutton Roast", price: 300, type: "Non-Vegetarian", category: "Starters" },
 
-    // --- CHICKEN STARTERS ---
+    // CHICKEN STARTERS
     { name: "Chicken 65", price: 200, type: "Non-Vegetarian", category: "Starters" },
     { name: "Chicken Manchuria", price: 200, type: "Non-Vegetarian", category: "Starters" },
     { name: "Chicken Chilly", price: 200, type: "Non-Vegetarian", category: "Starters" },
@@ -75,7 +73,7 @@ const menuData = [
     { name: "Chicken Drumsticks (3 PCS)", price: 140, type: "Non-Vegetarian", category: "Starters" },
     { name: "Chicken Lollipops (3 PCS)", price: 140, type: "Non-Vegetarian", category: "Starters" },
 
-    // --- TANDOORI ---
+    // TANDOORI
     { name: "Tandoori Chicken Full", price: 450, type: "Non-Vegetarian", category: "Starters" },
     { name: "Tandoori Chicken Half", price: 250, type: "Non-Vegetarian", category: "Starters" },
     { name: "Chicken Tangdi Kabab Full", price: 150, type: "Non-Vegetarian", category: "Starters" },
@@ -93,7 +91,7 @@ const menuData = [
     { name: "Paneer Tikka Kabab", price: 250, type: "Vegetarian", category: "Starters" },
     { name: "Special Platter", price: 700, type: "Non-Vegetarian", category: "Starters" },
 
-    // --- MAIN COURSE ---
+    // MAIN COURSE
     { name: "Fish Curry", price: 280, type: "Non-Vegetarian", category: "Main Course" },
     { name: "Prawn's Curry", price: 300, type: "Non-Vegetarian", category: "Main Course" },
     { name: "Dal Fry", price: 150, type: "Vegetarian", category: "Main Course" },
@@ -144,7 +142,7 @@ const menuData = [
     { name: "Mutton Nawabi", price: 400, type: "Non-Vegetarian", category: "Main Course" },
     { name: "Mutton Fry Boneless", price: 400, type: "Non-Vegetarian", category: "Main Course" },
 
-    // --- MANDI ---
+    // MANDI
     { name: "Mutton Mandi (1 Person)", price: 350, type: "Non-Vegetarian", category: "Mandi" },
     { name: "Mutton Mandi (2 Persons)", price: 600, type: "Non-Vegetarian", category: "Mandi" },
     { name: "Mutton Mandi (3 Persons)", price: 850, type: "Non-Vegetarian", category: "Mandi" },
@@ -180,12 +178,12 @@ const menuData = [
     { name: "Prawn's 65 Mandi", price: 330, type: "Non-Vegetarian", category: "Mandi" },
     { name: "Prawn's Manchurian Mandi", price: 330, type: "Non-Vegetarian", category: "Mandi" },
     { name: "Fish Mandi Extra (1 Piece)", price: 200, type: "Non-Vegetarian", category: "Mandi" },
-    { name: "Mix Mandi (1 Piece Chicken 1 Piece Mutton)", price: 600, type: "Non-Vegetarian", category: "Mandi" },
-    { name: "Mix Mandi (2 Piece Chicken 1 Piece Mutton)", price: 750, type: "Non-Vegetarian", category: "Mandi" },
-    { name: "Mix Mandi (2 Piece Chicken 2 Piece Mutton)", price: 850, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Mix Mandi (1 Chicken 1 Mutton)", price: 600, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Mix Mandi (2 Chicken 1 Mutton)", price: 750, type: "Non-Vegetarian", category: "Mandi" },
+    { name: "Mix Mandi (2 Chicken 2 Mutton)", price: 850, type: "Non-Vegetarian", category: "Mandi" },
     { name: "Unifood Special Mix Mandi", price: 1600, type: "Non-Vegetarian", category: "Mandi" },
 
-    // --- BIRYANI ---
+    // BIRYANI
     { name: "Mutton Biryani Single", price: 250, type: "Non-Vegetarian", category: "Biryani" },
     { name: "Mutton Biryani Full", price: 450, type: "Non-Vegetarian", category: "Biryani" },
     { name: "Mutton Biryani Family Pack", price: 800, type: "Non-Vegetarian", category: "Biryani" },
@@ -218,7 +216,7 @@ const menuData = [
     { name: "Kaju Paneer Biryani Single", price: 250, type: "Vegetarian", category: "Biryani" },
     { name: "Kaju Mashroom Biryani Single", price: 250, type: "Vegetarian", category: "Biryani" },
 
-    // --- FRIED RICE & NOODLES ---
+    // RICE & NOODLES
     { name: "Veg Fried Rice", price: 100, type: "Vegetarian", category: "Rice & Noodles" },
     { name: "Egg Fried Rice", price: 120, type: "Non-Vegetarian", category: "Rice & Noodles" },
     { name: "Paneer Fried Rice", price: 150, type: "Vegetarian", category: "Rice & Noodles" },
@@ -249,7 +247,7 @@ const menuData = [
     { name: "Chicken Hakka Noodles", price: 180, type: "Non-Vegetarian", category: "Rice & Noodles" },
     { name: "Veg Manchurian Noodles", price: 200, type: "Vegetarian", category: "Rice & Noodles" },
 
-    // --- BREADS & ROTIS ---
+    // BREADS
     { name: "Rumali Roti", price: 20, type: "Vegetarian", category: "Breads" },
     { name: "Tandoori Roti", price: 20, type: "Vegetarian", category: "Breads" },
     { name: "Plain Naan", price: 30, type: "Vegetarian", category: "Breads" },
@@ -259,13 +257,13 @@ const menuData = [
     { name: "Kulcha Naan", price: 50, type: "Vegetarian", category: "Breads" },
     { name: "Butter Roti", price: 25, type: "Vegetarian", category: "Breads" },
 
-    // --- DESSERTS ---
+    // DESSERTS
     { name: "Qurbani Ka Meetha", price: 70, type: "Vegetarian", category: "Desserts" },
     { name: "Kaddu Ki Kheer", price: 80, type: "Vegetarian", category: "Desserts" },
     { name: "Double ka Meetha", price: 70, type: "Vegetarian", category: "Desserts" },
     { name: "Rabdi", price: 80, type: "Vegetarian", category: "Desserts" },
 
-    // --- EXTRAS ---
+    // EXTRAS
     { name: "Mayonnaise", price: 40, type: "Vegetarian", category: "Extras" },
     { name: "Extra Mandi Rice", price: 140, type: "Vegetarian", category: "Extras" },
     { name: "Extra Biryani Rice", price: 120, type: "Vegetarian", category: "Extras" },
@@ -276,22 +274,20 @@ const menuData = [
 
 let cart = [];
 
-/* ---------- Read toggles from either desktop OR mobile ---------- */
 function getToggleState() {
-    const vegDesktop = document.getElementById("veg-toggle");
-    const vegMobile = document.getElementById("veg-toggle-mobile");
-    const nonVegDesktop = document.getElementById("nonveg-toggle");
-    const nonVegMobile = document.getElementById("nonveg-toggle-mobile");
-
-    const veg = vegDesktop?.checked ?? vegMobile?.checked ?? true;
-    const nonVeg = nonVegDesktop?.checked ?? nonVegMobile?.checked ?? true;
-    return { veg, nonVeg };
+    const vegD = document.getElementById("veg-toggle");
+    const vegM = document.getElementById("veg-toggle-mobile");
+    const nonD = document.getElementById("nonveg-toggle");
+    const nonM = document.getElementById("nonveg-toggle-mobile");
+    return {
+        veg: vegD?.checked ?? vegM?.checked ?? true,
+        nonVeg: nonD?.checked ?? nonM?.checked ?? true
+    };
 }
 
 function buildMenuUI() {
     const wrapper = document.getElementById("category-sections-wrapper");
     if (!wrapper) return;
-
     wrapper.innerHTML = "";
 
     const searchStr = document.getElementById("menu-search")?.value.toLowerCase() || "";
@@ -332,7 +328,6 @@ function buildMenuUI() {
             const isVeg = item.type === "Vegetarian";
             const rowCard = document.createElement("div");
             rowCard.className = "bg-white p-4 sm:p-5 rounded-2xl border border-gray-100 shadow-sm flex items-center justify-between hover:border-[#3A4D39] transition-all duration-200 group";
-
             rowCard.innerHTML = `
                 <div class="flex items-center gap-3 pr-2 min-w-0">
                     <span class="${isVeg ? 'text-green-600' : 'text-red-600'} text-lg shrink-0 flex items-center">
@@ -365,13 +360,9 @@ function toggleCart() {
 function addToCart(itemName) {
     const targetItem = menuData.find(item => item.name === itemName);
     if (!targetItem) return;
-
     const cartIdx = cart.findIndex(item => item.name === itemName);
-    if (cartIdx > -1) {
-        cart[cartIdx].quantity += 1;
-    } else {
-        cart.push({ ...targetItem, quantity: 1 });
-    }
+    if (cartIdx > -1) cart[cartIdx].quantity += 1;
+    else cart.push({ ...targetItem, quantity: 1 });
     updateCartUI();
 
     const sidebar = document.getElementById("cart-sidebar");
@@ -393,7 +384,6 @@ function updateCartUI() {
     const box = document.getElementById("cart-items-container");
     const countBadge = document.getElementById("cart-count");
     const costLabel = document.getElementById("cart-total");
-
     if (!box) return;
 
     if (cart.length === 0) {
@@ -409,7 +399,6 @@ function updateCartUI() {
     cart.forEach(item => {
         cost += item.price * item.quantity;
         units += item.quantity;
-
         const row = document.createElement("div");
         row.className = "flex items-center justify-between border-b border-gray-100 pb-3 gap-3";
         row.innerHTML = `
@@ -433,23 +422,14 @@ function updateCartUI() {
 function sendOrderToWhatsApp() {
     const nameEl = document.getElementById("cust-name");
     const addressEl = document.getElementById("cust-address");
-
     const name = nameEl ? nameEl.value.trim() : "";
     const address = addressEl ? addressEl.value.trim() : "";
 
-    if (cart.length === 0) {
-        alert("Your basket is empty!");
-        return;
-    }
-    if (!name || !address) {
-        alert("Please complete delivery info before ordering!");
-        return;
-    }
+    if (cart.length === 0) { alert("Your basket is empty!"); return; }
+    if (!name || !address) { alert("Please complete delivery info before ordering!"); return; }
 
-    let msg = `*New Order - Unifood Multi Cuisine*\n`;
-    msg += `--------------------------------------\n`;
-    msg += `*Name:* ${name}\n*Address/Table:* ${address}\n`;
-    msg += `--------------------------------------\n\n`;
+    let msg = `*New Order - Unifood Multi Cuisine*\n--------------------------------------\n`;
+    msg += `*Name:* ${name}\n*Address/Table:* ${address}\n--------------------------------------\n\n`;
 
     let total = 0;
     cart.forEach(item => {
@@ -457,27 +437,20 @@ function sendOrderToWhatsApp() {
         total += item.price * item.quantity;
     });
 
-    msg += `\n--------------------------------------\n`;
-    msg += `*Grand Total:* ₹${total}.00\n`;
-    msg += `--------------------------------------\n`;
+    msg += `\n--------------------------------------\n*Grand Total:* ₹${total}.00\n--------------------------------------\n`;
 
-    // location.href works on iOS Safari; window.open is often blocked
     window.location.href = `https://api.whatsapp.com/send?phone=919885397871&text=${encodeURIComponent(msg)}`;
 }
 
-/* ---------- Wire up the UI ---------- */
 document.addEventListener("DOMContentLoaded", () => {
     if (!document.getElementById("category-sections-wrapper")) return;
-
     buildMenuUI();
 
-    // Search + toggles (desktop + mobile both wired)
     ["menu-search", "veg-toggle", "veg-toggle-mobile", "nonveg-toggle", "nonveg-toggle-mobile"].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.addEventListener(el.type === "checkbox" ? "change" : "input", buildMenuUI);
     });
 
-    // Category strip buttons
     document.querySelectorAll(".category-strip-btn").forEach(btn => {
         btn.addEventListener("click", (e) => {
             document.querySelectorAll(".category-strip-btn").forEach(b => b.classList.remove("active"));

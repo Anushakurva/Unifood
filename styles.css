@@ -1,22 +1,57 @@
-/* ================= BASE / SCROLLBARS ================= */
+/* ============ BASE ============ */
 .scrollbar-none::-webkit-scrollbar { display: none; }
 .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
-
 html { -webkit-text-size-adjust: 100%; }
+body { -webkit-tap-highlight-color: transparent; }
 
-/* ================= CATEGORY STRIP BUTTONS ================= */
+/* ============ DRAWER LINK ============ */
+.drawer-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 12px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+.drawer-link i {
+    width: 20px;
+    color: #EEA47F;
+    text-align: center;
+}
+.drawer-link:active { background-color: rgba(255,255,255,0.08); }
+
+/* ============ SAFE-AREA FOR IPHONE ============ */
+#bottom-nav { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+
+/* ============ SECTION ANIMATION HELPERS ============ */
+.section-head { will-change: transform, opacity; }
+.quick-card,
+.dish-card,
+.review-card { will-change: transform, opacity; }
+
+/* ============ HORIZONTAL SNAP SCROLL ============ */
+.overflow-x-auto.scrollbar-none { scroll-snap-type: x mandatory; }
+.overflow-x-auto.scrollbar-none > * { scroll-snap-align: start; }
+
+/* ============ TOUCH FEEL ============ */
+a, button { touch-action: manipulation; }
+
+/* ============ CATEGORY STRIP (still used on menu.html) ============ */
 .category-strip-btn {
     background-color: #FFFFFF;
     color: #5C5A54;
     font-size: 13px;
     font-weight: 600;
     padding: 10px 20px;
-    min-height: 44px;                    /* touch-friendly */
+    min-height: 44px;
     border-radius: 9999px;
     border: 1px solid #EAE6DF;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
-    touch-action: manipulation;          /* removes 300ms tap delay */
+    touch-action: manipulation;
     white-space: nowrap;
 }
 .category-strip-btn:hover {
@@ -28,83 +63,4 @@ html { -webkit-text-size-adjust: 100%; }
     background-color: #3A4D39;
     color: #FFFFFF;
     border-color: #3A4D39;
-}
-
-/* ================= PHOTO GALLERY ================= */
-.gallery-item {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    display: block;
-    touch-action: manipulation;
-}
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-/* Always-visible overlay on mobile — desktop uses hover */
-.gallery-item::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(26,21,18,0.65), transparent 60%);
-    opacity: 1;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-.gallery-item::before {
-    content: "\f00e";                     /* magnifier icon from FA */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    position: absolute;
-    bottom: 14px;
-    left: 16px;
-    color: #fff;
-    font-size: 14px;
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.3s ease;
-    z-index: 2;
-    pointer-events: none;
-}
-
-/* Desktop hover-only overlay */
-@media (min-width: 768px) {
-    .gallery-item::after { opacity: 0; }
-    .gallery-item::before { opacity: 0; transform: translateY(6px); }
-    .gallery-item:hover img { transform: scale(1.07); }
-    .gallery-item:hover::after,
-    .gallery-item:hover::before { opacity: 1; transform: translateY(0); }
-}
-
-/* ================= TOUCH-SCROLL IMPROVEMENTS ================= */
-#mobile-drawer nav,
-#cart-items-container,
-#sticky-category-strip {
-    -webkit-overflow-scrolling: touch;
-}
-
-/* Prevent body scroll when drawer is open (JS sets style, this is a fallback) */
-body.menu-open { overflow: hidden; }
-
-/* ================= SMALL-SCREEN TYPOGRAPHY TWEAKS ================= */
-@media (max-width: 400px) {
-    .category-strip-btn {
-        font-size: 12px;
-        padding: 9px 16px;
-    }
-}
-@media (max-width: 768px) {
-  html,
-  body {
-    width: 100%;
-    overflow-x: hidden;
-  }
 }

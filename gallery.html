@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#2C3A2B">
+    <title>Photo Gallery | Unifood Multi Cuisine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=400..900&family=Plus+Jakarta+Sans:wght=300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#FBF9F4] text-[#2C2A29] font-['Plus_Jakarta_Sans'] overflow-x-hidden">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-[#FBF9F4]/95 backdrop-blur-md border-b border-[#EAE6DF]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-['Playfair_Display'] text-lg sm:text-xl font-bold tracking-tight text-[#3A4D39] whitespace-nowrap">
+                Unifood<span class="text-[#C75B39]"> Multi-Cuisine</span>
+            </a>
+            <button id="hamburger-btn" aria-label="Open menu"
+                    class="md:hidden w-11 h-11 rounded-full bg-[#3A4D39] text-white flex items-center justify-center active:scale-95 transition-transform shadow-md shrink-0">
+                <i class="fa-solid fa-bars text-lg"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- DRAWER -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+
+    <aside id="mobile-drawer"
+           class="fixed top-0 right-0 h-full w-[82%] max-w-[340px] bg-[#2C3A2B] text-white z-[70] translate-x-full transition-transform duration-300 ease-out md:hidden flex flex-col">
+
+        <div class="flex items-center justify-between p-5 border-b border-white/10">
+            <span class="font-['Playfair_Display'] text-xl font-bold">
+                Unifood<span class="text-[#EEA47F]">.</span>
+            </span>
+            <button id="close-drawer-btn" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white active:scale-95 transition-transform">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+        </div>
+
+        <nav class="flex-1 overflow-y-auto px-5 py-5">
+            <ul class="space-y-1">
+                <li><a href="index.html" class="drawer-link"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="index.html#our-story" class="drawer-link"><i class="fa-solid fa-book-open"></i> Our Story</a></li>
+                <li><a href="index.html#ambiance" class="drawer-link"><i class="fa-solid fa-leaf"></i> Ambiance</a></li>
+                <li><a href="gallery.html" class="drawer-link active-link"><i class="fa-solid fa-images"></i> Gallery</a></li>
+                <li><a href="book-table.html" class="drawer-link"><i class="fa-solid fa-chair"></i> Book a Table</a></li>
+                <li><a href="index.html#testimonials" class="drawer-link"><i class="fa-solid fa-comment-dots"></i> Reviews</a></li>
+                <li><a href="index.html#find-us" class="drawer-link"><i class="fa-solid fa-location-dot"></i> Find Us</a></li>
+                <li><a href="menu.html" class="drawer-link"><i class="fa-solid fa-bowl-food"></i> Menu</a></li>
+            </ul>
+        </nav>
+
+        <div class="p-5 border-t border-white/10 space-y-3">
+            <a href="menu.html" class="flex items-center justify-center gap-2 w-full bg-[#C75B39] text-white font-semibold py-3.5 rounded-xl text-sm active:scale-95 transition-transform">
+                <i class="fa-solid fa-bag-shopping"></i> Order Online
+            </a>
+            <a href="tel:09885397871" class="flex items-center justify-center gap-2 w-full bg-white/5 border border-white/15 text-white font-medium py-3 rounded-xl text-sm active:scale-95 transition-transform">
+                <i class="fa-solid fa-phone text-[#EEA47F]"></i> +91 98853 97871
+            </a>
+        </div>
+    </aside>
+
+    <!-- PAGE HEADER -->
+    <section class="pt-24 pb-8 px-5 sm:px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <span class="inline-block text-[#3A4D39] font-bold tracking-widest text-[10px] uppercase bg-[#3A4D39]/10 px-3 py-1 rounded-full">
+                A Taste, A Table, A Setting
+            </span>
+            <h1 class="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-bold text-[#2C3A2B] mt-4">
+                Photo Gallery
+            </h1>
+            <p class="text-[#7C7973] max-w-xl mx-auto mt-3 text-sm leading-relaxed">
+                A closer look at what leaves our kitchen and the spaces you'll be sitting in.
+            </p>
+        </div>
+    </section>
+
+    <!-- GALLERY GRID -->
+    <section class="pb-16 px-4 sm:px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[150px] sm:auto-rows-[180px] md:auto-rows-[200px]">
+
+            <button data-caption="Chicken Biryani, slow dum-cooked" class="gallery-item row-span-2 col-span-1">
+                <img src="photo2.jpeg" alt="Chicken biryani" loading="lazy">
+            </button>
+
+            <button data-caption="Mandi-style chicken over basmati" class="gallery-item col-span-1">
+                <img src="photo3.jpeg" alt="Mandi chicken" loading="lazy">
+            </button>
+
+            <button data-caption="Sesame chilli wings starter" class="gallery-item col-span-1">
+                <img src="photo4.jpeg" alt="Sesame wings" loading="lazy">
+            </button>
+
+            <button data-caption="Wok-fired starters, flame finished" class="gallery-item row-span-2 col-span-1">
+                <img src="photo5.jpeg" alt="Wok flames" loading="lazy">
+            </button>
+
+            <button data-caption="Kadai-style curry in copper" class="gallery-item col-span-1">
+                <img src="photo6.jpeg" alt="Kadai curry" loading="lazy">
+            </button>
+
+            <button data-caption="House-made garlic pickle" class="gallery-item col-span-1">
+                <img src="photo7.jpeg" alt="Garlic pickle" loading="lazy">
+            </button>
+
+            <button data-caption="Full garden setup at night" class="gallery-item col-span-1">
+                <img src="photo1.jpeg" alt="Garden night view" loading="lazy">
+            </button>
+
+            <button data-caption="Restaurant exterior" class="gallery-item col-span-1">
+                <img src="photo10.jpeg" alt="Restaurant exterior" loading="lazy">
+            </button>
+
+        </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="fixed inset-0 bg-black/90 z-[80] hidden items-center justify-center px-4">
+        <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-2xl w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-4xl w-full">
+            <img id="lightbox-img" src="" alt="" class="w-full max-h-[75vh] object-contain rounded-2xl">
+            <p id="lightbox-caption" class="text-center text-stone-300 text-sm mt-4"></p>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <section class="px-5 pb-16">
+        <div class="max-w-3xl mx-auto text-center bg-[#F5F2EA] rounded-3xl border border-[#EAE6DF] p-8">
+            <h3 class="font-['Playfair_Display'] text-2xl font-bold text-[#2C3A2B]">Liked what you saw?</h3>
+            <p class="text-sm text-[#7C7973] mt-2">Reserve your table or browse our full menu.</p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center mt-6">
+                <a href="book-table.html" class="inline-flex items-center justify-center gap-2 bg-[#3A4D39] text-white font-semibold px-6 py-3.5 rounded-full text-sm active:scale-95 transition-transform">
+                    <i class="fa-solid fa-chair"></i> Book a Table
+                </a>
+                <a href="menu.html" class="inline-flex items-center justify-center gap-2 border-2 border-[#3A4D39] text-[#3A4D39] font-semibold px-6 py-3.5 rounded-full text-sm active:scale-95 transition-transform">
+                    <i class="fa-solid fa-bowl-food"></i> View Menu
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#2C3A2B] text-white py-8 px-5 text-center">
+        <p class="text-xs text-stone-400">
+            © <span id="year"></span> Unifood Multi Cuisine · <a href="index.html" class="text-[#EEA47F] underline">Back to Home</a>
+        </p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            const hamburger = document.getElementById('hamburger-btn');
+            const drawer = document.getElementById('mobile-drawer');
+            const overlay = document.getElementById('mobile-overlay');
+            const closeBtn = document.getElementById('close-drawer-btn');
+            const openDrawer = () => {
+                drawer.classList.remove('translate-x-full');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'hidden';
+            };
+            const closeDrawer = () => {
+                drawer.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = '';
+            };
+            hamburger.addEventListener('click', openDrawer);
+            closeBtn.addEventListener('click', closeDrawer);
+            overlay.addEventListener('click', closeDrawer);
+            document.querySelectorAll('.drawer-link').forEach(l => l.addEventListener('click', closeDrawer));
+            document.addEventListener('keydown', e => e.key === 'Escape' && closeDrawer());
+
+            /* LIGHTBOX */
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const img = item.querySelector('img');
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                    lightboxCaption.textContent = item.dataset.caption || '';
+                    lightbox.classList.remove('hidden');
+                    lightbox.classList.add('flex');
+                });
+            });
+
+            window.closeLightbox = function() {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+            };
+            lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+        });
+    </script>
+</body>
+</html>

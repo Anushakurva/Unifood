@@ -68,13 +68,11 @@
         </div>
     </aside>
 
-    <!-- HERO -->
     <section id="hero" class="relative min-h-[100svh] w-full overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img id="hero-bg" src="photo10.jpeg" alt="Unifood Restaurant" class="w-full h-full object-cover object-center scale-110">
         </div>
         <div class="absolute inset-0 z-10 bg-gradient-to-b from-black/40 via-black/55 to-black/90"></div>
-
         <div class="relative z-20 w-full min-h-[100svh] flex flex-col justify-end px-5 sm:px-8 pb-10 pt-24 max-w-7xl mx-auto">
             <div id="hero-content" class="w-full max-w-2xl">
                 <span class="inline-block text-[#EEA47F] font-semibold tracking-[0.2em] text-[10px] uppercase bg-black/40 backdrop-blur-md border border-[#EEA47F]/40 px-3 py-1.5 rounded-full mb-5">
@@ -99,7 +97,6 @@
         </div>
     </section>
 
-    <!-- QUICK INFO -->
     <section id="quick" class="bg-[#F5F2EA] border-y border-[#EAE6DF] px-4 sm:px-6 py-6">
         <div class="max-w-7xl mx-auto grid grid-cols-3 gap-3 text-center">
             <div>
@@ -117,7 +114,6 @@
         </div>
     </section>
 
-    <!-- OUR STORY -->
     <section id="our-story" class="py-14 sm:py-20 bg-[#FBF9F4] px-5 sm:px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div class="lg:col-span-6 anim-reveal-left">
@@ -147,7 +143,6 @@
         </div>
     </section>
 
-    <!-- WHY CHOOSE US -->
     <section id="why-choose-us" class="py-14 sm:py-20 bg-[#F5F2EA] px-5 sm:px-6 border-y border-[#EAE6DF]">
         <div class="max-w-7xl mx-auto text-center mb-10 anim-reveal-up">
             <span class="text-[#C75B39] font-bold tracking-widest text-[10px] uppercase">The Unifood Standard</span>
@@ -172,7 +167,7 @@
         </div>
     </section>
 
-    <!-- AMBIANCE -->
+    <!-- AMBIANCE (5 slides now — Banquet Hall added) -->
     <section id="ambiance" class="py-14 sm:py-20 bg-[#FBF9F4] px-5 sm:px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -184,7 +179,7 @@
                         Premium <span class="text-[#3A4D39] italic">Bamboo Huts</span>
                     </h2>
                     <p class="text-[#7C7973] text-sm leading-relaxed">
-                        Beautifully illuminated open-air garden setup with private bamboo cabins — perfect for family gatherings and celebrations.
+                        Beautifully illuminated open-air garden setup with private bamboo cabins, and a dedicated banquet hall for birthdays, engagements, and family celebrations.
                     </p>
                     <div class="space-y-3 pt-2">
                         <div class="flex items-center gap-3 text-sm font-semibold text-[#2C2A29]">
@@ -195,11 +190,16 @@
                             <i class="fa-solid fa-moon text-[#3A4D39] bg-[#E8F0EA] p-2.5 rounded-xl text-xs"></i>
                             <span>Festive Night Illumination</span>
                         </div>
+                        <div class="flex items-center gap-3 text-sm font-semibold text-[#2C2A29]">
+                            <i class="fa-solid fa-champagne-glasses text-[#3A4D39] bg-[#E8F0EA] p-2.5 rounded-xl text-xs"></i>
+                            <span>Banquet Hall for 100+ Guests</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="lg:col-span-7 relative group anim-reveal-right">
                     <div class="w-full h-[260px] sm:h-[400px] rounded-3xl overflow-hidden border-4 sm:border-8 border-white shadow-2xl relative bg-[#2C3A2B]">
+
                         <div class="slider-slide absolute inset-0 opacity-100 transition-opacity duration-1000">
                             <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80" alt="Ambiance" class="w-full h-full object-cover" loading="lazy">
                             <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/85 to-transparent p-4 pt-12">
@@ -207,6 +207,7 @@
                                 <p class="text-stone-300 text-xs">Reception & multi-cuisine counter.</p>
                             </div>
                         </div>
+
                         <div class="slider-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
                             <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="Garden" class="w-full h-full object-cover" loading="lazy">
                             <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/85 to-transparent p-4 pt-12">
@@ -214,6 +215,7 @@
                                 <p class="text-stone-300 text-xs">Spacious gravel-terrain layouts.</p>
                             </div>
                         </div>
+
                         <div class="slider-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
                             <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80" alt="Bamboo Hut" class="w-full h-full object-cover" loading="lazy">
                             <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/85 to-transparent p-4 pt-12">
@@ -221,6 +223,16 @@
                                 <p class="text-stone-300 text-xs">Thatch-roofed private spaces.</p>
                             </div>
                         </div>
+
+                        <!-- NEW: Banquet Hall slide -->
+                        <div class="slider-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+                            <img src="photo1.jpeg" alt="Banquet Hall" class="w-full h-full object-cover" loading="lazy">
+                            <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/85 to-transparent p-4 pt-12">
+                                <p class="text-white font-bold text-base">Banquet Hall</p>
+                                <p class="text-stone-300 text-xs">Private hall for birthdays, engagements & celebrations.</p>
+                            </div>
+                        </div>
+
                         <div class="slider-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
                             <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=80" alt="Interior" class="w-full h-full object-cover" loading="lazy">
                             <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/85 to-transparent p-4 pt-12">
@@ -228,6 +240,7 @@
                                 <p class="text-stone-300 text-xs">Ambient lighting & lattice work.</p>
                             </div>
                         </div>
+
                         <button onclick="shiftSlide(-1)" aria-label="Previous"
                                 class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/30 backdrop-blur-md text-white flex items-center justify-center opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity shadow z-20">
                             <i class="fa-solid fa-chevron-left text-xs"></i>
@@ -243,7 +256,6 @@
         </div>
     </section>
 
-    <!-- REVIEWS -->
     <section id="testimonials" class="py-14 sm:py-20 bg-[#F5F2EA] px-5 sm:px-6 border-y border-[#EAE6DF]">
         <div class="max-w-7xl mx-auto text-center mb-10 anim-reveal-up">
             <span class="text-[#C75B39] font-bold tracking-widest text-[10px] uppercase">Guest Reviews</span>
@@ -302,7 +314,6 @@
         </div>
     </section>
 
-    <!-- FIND US -->
     <section id="find-us" class="py-14 sm:py-20 bg-[#FBF9F4] px-5 sm:px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div class="lg:col-span-5 space-y-4 anim-reveal-left">
@@ -350,7 +361,6 @@
         </div>
     </section>
 
-    <!-- ORDER CTA -->
     <section class="px-5 sm:px-6 pb-14 sm:pb-20">
         <div class="max-w-4xl mx-auto relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#3A4D39] to-[#1F2A1E] p-6 sm:p-10 text-white shadow-2xl">
             <div class="absolute -right-8 -top-8 w-40 h-40 rounded-full bg-[#C75B39]/20 blur-2xl"></div>
@@ -367,7 +377,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="bg-[#2C3A2B] text-white pt-10 sm:pt-14 pb-8 px-5 sm:px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 pb-8 border-b border-white/10">
             <div>
@@ -393,7 +402,6 @@
         document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('year').textContent = new Date().getFullYear();
 
-            /* DRAWER */
             const hamburger = document.getElementById('hamburger-btn');
             const drawer = document.getElementById('mobile-drawer');
             const overlay = document.getElementById('mobile-overlay');
@@ -417,7 +425,6 @@
             document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
             window.addEventListener('pageshow', () => { document.body.style.overflow = ''; });
 
-            /* GSAP HERO */
             if (window.gsap && window.ScrollTrigger) {
                 gsap.registerPlugin(ScrollTrigger);
                 gsap.to("#hero-bg", { scale: 1, duration: 2.4, ease: "power2.out" });
@@ -428,14 +435,13 @@
                 });
             }
 
-            /* SCROLL REVEAL */
             if (window.ScrollReveal) {
                 ScrollReveal().reveal('.anim-reveal-up', { origin: 'bottom', distance: '40px', duration: 800, interval: 100 });
                 ScrollReveal().reveal('.anim-reveal-left', { origin: 'left', distance: '40px', duration: 800 });
                 ScrollReveal().reveal('.anim-reveal-right', { origin: 'right', distance: '40px', duration: 800 });
             }
 
-            /* AMBIANCE SLIDER */
+            /* AMBIANCE SLIDER — 5 slides now */
             let currentSlideIndex = 0;
             const slides = document.querySelectorAll('.slider-slide');
             const dotsContainer = document.getElementById('slider-dots');
@@ -470,7 +476,6 @@
             window.jumpToSlide = function (i) { currentSlideIndex = i; updateSliderUI(); };
             setInterval(() => shiftSlide(1), 4500);
 
-            /* TESTIMONIAL SLIDER */
             let reviewIdx = 0;
             window.shiftReview = function (dir) {
                 const track = document.getElementById('testimonial-track');

@@ -8,6 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght=400..900&family=Plus+Jakarta+Sans:wght=300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-[#FBF9F4] text-[#2C2A29] font-['Plus_Jakarta_Sans'] overflow-x-hidden">
@@ -66,13 +68,13 @@
     <!-- PAGE HEADER -->
     <section class="pt-24 pb-8 px-5 sm:px-6">
         <div class="max-w-7xl mx-auto text-center">
-            <span class="inline-block text-[#3A4D39] font-bold tracking-widest text-[10px] uppercase bg-[#3A4D39]/10 px-3 py-1 rounded-full">
+            <span class="gallery-eyebrow inline-block text-[#3A4D39] font-bold tracking-widest text-[10px] uppercase bg-[#3A4D39]/10 px-3 py-1 rounded-full">
                 A Taste, A Table, A Setting
             </span>
-            <h1 class="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-bold text-[#2C3A2B] mt-4">
+            <h1 class="gallery-title font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-bold text-[#2C3A2B] mt-4">
                 Photo Gallery
             </h1>
-            <p class="text-[#7C7973] max-w-xl mx-auto mt-3 text-sm leading-relaxed">
+            <p class="gallery-subtitle text-[#7C7973] max-w-xl mx-auto mt-3 text-sm leading-relaxed">
                 A closer look at what leaves our kitchen and the spaces you'll be sitting in.
             </p>
         </div>
@@ -80,7 +82,7 @@
 
     <!-- GALLERY GRID -->
     <section class="pb-16 px-4 sm:px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[150px] sm:auto-rows-[180px] md:auto-rows-[200px]">
+        <div id="gallery-grid" class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[150px] sm:auto-rows-[180px] md:auto-rows-[200px]">
 
             <button data-caption="Chicken Biryani, slow dum-cooked" class="gallery-item row-span-2 col-span-1">
                 <img src="photo2.jpeg" alt="Chicken biryani" loading="lazy">
@@ -118,18 +120,18 @@
     </section>
 
     <!-- LIGHTBOX -->
-    <div id="lightbox" class="fixed inset-0 bg-black/90 z-[80] hidden items-center justify-center px-4">
-        <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-2xl w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center">
+    <div id="lightbox" class="fixed inset-0 bg-black/95 z-[80] hidden items-center justify-center px-4">
+        <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-2xl w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
             <i class="fa-solid fa-xmark"></i>
         </button>
-        <div class="max-w-4xl w-full">
+        <div id="lightbox-content" class="max-w-4xl w-full">
             <img id="lightbox-img" src="" alt="" class="w-full max-h-[75vh] object-contain rounded-2xl">
             <p id="lightbox-caption" class="text-center text-stone-300 text-sm mt-4"></p>
         </div>
     </div>
 
     <!-- CTA -->
-    <section class="px-5 pb-16">
+    <section id="gallery-cta" class="px-5 pb-16">
         <div class="max-w-3xl mx-auto text-center bg-[#F5F2EA] rounded-3xl border border-[#EAE6DF] p-8">
             <h3 class="font-['Playfair_Display'] text-2xl font-bold text-[#2C3A2B]">Liked what you saw?</h3>
             <p class="text-sm text-[#7C7973] mt-2">Reserve your table or browse our full menu.</p>
@@ -155,6 +157,7 @@
         document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('year').textContent = new Date().getFullYear();
 
+            /* ---------- DRAWER ---------- */
             const hamburger = document.getElementById('hamburger-btn');
             const drawer = document.getElementById('mobile-drawer');
             const overlay = document.getElementById('mobile-overlay');
@@ -175,26 +178,150 @@
             document.querySelectorAll('.drawer-link').forEach(l => l.addEventListener('click', closeDrawer));
             document.addEventListener('keydown', e => e.key === 'Escape' && closeDrawer());
 
-            /* LIGHTBOX */
+            /* ================================================
+               GSAP ANIMATIONS
+               ================================================ */
+            gsap.registerPlugin(ScrollTrigger);
+
+            /* ---------- 1. Page header entrance ---------- */
+            const headerTl = gsap.timeline({ defaults: { ease: "power3.out" } });
+            headerTl
+                .from(".gallery-eyebrow", { opacity: 0, y: 20, duration: 0.6 })
+                .from(".gallery-title",   { opacity: 0, y: 30, duration: 0.8 }, "-=0.35")
+                .from(".gallery-subtitle",{ opacity: 0, y: 20, duration: 0.6 }, "-=0.5");
+
+            /* ---------- 2. Staggered grid reveal on scroll ---------- */
+            gsap.from(".gallery-item", {
+                opacity: 0,
+                y: 60,
+                scale: 0.9,
+                duration: 0.9,
+                stagger: {
+                    each: 0.09,
+                    from: "start"
+                },
+                ease: "back.out(1.3)",
+                scrollTrigger: {
+                    trigger: "#gallery-grid",
+                    start: "top 85%",
+                    once: true
+                }
+            });
+
+            /* ---------- 3. Continuous subtle scale-in on each image as it enters ---------- */
+            document.querySelectorAll(".gallery-item img").forEach(img => {
+                gsap.from(img, {
+                    scale: 1.25,
+                    duration: 1.4,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: img,
+                        start: "top 90%",
+                        once: true
+                    }
+                });
+            });
+
+            /* ---------- 4. Parallax on scroll for the grid ---------- */
+            gsap.to("#gallery-grid .gallery-item:nth-child(odd)", {
+                yPercent: -4,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#gallery-grid",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+            gsap.to("#gallery-grid .gallery-item:nth-child(even)", {
+                yPercent: 4,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#gallery-grid",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+
+            /* ---------- 5. Per-tile hover micro-interaction ---------- */
+            document.querySelectorAll(".gallery-item").forEach(item => {
+                const img = item.querySelector("img");
+                item.addEventListener("mouseenter", () => {
+                    gsap.to(item, { y: -6, duration: 0.35, ease: "power2.out" });
+                    gsap.to(img, { scale: 1.08, duration: 0.5, ease: "power2.out" });
+                });
+                item.addEventListener("mouseleave", () => {
+                    gsap.to(item, { y: 0, duration: 0.4, ease: "power2.out" });
+                    gsap.to(img, { scale: 1, duration: 0.5, ease: "power2.out" });
+                });
+            });
+
+            /* ---------- 6. CTA section reveal ---------- */
+            gsap.from("#gallery-cta > div", {
+                opacity: 0,
+                y: 50,
+                duration: 0.9,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: "#gallery-cta",
+                    start: "top 85%",
+                    once: true
+                }
+            });
+
+            /* ================================================
+               LIGHTBOX with GSAP open/close
+               ================================================ */
             const lightbox = document.getElementById('lightbox');
+            const lightboxContent = document.getElementById('lightbox-content');
             const lightboxImg = document.getElementById('lightbox-img');
             const lightboxCaption = document.getElementById('lightbox-caption');
+            let isOpen = false;
+
+            function openLightbox(imgSrc, imgAlt, caption) {
+                lightboxImg.src = imgSrc;
+                lightboxImg.alt = imgAlt;
+                lightboxCaption.textContent = caption || '';
+                lightbox.classList.remove('hidden');
+                lightbox.classList.add('flex');
+                isOpen = true;
+                document.body.style.overflow = 'hidden';
+
+                gsap.fromTo(lightbox,
+                    { opacity: 0 },
+                    { opacity: 1, duration: 0.3, ease: "power2.out" }
+                );
+                gsap.fromTo(lightboxContent,
+                    { scale: 0.85, opacity: 0, y: 30 },
+                    { scale: 1, opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.3)", delay: 0.1 }
+                );
+            }
+
+            window.closeLightbox = function() {
+                if (!isOpen) return;
+                isOpen = false;
+
+                const tl = gsap.timeline({
+                    onComplete: () => {
+                        lightbox.classList.add('hidden');
+                        lightbox.classList.remove('flex');
+                        document.body.style.overflow = '';
+                        lightboxImg.src = '';
+                    }
+                });
+
+                tl.to(lightboxContent, { scale: 0.9, opacity: 0, y: 20, duration: 0.3, ease: "power2.in" })
+                  .to(lightbox, { opacity: 0, duration: 0.25, ease: "power2.in" }, "-=0.15");
+            };
 
             document.querySelectorAll('.gallery-item').forEach(item => {
                 item.addEventListener('click', () => {
                     const img = item.querySelector('img');
-                    lightboxImg.src = img.src;
-                    lightboxImg.alt = img.alt;
-                    lightboxCaption.textContent = item.dataset.caption || '';
-                    lightbox.classList.remove('hidden');
-                    lightbox.classList.add('flex');
+                    openLightbox(img.src, img.alt, item.dataset.caption);
                 });
             });
 
-            window.closeLightbox = function() {
-                lightbox.classList.add('hidden');
-                lightbox.classList.remove('flex');
-            };
             lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
             document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
         });

@@ -17,13 +17,11 @@
 </head>
 <body class="bg-[#FBF9F4] text-[#2C2A29] font-['Plus_Jakarta_Sans'] overflow-x-hidden">
 
-    <!-- ================= HEADER ================= -->
     <header class="fixed top-0 left-0 right-0 z-40 bg-[#FBF9F4]/95 backdrop-blur-md border-b border-[#EAE6DF]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
             <a href="index.html" class="font-['Playfair_Display'] text-lg sm:text-xl font-bold tracking-tight text-[#3A4D39] whitespace-nowrap">
                 Unifood<span class="text-[#C75B39]"> Multi-Cuisine</span>
             </a>
-
             <nav class="hidden md:flex items-center gap-6 font-medium text-sm tracking-wide text-[#5C5A54]">
                 <a href="index.html" class="text-[#C75B39]">Home</a>
                 <a href="#our-story" class="hover:text-[#C75B39] transition-colors">Our Story</a>
@@ -33,7 +31,6 @@
                 <a href="#find-us" class="hover:text-[#C75B39] transition-colors">Find Us</a>
                 <a href="menu.html" class="hover:text-[#C75B39] transition-colors">Menu</a>
             </nav>
-
             <button id="hamburger-btn" aria-label="Open menu" aria-expanded="false"
                     class="md:hidden w-11 h-11 rounded-full bg-[#3A4D39] text-white flex items-center justify-center active:scale-95 transition-transform shadow-md shrink-0">
                 <i class="fa-solid fa-bars text-lg"></i>
@@ -41,22 +38,14 @@
         </div>
     </header>
 
-    <!-- ================= DRAWER ================= -->
     <div id="mobile-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
-
-    <aside id="mobile-drawer"
-           class="fixed top-0 right-0 h-full w-[82%] max-w-[340px] bg-[#2C3A2B] text-white z-[70] translate-x-full transition-transform duration-300 ease-out md:hidden flex flex-col">
-
+    <aside id="mobile-drawer" class="fixed top-0 right-0 h-full w-[82%] max-w-[340px] bg-[#2C3A2B] text-white z-[70] translate-x-full transition-transform duration-300 ease-out md:hidden flex flex-col">
         <div class="flex items-center justify-between p-5 border-b border-white/10">
-            <span class="font-['Playfair_Display'] text-xl font-bold">
-                Unifood<span class="text-[#EEA47F]">.</span>
-            </span>
-            <button id="close-drawer-btn" aria-label="Close menu"
-                    class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white active:scale-95 transition-transform">
+            <span class="font-['Playfair_Display'] text-xl font-bold">Unifood<span class="text-[#EEA47F]">.</span></span>
+            <button id="close-drawer-btn" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white active:scale-95 transition-transform">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
         </div>
-
         <nav class="flex-1 overflow-y-auto px-5 py-5">
             <ul class="space-y-1">
                 <li><a href="index.html" class="drawer-link"><i class="fa-solid fa-house"></i> Home</a></li>
@@ -69,7 +58,6 @@
                 <li><a href="menu.html" class="drawer-link"><i class="fa-solid fa-bowl-food"></i> Menu</a></li>
             </ul>
         </nav>
-
         <div class="p-5 border-t border-white/10 space-y-3">
             <a href="menu.html" class="flex items-center justify-center gap-2 w-full bg-[#C75B39] text-white font-semibold py-3.5 rounded-xl text-sm active:scale-95 transition-transform">
                 <i class="fa-solid fa-bag-shopping"></i> Order Online
@@ -80,58 +68,38 @@
         </div>
     </aside>
 
-    <!-- ================= HERO ================= -->
+    <!-- HERO -->
     <section id="hero" class="relative min-h-[100svh] w-full overflow-hidden">
-
-        <!-- BG image -->
         <div class="absolute inset-0 z-0">
-            <img id="hero-bg"
-                 src="photo10.jpeg"
-                 alt="Unifood Multi Cuisine Restaurant"
-                 class="w-full h-full object-cover object-center scale-110">
+            <img id="hero-bg" src="photo10.jpeg" alt="Unifood Restaurant" class="w-full h-full object-cover object-center scale-110">
         </div>
-
-        <!-- Overlay: light at top, dark at bottom for text contrast -->
         <div class="absolute inset-0 z-10 bg-gradient-to-b from-black/40 via-black/55 to-black/90"></div>
 
-        <!-- Content: anchored to bottom, guaranteed padding -->
-        <div class="relative z-20 w-full min-h-[100svh] flex flex-col justify-end
-                    px-5 sm:px-8 pb-10 pt-24 max-w-7xl mx-auto">
-
+        <div class="relative z-20 w-full min-h-[100svh] flex flex-col justify-end px-5 sm:px-8 pb-10 pt-24 max-w-7xl mx-auto">
             <div id="hero-content" class="w-full max-w-2xl">
                 <span class="inline-block text-[#EEA47F] font-semibold tracking-[0.2em] text-[10px] uppercase bg-black/40 backdrop-blur-md border border-[#EEA47F]/40 px-3 py-1.5 rounded-full mb-5">
                     <i class="fa-solid fa-star mr-1"></i> Mahbubnagar's Finest Multi-Cuisine
                 </span>
-
                 <h1 class="font-['Playfair_Display'] text-[2rem] sm:text-5xl md:text-6xl font-bold leading-[1.1] text-white">
                     Taste the Royal<br>
                     <span class="italic text-[#EEA47F]">Hyderabadi Dum Biryani</span>
                 </h1>
-
                 <p class="text-stone-200 text-sm sm:text-base mt-4 leading-relaxed max-w-md">
                     Authentic spices, premium basmati, slow dum-cooked meats — a symphony of flavours on every plate.
                 </p>
-
                 <div class="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full max-w-md">
-                    <a href="menu.html"
-                       class="flex items-center justify-center gap-2 w-full sm:w-auto bg-[#C75B39] hover:bg-[#A84A2D] active:scale-[0.97] text-white font-semibold px-6 py-3.5 rounded-full shadow-lg shadow-black/30 transition-all text-sm">
+                    <a href="menu.html" class="flex items-center justify-center gap-2 w-full sm:w-auto bg-[#C75B39] hover:bg-[#A84A2D] active:scale-[0.97] text-white font-semibold px-6 py-3.5 rounded-full shadow-lg shadow-black/30 transition-all text-sm">
                         <i class="fa-solid fa-bowl-food"></i> Order Online
                     </a>
-                    <a href="book-table.html"
-                       class="flex items-center justify-center gap-2 w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/30 text-white hover:bg-white hover:text-[#2C3A2B] active:scale-[0.97] font-semibold px-6 py-3.5 rounded-full transition-all text-sm">
+                    <a href="book-table.html" class="flex items-center justify-center gap-2 w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/30 text-white hover:bg-white hover:text-[#2C3A2B] active:scale-[0.97] font-semibold px-6 py-3.5 rounded-full transition-all text-sm">
                         <i class="fa-solid fa-utensils"></i> Book a Table
                     </a>
                 </div>
             </div>
-
-            <!-- Scroll cue -->
-            <a href="#quick" class="hidden sm:flex justify-center mt-8 text-white/60 animate-bounce">
-                <i class="fa-solid fa-chevron-down text-lg"></i>
-            </a>
         </div>
     </section>
 
-    <!-- ================= QUICK INFO STRIP ================= -->
+    <!-- QUICK INFO -->
     <section id="quick" class="bg-[#F5F2EA] border-y border-[#EAE6DF] px-4 sm:px-6 py-6">
         <div class="max-w-7xl mx-auto grid grid-cols-3 gap-3 text-center">
             <div>
@@ -149,16 +117,14 @@
         </div>
     </section>
 
-    <!-- ================= OUR STORY ================= -->
+    <!-- OUR STORY -->
     <section id="our-story" class="py-14 sm:py-20 bg-[#FBF9F4] px-5 sm:px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-
             <div class="lg:col-span-6 anim-reveal-left">
                 <div class="w-full h-[260px] sm:h-[420px] rounded-3xl overflow-hidden border-4 sm:border-8 border-white shadow-2xl bg-[#2C3A2B]">
                     <img src="photo7.jpeg" alt="Unifood Restaurant" class="w-full h-full object-cover" loading="lazy">
                 </div>
             </div>
-
             <div class="lg:col-span-6 space-y-4 anim-reveal-right">
                 <span class="inline-block text-[#C75B39] font-semibold tracking-widest text-[10px] uppercase bg-[#C75B39]/10 px-3 py-1 rounded-full">
                     <i class="fa-solid fa-book-open mr-1"></i> Our Story
@@ -178,47 +144,38 @@
                     </a>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- ================= WHY CHOOSE US ================= -->
+    <!-- WHY CHOOSE US -->
     <section id="why-choose-us" class="py-14 sm:py-20 bg-[#F5F2EA] px-5 sm:px-6 border-y border-[#EAE6DF]">
         <div class="max-w-7xl mx-auto text-center mb-10 anim-reveal-up">
             <span class="text-[#C75B39] font-bold tracking-widest text-[10px] uppercase">The Unifood Standard</span>
             <h2 class="font-['Playfair_Display'] text-2xl sm:text-4xl md:text-5xl font-bold text-[#2C3A2B] mt-2">Why Dine With Us?</h2>
         </div>
-
         <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             <div class="bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm anim-reveal-up">
-                <div class="w-11 h-11 rounded-2xl bg-[#3A4D39]/10 flex items-center justify-center text-[#3A4D39] text-lg mb-4">
-                    <i class="fa-solid fa-pepper-hot"></i>
-                </div>
+                <div class="w-11 h-11 rounded-2xl bg-[#3A4D39]/10 flex items-center justify-center text-[#3A4D39] text-lg mb-4"><i class="fa-solid fa-pepper-hot"></i></div>
                 <h3 class="font-['Playfair_Display'] text-base sm:text-lg font-bold mb-2 text-[#2C3A2B]">100% Authentic Spices</h3>
                 <p class="text-xs sm:text-sm text-[#7C7973] leading-relaxed">Hand-ground masalas prepared fresh every morning — no premixes.</p>
             </div>
             <div class="bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm anim-reveal-up">
-                <div class="w-11 h-11 rounded-2xl bg-[#C75B39]/10 flex items-center justify-center text-[#C75B39] text-lg mb-4">
-                    <i class="fa-solid fa-clock-rotate-left"></i>
-                </div>
+                <div class="w-11 h-11 rounded-2xl bg-[#C75B39]/10 flex items-center justify-center text-[#C75B39] text-lg mb-4"><i class="fa-solid fa-clock-rotate-left"></i></div>
                 <h3 class="font-['Playfair_Display'] text-base sm:text-lg font-bold mb-2 text-[#2C3A2B]">Slow-Cooked Heritage</h3>
                 <p class="text-xs sm:text-sm text-[#7C7973] leading-relaxed">Wood-fired steam dum techniques for true native textures.</p>
             </div>
             <div class="bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm anim-reveal-up">
-                <div class="w-11 h-11 rounded-2xl bg-amber-100 flex items-center justify-center text-amber-800 text-lg mb-4">
-                    <i class="fa-solid fa-wheat-awn"></i>
-                </div>
+                <div class="w-11 h-11 rounded-2xl bg-amber-100 flex items-center justify-center text-amber-800 text-lg mb-4"><i class="fa-solid fa-wheat-awn"></i></div>
                 <h3 class="font-['Playfair_Display'] text-base sm:text-lg font-bold mb-2 text-[#2C3A2B]">Elite Basmati Selection</h3>
-                <p class="text-xs sm:text-sm text-[#7C7973] leading-relaxed">Long-grain aged rice for pristine aroma absorption on every serving.</p>
+                <p class="text-xs sm:text-sm text-[#7C7973] leading-relaxed">Long-grain aged rice for pristine aroma on every serving.</p>
             </div>
         </div>
     </section>
 
-    <!-- ================= AMBIANCE ================= -->
+    <!-- AMBIANCE -->
     <section id="ambiance" class="py-14 sm:py-20 bg-[#FBF9F4] px-5 sm:px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-
                 <div class="lg:col-span-5 space-y-4 anim-reveal-left">
                     <span class="inline-block text-[#3A4D39] font-bold tracking-widest text-[10px] uppercase bg-[#3A4D39]/10 px-3 py-1 rounded-full">
                         <i class="fa-solid fa-leaf mr-1"></i> Open-Air Dining
@@ -229,7 +186,6 @@
                     <p class="text-[#7C7973] text-sm leading-relaxed">
                         Beautifully illuminated open-air garden setup with private bamboo cabins — perfect for family gatherings and celebrations.
                     </p>
-
                     <div class="space-y-3 pt-2">
                         <div class="flex items-center gap-3 text-sm font-semibold text-[#2C2A29]">
                             <i class="fa-solid fa-door-closed text-[#3A4D39] bg-[#E8F0EA] p-2.5 rounded-xl text-xs"></i>
@@ -244,7 +200,6 @@
 
                 <div class="lg:col-span-7 relative group anim-reveal-right">
                     <div class="w-full h-[260px] sm:h-[400px] rounded-3xl overflow-hidden border-4 sm:border-8 border-white shadow-2xl relative bg-[#2C3A2B]">
-
                         <div class="slider-slide absolute inset-0 opacity-100 transition-opacity duration-1000">
                             <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80" alt="Ambiance" class="w-full h-full object-cover" loading="lazy">
                             <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/85 to-transparent p-4 pt-12">
@@ -273,7 +228,6 @@
                                 <p class="text-stone-300 text-xs">Ambient lighting & lattice work.</p>
                             </div>
                         </div>
-
                         <button onclick="shiftSlide(-1)" aria-label="Previous"
                                 class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/30 backdrop-blur-md text-white flex items-center justify-center opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity shadow z-20">
                             <i class="fa-solid fa-chevron-left text-xs"></i>
@@ -283,15 +237,13 @@
                             <i class="fa-solid fa-chevron-right text-xs"></i>
                         </button>
                     </div>
-
                     <div class="flex justify-center gap-2 mt-4" id="slider-dots"></div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- ================= REVIEWS ================= -->
+    <!-- REVIEWS -->
     <section id="testimonials" class="py-14 sm:py-20 bg-[#F5F2EA] px-5 sm:px-6 border-y border-[#EAE6DF]">
         <div class="max-w-7xl mx-auto text-center mb-10 anim-reveal-up">
             <span class="text-[#C75B39] font-bold tracking-widest text-[10px] uppercase">Guest Reviews</span>
@@ -305,58 +257,40 @@
         <div class="max-w-5xl mx-auto relative">
             <div class="overflow-hidden">
                 <div id="testimonial-track" class="flex transition-transform duration-500 ease-in-out gap-4" style="transform: translateX(0%);">
-
                     <div class="w-full md:w-[calc(50%-8px)] shrink-0 bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm">
                         <div class="text-amber-500 text-sm mb-3">★★★★★</div>
                         <p class="text-sm text-[#5C5A54] leading-relaxed italic">"The Mattbor Biryani here is hands down the best in town! Long grains, super aromatic, meat just melts."</p>
                         <div class="flex items-center gap-3 mt-4 pt-4 border-t border-[#EAE6DF]">
                             <div class="w-9 h-9 rounded-full bg-[#3A4D39] text-white font-bold flex items-center justify-center text-xs">R</div>
-                            <div>
-                                <p class="text-xs font-bold text-[#2C3A2B]">Rahul K.</p>
-                                <p class="text-[10px] text-[#7C7973]">Local Guide</p>
-                            </div>
+                            <div><p class="text-xs font-bold text-[#2C3A2B]">Rahul K.</p><p class="text-[10px] text-[#7C7973]">Local Guide</p></div>
                         </div>
                     </div>
-
                     <div class="w-full md:w-[calc(50%-8px)] shrink-0 bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm">
                         <div class="text-amber-500 text-sm mb-3">★★★★★</div>
                         <p class="text-sm text-[#5C5A54] leading-relaxed italic">"We booked a private bamboo hut for a family gathering. The open-air garden vibe made it extra special."</p>
                         <div class="flex items-center gap-3 mt-4 pt-4 border-t border-[#EAE6DF]">
                             <div class="w-9 h-9 rounded-full bg-[#C75B39] text-white font-bold flex items-center justify-center text-xs">A</div>
-                            <div>
-                                <p class="text-xs font-bold text-[#2C3A2B]">Anitha Reddy</p>
-                                <p class="text-[10px] text-[#7C7973]">Verified Customer</p>
-                            </div>
+                            <div><p class="text-xs font-bold text-[#2C3A2B]">Anitha Reddy</p><p class="text-[10px] text-[#7C7973]">Verified Customer</p></div>
                         </div>
                     </div>
-
                     <div class="w-full md:w-[calc(50%-8px)] shrink-0 bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm">
                         <div class="text-amber-500 text-sm mb-3">★★★★★</div>
                         <p class="text-sm text-[#5C5A54] leading-relaxed italic">"Mandi spreads here are phenomenal — authentic spice levels matching Hyderabad's elite spots."</p>
                         <div class="flex items-center gap-3 mt-4 pt-4 border-t border-[#EAE6DF]">
                             <div class="w-9 h-9 rounded-full bg-stone-700 text-white font-bold flex items-center justify-center text-xs">V</div>
-                            <div>
-                                <p class="text-xs font-bold text-[#2C3A2B]">Vikram Singh</p>
-                                <p class="text-[10px] text-[#7C7973]">Food Blogger</p>
-                            </div>
+                            <div><p class="text-xs font-bold text-[#2C3A2B]">Vikram Singh</p><p class="text-[10px] text-[#7C7973]">Food Blogger</p></div>
                         </div>
                     </div>
-
                     <div class="w-full md:w-[calc(50%-8px)] shrink-0 bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm">
                         <div class="text-amber-500 text-sm mb-3">★★★★★</div>
                         <p class="text-sm text-[#5C5A54] leading-relaxed italic">"Changed the food standard in Mahbubnagar. Extremely clean and pristine flavors."</p>
                         <div class="flex items-center gap-3 mt-4 pt-4 border-t border-[#EAE6DF]">
                             <div class="w-9 h-9 rounded-full bg-blue-700 text-white font-bold flex items-center justify-center text-xs">K</div>
-                            <div>
-                                <p class="text-xs font-bold text-[#2C3A2B]">Kiran Kumar</p>
-                                <p class="text-[10px] text-[#7C7973]">Regular Diner</p>
-                            </div>
+                            <div><p class="text-xs font-bold text-[#2C3A2B]">Kiran Kumar</p><p class="text-[10px] text-[#7C7973]">Regular Diner</p></div>
                         </div>
                     </div>
-
                 </div>
             </div>
-
             <button onclick="shiftReview(-1)" aria-label="Previous review"
                     class="absolute -left-1 sm:-left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white text-[#2C3A2B] border border-[#EAE6DF] shadow-md flex items-center justify-center z-10 active:scale-95">
                 <i class="fa-solid fa-chevron-left text-xs"></i>
@@ -368,10 +302,9 @@
         </div>
     </section>
 
-    <!-- ================= FIND US / MAP ================= -->
+    <!-- FIND US -->
     <section id="find-us" class="py-14 sm:py-20 bg-[#FBF9F4] px-5 sm:px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-
             <div class="lg:col-span-5 space-y-4 anim-reveal-left">
                 <span class="inline-block text-[#3A4D39] font-bold tracking-widest text-[10px] uppercase bg-[#3A4D39]/10 px-3 py-1 rounded-full">
                     <i class="fa-solid fa-map-pin mr-1"></i> Visit Us
@@ -380,7 +313,6 @@
                 <p class="text-[#7C7973] text-sm leading-relaxed">
                     Located along the main corridor of Mahbubnagar — easy to reach for casual lunches, family get-togethers, or late-night dinner cravings.
                 </p>
-
                 <div class="p-5 bg-[#F5F2EA] rounded-3xl border border-[#EAE6DF] space-y-4">
                     <div class="flex items-start gap-3">
                         <i class="fa-solid fa-location-dot text-[#C75B39] text-base mt-1 shrink-0"></i>
@@ -404,49 +336,38 @@
                         </div>
                     </div>
                 </div>
-
-                <a href="https://maps.google.com/?q=Unifood+Multi+Cuisine+Restaurant+Mahbubnagar"
-                   target="_blank" rel="noopener"
+                <a href="https://maps.google.com/?q=Unifood+Multi+Cuisine+Restaurant+Mahbubnagar" target="_blank" rel="noopener"
                    class="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#3A4D39] text-white px-6 py-3.5 rounded-full text-xs font-bold tracking-wider uppercase active:scale-95 transition-transform shadow-sm">
                     <i class="fa-solid fa-diamond-turn-right"></i> Open in Maps
                 </a>
             </div>
-
             <div class="lg:col-span-7 anim-reveal-right">
                 <div class="w-full h-[280px] sm:h-[400px] rounded-3xl overflow-hidden border-4 border-white shadow-xl bg-stone-200">
-                    <iframe
-                        src="https://maps.google.com/maps?q=Unifood%20Multi%20Cuisine%20Restaurant,%20Bhoothpur%20Road,%20Christianpally,%20Mahbubnagar&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                        class="w-full h-full border-0"
-                        allowfullscreen=""
-                        loading="lazy">
-                    </iframe>
+                    <iframe src="https://maps.google.com/maps?q=Unifood%20Multi%20Cuisine%20Restaurant,%20Bhoothpur%20Road,%20Christianpally,%20Mahbubnagar&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- ================= ORDER CTA ================= -->
+    <!-- ORDER CTA -->
     <section class="px-5 sm:px-6 pb-14 sm:pb-20">
         <div class="max-w-4xl mx-auto relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#3A4D39] to-[#1F2A1E] p-6 sm:p-10 text-white shadow-2xl">
             <div class="absolute -right-8 -top-8 w-40 h-40 rounded-full bg-[#C75B39]/20 blur-2xl"></div>
             <div class="relative text-center sm:text-left">
                 <p class="text-[10px] uppercase tracking-[0.25em] text-[#EEA47F] font-bold">Hungry Now?</p>
-                <h3 class="font-['Playfair_Display'] text-xl sm:text-3xl font-bold mt-2 leading-snug">
-                    Fresh from our wok, to your table.
-                </h3>
+                <h3 class="font-['Playfair_Display'] text-xl sm:text-3xl font-bold mt-2 leading-snug">Fresh from our wok, to your table.</h3>
                 <p class="text-stone-300 text-xs sm:text-sm mt-3 leading-relaxed max-w-md mx-auto sm:mx-0">
                     Order in a tap — 100+ dishes across Indian, Arabian, Moghlai & Chinese.
                 </p>
-                <a href="menu.html"
-                   class="mt-5 inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#C75B39] hover:bg-[#A84A2D] active:scale-[0.97] text-white font-bold px-6 py-4 rounded-2xl shadow-lg transition-all text-sm">
+                <a href="menu.html" class="mt-5 inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#C75B39] hover:bg-[#A84A2D] active:scale-[0.97] text-white font-bold px-6 py-4 rounded-2xl shadow-lg transition-all text-sm">
                     <i class="fa-solid fa-bowl-food"></i> Start Your Order
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- ================= FOOTER ================= -->
+    <!-- FOOTER -->
     <footer class="bg-[#2C3A2B] text-white pt-10 sm:pt-14 pb-8 px-5 sm:px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 pb-8 border-b border-white/10">
             <div>
@@ -472,12 +393,11 @@
         document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('year').textContent = new Date().getFullYear();
 
-            /* ---------- DRAWER ---------- */
+            /* DRAWER */
             const hamburger = document.getElementById('hamburger-btn');
             const drawer = document.getElementById('mobile-drawer');
             const overlay = document.getElementById('mobile-overlay');
             const closeBtn = document.getElementById('close-drawer-btn');
-
             const openDrawer = () => {
                 drawer.classList.remove('translate-x-full');
                 overlay.classList.remove('opacity-0', 'pointer-events-none');
@@ -497,48 +417,25 @@
             document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
             window.addEventListener('pageshow', () => { document.body.style.overflow = ''; });
 
-            /* ---------- GSAP HERO ---------- */
+            /* GSAP HERO */
             if (window.gsap && window.ScrollTrigger) {
                 gsap.registerPlugin(ScrollTrigger);
-
-                // Slow zoom-out on the background
+                gsap.to("#hero-bg", { scale: 1, duration: 2.4, ease: "power2.out" });
+                gsap.from("#hero-content > *", { opacity: 0, y: 30, duration: 0.9, stagger: 0.12, ease: "power3.out", delay: 0.2 });
                 gsap.to("#hero-bg", {
-                    scale: 1,
-                    duration: 2.4,
-                    ease: "power2.out"
-                });
-
-                // Content fade-up
-                gsap.from("#hero-content > *", {
-                    opacity: 0,
-                    y: 30,
-                    duration: 0.9,
-                    stagger: 0.12,
-                    ease: "power3.out",
-                    delay: 0.2
-                });
-
-                // Parallax
-                gsap.to("#hero-bg", {
-                    yPercent: 15,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: "#hero",
-                        start: "top top",
-                        end: "bottom top",
-                        scrub: true
-                    }
+                    yPercent: 15, ease: "none",
+                    scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true }
                 });
             }
 
-            /* ---------- SCROLL REVEAL ---------- */
+            /* SCROLL REVEAL */
             if (window.ScrollReveal) {
                 ScrollReveal().reveal('.anim-reveal-up', { origin: 'bottom', distance: '40px', duration: 800, interval: 100 });
                 ScrollReveal().reveal('.anim-reveal-left', { origin: 'left', distance: '40px', duration: 800 });
                 ScrollReveal().reveal('.anim-reveal-right', { origin: 'right', distance: '40px', duration: 800 });
             }
 
-            /* ---------- AMBIANCE SLIDER ---------- */
+            /* AMBIANCE SLIDER */
             let currentSlideIndex = 0;
             const slides = document.querySelectorAll('.slider-slide');
             const dotsContainer = document.getElementById('slider-dots');
@@ -573,18 +470,16 @@
             window.jumpToSlide = function (i) { currentSlideIndex = i; updateSliderUI(); };
             setInterval(() => shiftSlide(1), 4500);
 
-            /* ---------- TESTIMONIAL SLIDER ---------- */
+            /* TESTIMONIAL SLIDER */
             let reviewIdx = 0;
             window.shiftReview = function (dir) {
                 const track = document.getElementById('testimonial-track');
                 const isMobile = window.innerWidth < 768;
                 const totalCards = track.children.length;
                 const maxIndex = isMobile ? totalCards - 1 : Math.ceil(totalCards / 2) - 1;
-
                 reviewIdx += dir;
                 if (reviewIdx < 0) reviewIdx = 0;
                 if (reviewIdx > maxIndex) reviewIdx = maxIndex;
-
                 const shift = isMobile ? (reviewIdx * 100) : (reviewIdx * 50);
                 track.style.transform = `translateX(-${shift}%)`;
             };

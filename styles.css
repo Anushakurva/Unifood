@@ -1,8 +1,50 @@
-/* ================= BASE ================= */
+/* ================= ROCK-SOLID HORIZONTAL OVERFLOW FIX ================= */
+html {
+    overflow-x: clip;
+    overflow-y: auto;
+    max-width: 100vw;
+    overscroll-behavior-x: none;
+    scroll-behavior: smooth;
+}
+body {
+    overflow-x: clip;
+    max-width: 100vw;
+    overscroll-behavior-x: none;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+}
+/* Prevent any element from creating sideways scroll */
+#hero, #quick, #our-story, #why-choose-us, #ambiance, #testimonials, #find-us, footer {
+    max-width: 100vw;
+    overflow-x: clip;
+}
+/* Lock body scroll when menu is open — but keep layout intact */
+body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* ================= HERO ================= */
+/* Subtle radial vignette — only the edges darken, center stays sharp */
+.hero-vignette {
+    background: radial-gradient(ellipse at 50% 45%, transparent 45%, rgba(0,0,0,0.55) 100%);
+}
+/* Line reveal wrapper for hero title */
+.hero-line {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.08em; /* avoid descender clipping */
+}
+.hero-line-inner {
+    display: inline-block;
+    will-change: transform;
+}
+
+/* ================= SCROLLBAR HIDDEN ================= */
 .scrollbar-none::-webkit-scrollbar { display: none; }
 .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
-html { -webkit-text-size-adjust: 100%; }
-body { -webkit-tap-highlight-color: transparent; }
 
 /* ================= DRAWER LINKS ================= */
 .drawer-link {
@@ -20,7 +62,7 @@ body { -webkit-tap-highlight-color: transparent; }
 .drawer-link:active { background-color: rgba(255,255,255,0.08); }
 .drawer-link.active-link { background-color: rgba(255,255,255,0.10); }
 
-/* ================= CATEGORY STRIP ================= */
+/* ================= CATEGORY STRIP (menu.html) ================= */
 .category-strip-btn {
     background-color: #FFFFFF;
     color: #5C5A54;
@@ -86,6 +128,12 @@ body { -webkit-tap-highlight-color: transparent; }
     .gallery-item:hover::before { opacity: 1; transform: translateY(0); }
 }
 
+/* ================= MARQUEE ================= */
+#marquee-track {
+    width: max-content;
+    will-change: transform;
+}
+
 /* ================= SCROLL IMPROVEMENTS ================= */
 #mobile-drawer nav,
 #cart-items-container,
@@ -94,7 +142,17 @@ body { -webkit-tap-highlight-color: transparent; }
 /* ================= SMALL SCREEN ================= */
 @media (max-width: 400px) {
     .category-strip-btn { font-size: 12px; padding: 9px 16px; }
+    .hero-title-wrap { font-size: 1.85rem; }
 }
 
 /* ================= SAFE AREA ================= */
 #bottom-nav { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+
+/* ================= ACCESSIBILITY ================= */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

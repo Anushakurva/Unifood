@@ -25,23 +25,10 @@
         <div class="pt-panel absolute inset-y-0 right-0 w-1/2 bg-[#2C3A2B]" style="transform: translateX(100%);"></div>
     </div>
 
-    <!-- ============ CUSTOM CURSOR (desktop) ============ -->
-    <div id="cursor-dot" class="cursor-dot"></div>
-    <div id="cursor-ring" class="cursor-ring"><span></span></div>
-
-    <!-- ============ SCROLL PROGRESS (SVG ring, top-right) ============ -->
-    <div id="scroll-ring" class="fixed top-5 right-5 z-[90] w-12 h-12 pointer-events-none">
-        <svg viewBox="0 0 36 36" class="w-full h-full -rotate-90">
-            <circle cx="18" cy="18" r="15" fill="none" stroke="rgba(58,77,57,0.15)" stroke-width="2"/>
-            <circle id="scroll-ring-fill" cx="18" cy="18" r="15" fill="none" stroke="#C75B39" stroke-width="2"
-                    stroke-dasharray="94.2" stroke-dashoffset="94.2" stroke-linecap="round"/>
-        </svg>
-    </div>
-
     <!-- ============ HEADER ============ -->
     <header id="site-header" class="fixed top-0 left-0 right-0 z-40 bg-[#FBF9F4]/95 backdrop-blur-md border-b border-[#EAE6DF]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <a href="index.html" data-nav class="logo-link font-['Playfair_Display'] text-lg sm:text-xl font-bold tracking-tight text-[#3A4D39] whitespace-nowrap">
+            <a href="index.html" data-nav class="font-['Playfair_Display'] text-lg sm:text-xl font-bold tracking-tight text-[#3A4D39] whitespace-nowrap">
                 Unifood<span class="text-[#C75B39]"> Multi-Cuisine</span>
             </a>
             <nav class="hidden md:flex items-center gap-6 font-medium text-sm tracking-wide text-[#5C5A54]">
@@ -54,7 +41,7 @@
                 <a href="menu.html" data-nav class="hover:text-[#C75B39] transition-colors nav-item">Menu</a>
             </nav>
             <button id="hamburger-btn" aria-label="Open menu" aria-expanded="false"
-                    class="md:hidden w-11 h-11 rounded-full bg-[#3A4D39] text-white flex items-center justify-center active:scale-95 transition-transform shadow-md shrink-0 cursor-pointer">
+                    class="md:hidden w-11 h-11 rounded-full bg-[#3A4D39] text-white flex items-center justify-center active:scale-95 transition-transform shadow-md shrink-0">
                 <i class="fa-solid fa-bars text-lg"></i>
             </button>
         </div>
@@ -65,7 +52,7 @@
     <aside id="mobile-drawer" class="fixed top-0 right-0 h-full w-[82%] max-w-[340px] bg-[#2C3A2B] text-white z-[70] translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.83,0,0.17,1)] md:hidden flex flex-col">
         <div class="flex items-center justify-between p-5 border-b border-white/10">
             <span class="font-['Playfair_Display'] text-xl font-bold">Unifood<span class="text-[#EEA47F]">.</span></span>
-            <button id="close-drawer-btn" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white active:scale-95 transition-transform cursor-pointer">
+            <button id="close-drawer-btn" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white active:scale-95 transition-transform">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
         </div>
@@ -82,10 +69,10 @@
             </ul>
         </nav>
         <div class="p-5 border-t border-white/10 space-y-3">
-            <a href="menu.html" data-nav class="flex items-center justify-center gap-2 w-full bg-[#C75B39] text-white font-semibold py-3.5 rounded-xl text-sm active:scale-95 transition-transform cursor-pointer">
+            <a href="menu.html" data-nav class="flex items-center justify-center gap-2 w-full bg-[#C75B39] text-white font-semibold py-3.5 rounded-xl text-sm active:scale-95 transition-transform">
                 <i class="fa-solid fa-bag-shopping"></i> Order Online
             </a>
-            <a href="tel:09885397871" class="flex items-center justify-center gap-2 w-full bg-white/5 border border-white/15 text-white font-medium py-3 rounded-xl text-sm active:scale-95 transition-transform cursor-pointer">
+            <a href="tel:09885397871" class="flex items-center justify-center gap-2 w-full bg-white/5 border border-white/15 text-white font-medium py-3 rounded-xl text-sm active:scale-95 transition-transform">
                 <i class="fa-solid fa-phone text-[#EEA47F]"></i> +91 98853 97871
             </a>
         </div>
@@ -94,21 +81,17 @@
     <!-- ============ HERO ============ -->
     <section id="hero" class="relative min-h-[100svh] w-full overflow-hidden">
 
-        <!-- Hero image with curtain reveal overlay panels -->
         <div class="absolute inset-0 z-0 overflow-hidden">
             <img id="hero-bg" src="photo10.jpeg" alt="Unifood Multi Cuisine Restaurant"
                  class="w-full h-full object-cover object-center" style="transform: scale(1.25);">
-            <!-- Two curtain panels that slide away to reveal the photo -->
             <div class="hero-curtain absolute inset-y-0 left-0 w-1/2 bg-[#2C3A2B] z-10"></div>
             <div class="hero-curtain absolute inset-y-0 right-0 w-1/2 bg-[#2C3A2B] z-10"></div>
         </div>
 
-        <!-- Light edge gradients only — image stays sharp in the middle -->
         <div class="absolute inset-x-0 top-0 h-40 z-[15] bg-gradient-to-b from-black/55 to-transparent pointer-events-none"></div>
         <div class="absolute inset-x-0 bottom-0 h-3/5 z-[15] bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>
         <div class="hero-vignette absolute inset-0 z-[15] pointer-events-none"></div>
 
-        <!-- Content -->
         <div class="relative z-20 w-full min-h-[100svh] flex flex-col justify-end px-5 sm:px-8 pb-10 pt-24 max-w-7xl mx-auto">
             <div id="hero-content" class="w-full max-w-2xl">
                 <span id="hero-badge" class="hero-badge inline-flex items-center text-[#EEA47F] font-semibold tracking-[0.2em] text-[10px] uppercase bg-black/40 backdrop-blur-md border border-[#EEA47F]/40 px-3 py-1.5 rounded-full mb-5">
@@ -117,38 +100,35 @@
 
                 <h1 class="font-['Playfair_Display'] text-[2rem] sm:text-5xl md:text-6xl font-bold leading-[1.1] text-white">
                     <span class="hero-line block overflow-hidden pb-[0.08em]">
-                        <span class="hero-title-line inline-block" data-split="chars">Taste the Royal</span>
+                        <span class="hero-title-line inline-block">Taste the Royal</span>
                     </span>
                     <span class="hero-line block overflow-hidden pb-[0.08em]">
-                        <span class="hero-title-line inline-block italic text-[#EEA47F]" data-split="chars">Hyderabadi Dum Biryani</span>
+                        <span class="hero-title-line inline-block italic text-[#EEA47F]">Hyderabadi Dum Biryani</span>
                     </span>
                 </h1>
 
-                <p class="hero-sub text-stone-100 text-sm sm:text-base mt-5 leading-relaxed max-w-md" data-split="words" style="text-shadow: 0 2px 12px rgba(0,0,0,0.7);">
+                <p class="hero-sub text-stone-100 text-sm sm:text-base mt-5 leading-relaxed max-w-md" style="text-shadow: 0 2px 12px rgba(0,0,0,0.7);">
                     Authentic spices, premium basmati, slow dum-cooked meats — a symphony of flavours on every plate.
                 </p>
 
                 <div class="hero-cta mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full max-w-md">
-                    <a href="menu.html" data-nav class="magnetic-btn group flex items-center justify-center gap-2 w-full sm:w-auto bg-[#C75B39] hover:bg-[#A84A2D] text-white font-semibold px-6 py-3.5 rounded-full shadow-lg shadow-black/30 transition-all text-sm cursor-pointer">
+                    <a href="menu.html" data-nav class="magnetic-btn group flex items-center justify-center gap-2 w-full sm:w-auto bg-[#C75B39] hover:bg-[#A84A2D] text-white font-semibold px-6 py-3.5 rounded-full shadow-lg shadow-black/30 transition-all text-sm">
                         <i class="fa-solid fa-bowl-food"></i> Order Online
-                        <span class="magnetic-inner"></span>
                     </a>
-                    <a href="book-table.html" data-nav class="magnetic-btn group flex items-center justify-center gap-2 w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/30 text-white hover:bg-white hover:text-[#2C3A2B] font-semibold px-6 py-3.5 rounded-full transition-all text-sm cursor-pointer">
+                    <a href="book-table.html" data-nav class="magnetic-btn group flex items-center justify-center gap-2 w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/30 text-white hover:bg-white hover:text-[#2C3A2B] font-semibold px-6 py-3.5 rounded-full transition-all text-sm">
                         <i class="fa-solid fa-utensils"></i> Book a Table
-                        <span class="magnetic-inner"></span>
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- Scroll cue -->
         <div class="hero-scroll-cue absolute bottom-4 left-1/2 -translate-x-1/2 z-20 text-white/70 flex flex-col items-center gap-1 pointer-events-none">
             <span class="text-[9px] tracking-[0.3em] uppercase">Scroll</span>
             <i class="fa-solid fa-arrow-down text-xs"></i>
         </div>
     </section>
 
-    <!-- ============ QUICK STATS (rolling counters) ============ -->
+    <!-- ============ QUICK STATS ============ -->
     <section id="quick" class="bg-[#F5F2EA] border-y border-[#EAE6DF] px-4 sm:px-6 py-8">
         <div class="max-w-7xl mx-auto grid grid-cols-3 gap-3 text-center">
             <div class="quick-stat">
@@ -210,7 +190,7 @@
                     Today we're a full multi-cuisine restaurant with open-air garden seating, private bamboo cabins, and a banquet hall for the town's celebrations.
                 </p>
                 <div class="pt-2">
-                    <a href="menu.html" data-nav class="inline-flex items-center gap-2 text-[#C75B39] font-bold text-sm group cursor-pointer">
+                    <a href="menu.html" data-nav class="inline-flex items-center gap-2 text-[#C75B39] font-bold text-sm group">
                         Explore the menu <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
                     </a>
                 </div>
@@ -218,7 +198,7 @@
         </div>
     </section>
 
-    <!-- ============ WHY CHOOSE US (sticky stacked cards) ============ -->
+    <!-- ============ WHY CHOOSE US ============ -->
     <section id="why-choose-us" class="py-14 sm:py-20 bg-[#F5F2EA] px-5 sm:px-6 border-y border-[#EAE6DF]">
         <div class="max-w-7xl mx-auto text-center mb-10 section-header">
             <span class="text-[#C75B39] font-bold tracking-widest text-[10px] uppercase">The Unifood Standard</span>
@@ -255,7 +235,7 @@
         </div>
     </section>
 
-    <!-- ============ AMBIANCE (pinned 2-slide with clip reveal) ============ -->
+    <!-- ============ AMBIANCE ============ -->
     <section id="ambiance" class="py-14 sm:py-20 bg-[#FBF9F4] px-5 sm:px-6 overflow-hidden">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -305,11 +285,11 @@
                         </div>
 
                         <button onclick="shiftSlide(-1)" aria-label="Previous"
-                                class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/30 backdrop-blur-md text-white flex items-center justify-center opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity shadow z-20 cursor-pointer">
+                                class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/30 backdrop-blur-md text-white flex items-center justify-center opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity shadow z-20">
                             <i class="fa-solid fa-chevron-left text-xs"></i>
                         </button>
                         <button onclick="shiftSlide(1)" aria-label="Next"
-                                class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/30 backdrop-blur-md text-white flex items-center justify-center opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity shadow z-20 cursor-pointer">
+                                class="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/30 backdrop-blur-md text-white flex items-center justify-center opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity shadow z-20">
                             <i class="fa-solid fa-chevron-right text-xs"></i>
                         </button>
                     </div>
@@ -368,11 +348,11 @@
                 </div>
             </div>
             <button onclick="shiftReview(-1)" aria-label="Previous review"
-                    class="absolute -left-1 sm:-left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white text-[#2C3A2B] border border-[#EAE6DF] shadow-md flex items-center justify-center z-10 active:scale-95 cursor-pointer">
+                    class="absolute -left-1 sm:-left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white text-[#2C3A2B] border border-[#EAE6DF] shadow-md flex items-center justify-center z-10 active:scale-95">
                 <i class="fa-solid fa-chevron-left text-xs"></i>
             </button>
             <button onclick="shiftReview(1)" aria-label="Next review"
-                    class="absolute -right-1 sm:-right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white text-[#2C3A2B] border border-[#EAE6DF] shadow-md flex items-center justify-center z-10 active:scale-95 cursor-pointer">
+                    class="absolute -right-1 sm:-right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white text-[#2C3A2B] border border-[#EAE6DF] shadow-md flex items-center justify-center z-10 active:scale-95">
                 <i class="fa-solid fa-chevron-right text-xs"></i>
             </button>
         </div>
@@ -413,7 +393,7 @@
                     </div>
                 </div>
                 <a href="https://maps.google.com/?q=Unifood+Multi+Cuisine+Restaurant+Mahbubnagar" target="_blank" rel="noopener"
-                   class="magnetic-btn inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#3A4D39] text-white px-6 py-3.5 rounded-full text-xs font-bold tracking-wider uppercase active:scale-95 transition-transform shadow-sm cursor-pointer">
+                   class="magnetic-btn inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#3A4D39] text-white px-6 py-3.5 rounded-full text-xs font-bold tracking-wider uppercase active:scale-95 transition-transform shadow-sm">
                     <i class="fa-solid fa-diamond-turn-right"></i> Open in Maps
                 </a>
             </div>
@@ -436,7 +416,7 @@
                 <p class="text-stone-300 text-xs sm:text-sm mt-3 leading-relaxed max-w-md mx-auto sm:mx-0">
                     Order in a tap — 100+ dishes across Indian, Arabian, Moghlai & Chinese.
                 </p>
-                <a href="menu.html" data-nav class="magnetic-btn mt-5 inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#C75B39] hover:bg-[#A84A2D] text-white font-bold px-6 py-4 rounded-2xl shadow-lg transition-all text-sm cursor-pointer">
+                <a href="menu.html" data-nav class="magnetic-btn mt-5 inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#C75B39] hover:bg-[#A84A2D] text-white font-bold px-6 py-4 rounded-2xl shadow-lg transition-all text-sm">
                     <i class="fa-solid fa-bowl-food"></i> Start Your Order
                 </a>
             </div>
@@ -479,27 +459,7 @@
         gsap.ticker.add((time) => lenis.raf(time * 1000));
         gsap.ticker.lagSmoothing(0);
 
-        /* ============ CUSTOM CURSOR (desktop) ============ */
         const isDesktop = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-        if (isDesktop) {
-            const dot = document.getElementById('cursor-dot');
-            const ring = document.getElementById('cursor-ring');
-            const dotX = gsap.quickTo(dot, "x", { duration: 0.15, ease: "power3" });
-            const dotY = gsap.quickTo(dot, "y", { duration: 0.15, ease: "power3" });
-            const ringX = gsap.quickTo(ring, "x", { duration: 0.5, ease: "power3" });
-            const ringY = gsap.quickTo(ring, "y", { duration: 0.5, ease: "power3" });
-            window.addEventListener('mousemove', (e) => {
-                dotX(e.clientX); dotY(e.clientY);
-                ringX(e.clientX); ringY(e.clientY);
-            });
-            document.querySelectorAll("a, button, .magnetic-btn, .gallery-item").forEach(el => {
-                el.addEventListener('mouseenter', () => ring.classList.add('hovering'));
-                el.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
-            });
-        } else {
-            document.getElementById('cursor-dot').style.display = 'none';
-            document.getElementById('cursor-ring').style.display = 'none';
-        }
 
         /* ============ TEXT SCRAMBLE on hero badge ============ */
         class TextScramble {
@@ -552,22 +512,16 @@
         }
 
         /* ============ SPLIT TYPE TEXT REVEALS ============ */
-        // Hero title — char by char with 3D rotateY
         document.querySelectorAll('.hero-title-line').forEach((line, lineIdx) => {
             const split = new SplitType(line, { types: 'chars' });
             gsap.set(split.chars, { yPercent: 110, opacity: 0, rotateY: -60 });
             gsap.to(split.chars, {
-                yPercent: 0,
-                opacity: 1,
-                rotateY: 0,
-                duration: 1,
-                stagger: 0.025,
-                ease: "expo.out",
+                yPercent: 0, opacity: 1, rotateY: 0,
+                duration: 1, stagger: 0.025, ease: "expo.out",
                 delay: 0.35 + lineIdx * 0.25
             });
         });
 
-        // Hero subtitle — word by word
         document.querySelectorAll('.hero-sub').forEach(el => {
             const split = new SplitType(el, { types: 'words' });
             gsap.from(split.words, {
@@ -576,17 +530,13 @@
             });
         });
 
-        // Hero CTAs
         gsap.from(".hero-cta > a", {
             opacity: 0, y: 30, duration: 0.7, stagger: 0.15,
             ease: "power3.out", delay: 1.4
         });
 
-        // Hero scroll cue
         gsap.from(".hero-scroll-cue", { opacity: 0, duration: 0.6, delay: 2 });
-        gsap.to(".hero-scroll-cue i", {
-            y: 6, repeat: -1, yoyo: true, duration: 0.9, ease: "power1.inOut"
-        });
+        gsap.to(".hero-scroll-cue i", { y: 6, repeat: -1, yoyo: true, duration: 0.9, ease: "power1.inOut" });
 
         /* ============ HERO CURTAIN REVEAL ============ */
         const heroTl = gsap.timeline({ delay: 0.1 });
@@ -596,7 +546,7 @@
             .to("#hero-bg", { scale: 1, duration: 2.4, ease: "power2.out" }, 0.2)
             .set(".hero-curtain", { display: "none" });
 
-        /* ============ HERO SCROLL PARALLAX + MOUSE TILT ============ */
+        /* ============ HERO PARALLAX + MOUSE TILT ============ */
         gsap.to("#hero-bg", {
             yPercent: 20, ease: "none",
             scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true }
@@ -610,14 +560,7 @@
             });
         }
 
-        /* ============ SCROLL PROGRESS RING ============ */
-        gsap.to("#scroll-ring-fill", {
-            strokeDashoffset: 0,
-            ease: "none",
-            scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 0.4 }
-        });
-
-        /* ============ SCROLL VELOCITY SKEW (all cards) ============ */
+        /* ============ SCROLL VELOCITY SKEW ============ */
         let proxy = { skew: 0 },
             skewSetter = gsap.quickSetter(".why-card, .review-card, .quick-stat, .footer-col", "skewY", "deg"),
             clamp = gsap.utils.clamp(-4, 4);
@@ -634,7 +577,7 @@
             }
         });
 
-        /* ============ SECTION TITLES: char by char ============ */
+        /* ============ SECTION TITLES ============ */
         document.querySelectorAll(".section-title").forEach(title => {
             const split = new SplitType(title, { types: 'chars,words' });
             gsap.from(split.chars, {
@@ -644,7 +587,6 @@
             });
         });
 
-        /* ============ EYEBROWS & SECTION HEADERS ============ */
         document.querySelectorAll(".section-eyebrow, .section-header").forEach(el => {
             gsap.from(el, {
                 opacity: 0, y: 20, duration: 0.7, ease: "power3.out",
@@ -652,11 +594,10 @@
             });
         });
 
-        /* ============ PARAGRAPH LINE REVEAL (mask effect) ============ */
+        /* ============ PARAGRAPH LINE REVEAL ============ */
         document.querySelectorAll("[data-split='lines']").forEach(p => {
             const split = new SplitType(p, { types: 'lines' });
             gsap.set(split.lines, { yPercent: 110, opacity: 0 });
-            // Wrap lines to create mask effect
             split.lines.forEach(line => {
                 const wrap = document.createElement('div');
                 wrap.style.overflow = 'hidden';
@@ -671,7 +612,7 @@
             });
         });
 
-        /* ============ IMAGE CLIP-PATH REVEALS ============ */
+        /* ============ IMAGE CLIP REVEALS ============ */
         document.querySelectorAll(".reveal-image").forEach(el => {
             const clipType = el.dataset.clip || "bottom";
             let fromClip, toClip;
@@ -695,7 +636,7 @@
             );
         });
 
-        /* ============ IMAGE PARALLAX inside wrappers ============ */
+        /* ============ IMAGE PARALLAX ============ */
         document.querySelectorAll(".parallax-img-wrap").forEach(wrap => {
             const img = wrap.querySelector(".parallax-img");
             if (!img) return;
@@ -720,7 +661,6 @@
             });
         });
 
-        /* ============ QUICK STAT ENTRANCE ============ */
         gsap.from(".quick-stat", {
             opacity: 0, y: 30, scale: 0.9, duration: 0.8, stagger: 0.1,
             ease: "back.out(1.6)",
@@ -734,7 +674,6 @@
                 duration: 0.9, ease: "power3.out",
                 scrollTrigger: { trigger: card, start: "top 90%", once: true }
             });
-            // Scale down older cards as new ones stack on top
             gsap.to(card, {
                 scale: 0.94,
                 scrollTrigger: {
@@ -753,7 +692,7 @@
             scrollTrigger: { trigger: "#testimonials", start: "top 80%", once: true }
         });
 
-        /* ============ FEATURE ROWS CASCADE ============ */
+        /* ============ FEATURE ROWS ============ */
         document.querySelectorAll(".feature-row").forEach((row, i) => {
             gsap.from(row, {
                 opacity: 0, x: -30, duration: 0.7, ease: "power3.out",
@@ -762,14 +701,14 @@
             });
         });
 
-        /* ============ KEN BURNS ambient slider images ============ */
+        /* ============ KEN BURNS ============ */
         document.querySelectorAll(".ken-burns").forEach(img => {
             gsap.fromTo(img, { scale: 1.15 }, {
                 scale: 1, duration: 6, ease: "power2.out", repeat: -1, yoyo: true
             });
         });
 
-        /* ============ MARQUEE with velocity ============ */
+        /* ============ MARQUEE ============ */
         const marquee = document.getElementById("marquee-track");
         const marqueeTween = gsap.to(marquee, {
             xPercent: -50, duration: 28, ease: "none", repeat: -1
@@ -782,14 +721,14 @@
             }
         });
 
-        /* ============ ORDER CTA + blob pulse ============ */
+        /* ============ ORDER CTA ============ */
         gsap.from("#order-cta", {
             opacity: 0, y: 60, scale: 0.92, duration: 1, ease: "back.out(1.4)",
             scrollTrigger: { trigger: "#order-cta", start: "top 85%", once: true }
         });
         gsap.to(".cta-blob", { scale: 1.4, opacity: 0.5, duration: 3, repeat: -1, yoyo: true, ease: "sine.inOut" });
 
-        /* ============ FOOTER COLUMNS ============ */
+        /* ============ FOOTER ============ */
         gsap.from(".footer-col", {
             opacity: 0, y: 30, duration: 0.7, stagger: 0.1, ease: "power3.out",
             scrollTrigger: { trigger: "footer", start: "top 92%", once: true }
@@ -811,27 +750,17 @@
             });
         }
 
-        /* ============ PAGE TRANSITION CURTAIN ============ */
+        /* ============ PAGE TRANSITION ============ */
         const ptPanels = document.querySelectorAll('.pt-panel');
         document.querySelectorAll('[data-nav]').forEach(link => {
             link.addEventListener('click', (e) => {
                 const href = link.getAttribute('href');
                 if (!href || href.startsWith('#') || href.startsWith('tel:') || href.startsWith('http')) return;
                 e.preventDefault();
-                gsap.to(ptPanels, {
-                    xPercent: (i) => (i === 0 ? 0 : 0),
-                    duration: 0.6, ease: "expo.inOut",
-                    onStart: () => {
-                        gsap.set(ptPanels[0], { xPercent: -100 });
-                        gsap.set(ptPanels[1], { xPercent: 100 });
-                    },
-                    onComplete: () => { window.location.href = href; }
-                });
                 gsap.to(ptPanels[0], { xPercent: 0, duration: 0.6, ease: "expo.inOut" });
-                gsap.to(ptPanels[1], { xPercent: 0, duration: 0.6, ease: "expo.inOut" });
+                gsap.to(ptPanels[1], { xPercent: 0, duration: 0.6, ease: "expo.inOut", onComplete: () => { window.location.href = href; } });
             });
         });
-        // Entrance curtain fade-out on load
         gsap.set([ptPanels[0]], { xPercent: 0 });
         gsap.set([ptPanels[1]], { xPercent: 0 });
         gsap.to(ptPanels[0], { xPercent: -100, duration: 0.7, ease: "expo.inOut", delay: 0.15 });
@@ -849,7 +778,6 @@
             overlay.classList.remove('opacity-0', 'pointer-events-none');
             hamburger.setAttribute('aria-expanded', 'true');
             lenis.stop();
-            // Stagger drawer link entrance
             gsap.fromTo(drawerLinks,
                 { x: 30, opacity: 0 },
                 { x: 0, opacity: 1, duration: 0.5, stagger: 0.05, ease: "power3.out", delay: 0.2 }
@@ -867,7 +795,7 @@
         drawerLinks.forEach(l => l.addEventListener('click', closeDrawer));
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
-        /* ============ ANCHOR SMOOTH SCROLL with Lenis ============ */
+        /* ============ ANCHOR SMOOTH SCROLL ============ */
         document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', (e) => {
                 const target = document.querySelector(link.getAttribute('href'));

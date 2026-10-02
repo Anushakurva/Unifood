@@ -10,13 +10,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght=300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-[#FBF9F4] text-[#2C2A29] font-['Plus_Jakarta_Sans'] overflow-x-hidden">
+<body class="bg-[#FBF9F4] text-[#2C2A29] font-['Plus_Jakarta_Sans']">
 
+    <!-- ================= SCROLL PROGRESS BAR ================= -->
+    <div id="scroll-progress" class="fixed top-0 left-0 right-0 h-0.5 bg-[#C75B39] z-[100] origin-left" style="transform: scaleX(0);"></div>
+
+    <!-- ================= HEADER ================= -->
     <header class="fixed top-0 left-0 right-0 z-40 bg-[#FBF9F4]/95 backdrop-blur-md border-b border-[#EAE6DF]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
             <a href="index.html" class="font-['Playfair_Display'] text-lg sm:text-xl font-bold tracking-tight text-[#3A4D39] whitespace-nowrap">
@@ -38,6 +41,7 @@
         </div>
     </header>
 
+    <!-- ================= DRAWER ================= -->
     <div id="mobile-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
     <aside id="mobile-drawer" class="fixed top-0 right-0 h-full w-[82%] max-w-[340px] bg-[#2C3A2B] text-white z-[70] translate-x-full transition-transform duration-300 ease-out md:hidden flex flex-col">
         <div class="flex items-center justify-between p-5 border-b border-white/10">
@@ -68,28 +72,43 @@
         </div>
     </aside>
 
+    <!-- ================= HERO ================= -->
     <section id="hero" class="relative min-h-[100svh] w-full overflow-hidden">
+
+        <!-- BG image — clear and sharp -->
         <div class="absolute inset-0 z-0">
-            <img id="hero-bg" src="photo10.jpeg" alt="Unifood Restaurant" class="w-full h-full object-cover object-center scale-110">
+            <img id="hero-bg"
+                 src="photo10.jpeg"
+                 alt="Unifood Multi Cuisine Restaurant"
+                 class="w-full h-full object-cover object-center">
         </div>
-        <div class="absolute inset-0 z-10 bg-gradient-to-b from-black/40 via-black/55 to-black/90"></div>
+
+        <!-- Light overlays: top and bottom bands only, middle stays clear -->
+        <div class="absolute inset-x-0 top-0 h-40 z-10 bg-gradient-to-b from-black/60 to-transparent pointer-events-none"></div>
+        <div class="absolute inset-x-0 bottom-0 h-3/5 z-10 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>
+        <div class="absolute inset-0 z-10 hero-vignette pointer-events-none"></div>
+
+        <!-- Content -->
         <div class="relative z-20 w-full min-h-[100svh] flex flex-col justify-end px-5 sm:px-8 pb-10 pt-24 max-w-7xl mx-auto">
             <div id="hero-content" class="w-full max-w-2xl">
-                <span class="inline-block text-[#EEA47F] font-semibold tracking-[0.2em] text-[10px] uppercase bg-black/40 backdrop-blur-md border border-[#EEA47F]/40 px-3 py-1.5 rounded-full mb-5">
-                    <i class="fa-solid fa-star mr-1"></i> Mahbubnagar's Finest Multi-Cuisine
+                <span class="hero-badge inline-flex items-center text-[#EEA47F] font-semibold tracking-[0.2em] text-[10px] uppercase bg-black/40 backdrop-blur-md border border-[#EEA47F]/40 px-3 py-1.5 rounded-full mb-5">
+                    <i class="fa-solid fa-star mr-2"></i> Mahbubnagar's Finest Multi-Cuisine
                 </span>
-                <h1 class="font-['Playfair_Display'] text-[2rem] sm:text-5xl md:text-6xl font-bold leading-[1.1] text-white">
-                    Taste the Royal<br>
-                    <span class="italic text-[#EEA47F]">Hyderabadi Dum Biryani</span>
+
+                <h1 class="font-['Playfair_Display'] text-[2rem] sm:text-5xl md:text-6xl font-bold leading-[1.1] text-white hero-title-wrap">
+                    <span class="hero-line block"><span class="hero-line-inner">Taste the Royal</span></span>
+                    <span class="hero-line block"><span class="hero-line-inner italic text-[#EEA47F]">Hyderabadi Dum Biryani</span></span>
                 </h1>
-                <p class="text-stone-200 text-sm sm:text-base mt-4 leading-relaxed max-w-md">
+
+                <p class="hero-sub text-stone-100 text-sm sm:text-base mt-5 leading-relaxed max-w-md" style="text-shadow: 0 2px 10px rgba(0,0,0,0.6);">
                     Authentic spices, premium basmati, slow dum-cooked meats — a symphony of flavours on every plate.
                 </p>
-                <div class="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full max-w-md">
-                    <a href="menu.html" class="flex items-center justify-center gap-2 w-full sm:w-auto bg-[#C75B39] hover:bg-[#A84A2D] active:scale-[0.97] text-white font-semibold px-6 py-3.5 rounded-full shadow-lg shadow-black/30 transition-all text-sm">
+
+                <div class="hero-cta mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 w-full max-w-md">
+                    <a href="menu.html" class="magnetic-btn flex items-center justify-center gap-2 w-full sm:w-auto bg-[#C75B39] hover:bg-[#A84A2D] active:scale-[0.97] text-white font-semibold px-6 py-3.5 rounded-full shadow-lg shadow-black/30 transition-all text-sm">
                         <i class="fa-solid fa-bowl-food"></i> Order Online
                     </a>
-                    <a href="book-table.html" class="flex items-center justify-center gap-2 w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/30 text-white hover:bg-white hover:text-[#2C3A2B] active:scale-[0.97] font-semibold px-6 py-3.5 rounded-full transition-all text-sm">
+                    <a href="book-table.html" class="magnetic-btn flex items-center justify-center gap-2 w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/30 text-white hover:bg-white hover:text-[#2C3A2B] active:scale-[0.97] font-semibold px-6 py-3.5 rounded-full transition-all text-sm">
                         <i class="fa-solid fa-utensils"></i> Book a Table
                     </a>
                 </div>
@@ -97,31 +116,65 @@
         </div>
     </section>
 
-    <section id="quick" class="bg-[#F5F2EA] border-y border-[#EAE6DF] px-4 sm:px-6 py-6">
+    <!-- ================= QUICK INFO (animated counters) ================= -->
+    <section id="quick" class="bg-[#F5F2EA] border-y border-[#EAE6DF] px-4 sm:px-6 py-8">
         <div class="max-w-7xl mx-auto grid grid-cols-3 gap-3 text-center">
-            <div>
-                <p class="font-['Playfair_Display'] text-xl sm:text-2xl font-bold text-[#2C3A2B]">100+</p>
-                <p class="text-[10px] sm:text-xs text-[#7C7973] mt-0.5">Dishes</p>
+            <div class="quick-stat">
+                <p class="font-['Playfair_Display'] text-2xl sm:text-3xl font-bold text-[#2C3A2B]">
+                    <span class="counter" data-target="100">0</span><span class="text-[#C75B39]">+</span>
+                </p>
+                <p class="text-[10px] sm:text-xs text-[#7C7973] mt-1 uppercase tracking-widest font-semibold">Dishes</p>
             </div>
-            <div class="border-x border-[#EAE6DF]">
-                <p class="font-['Playfair_Display'] text-xl sm:text-2xl font-bold text-[#2C3A2B]">4</p>
-                <p class="text-[10px] sm:text-xs text-[#7C7973] mt-0.5">Cuisines</p>
+            <div class="quick-stat border-x border-[#EAE6DF]">
+                <p class="font-['Playfair_Display'] text-2xl sm:text-3xl font-bold text-[#2C3A2B]">
+                    <span class="counter" data-target="4">0</span>
+                </p>
+                <p class="text-[10px] sm:text-xs text-[#7C7973] mt-1 uppercase tracking-widest font-semibold">Cuisines</p>
             </div>
-            <div>
-                <p class="font-['Playfair_Display'] text-xl sm:text-2xl font-bold text-[#2C3A2B]">4.6★</p>
-                <p class="text-[10px] sm:text-xs text-[#7C7973] mt-0.5">320+ Reviews</p>
+            <div class="quick-stat">
+                <p class="font-['Playfair_Display'] text-2xl sm:text-3xl font-bold text-[#2C3A2B]">
+                    <span class="counter" data-target="4.6" data-decimal="1">0</span><span class="text-[#C75B39]">★</span>
+                </p>
+                <p class="text-[10px] sm:text-xs text-[#7C7973] mt-1 uppercase tracking-widest font-semibold">320+ Reviews</p>
             </div>
         </div>
     </section>
 
+    <!-- ================= MARQUEE ================= -->
+    <section class="bg-[#2C3A2B] py-4 overflow-hidden">
+        <div id="marquee-track" class="flex gap-8 whitespace-nowrap text-white/90 text-sm font-medium will-change-transform">
+            <span>🍛 Authentic Biryani</span>
+            <span class="text-[#EEA47F]">·</span>
+            <span>🔥 Wok-fired Starters</span>
+            <span class="text-[#EEA47F]">·</span>
+            <span>🍖 Smoky Arabian Mandi</span>
+            <span class="text-[#EEA47F]">·</span>
+            <span>🥘 Rich Moghlai Curries</span>
+            <span class="text-[#EEA47F]">·</span>
+            <span>🥢 Chinese Specials</span>
+            <span class="text-[#EEA47F]">·</span>
+            <span>🍛 Authentic Biryani</span>
+            <span class="text-[#EEA47F]">·</span>
+            <span>🔥 Wok-fired Starters</span>
+            <span class="text-[#EEA47F]">·</span>
+            <span>🍖 Smoky Arabian Mandi</span>
+            <span class="text-[#EEA47F]">·</span>
+            <span>🥘 Rich Moghlai Curries</span>
+            <span class="text-[#EEA47F]">·</span>
+            <span>🥢 Chinese Specials</span>
+            <span class="text-[#EEA47F]">·</span>
+        </div>
+    </section>
+
+    <!-- ================= OUR STORY ================= -->
     <section id="our-story" class="py-14 sm:py-20 bg-[#FBF9F4] px-5 sm:px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div class="lg:col-span-6 anim-reveal-left">
+            <div class="lg:col-span-6 reveal-image">
                 <div class="w-full h-[260px] sm:h-[420px] rounded-3xl overflow-hidden border-4 sm:border-8 border-white shadow-2xl bg-[#2C3A2B]">
                     <img src="photo7.jpeg" alt="Unifood Restaurant" class="w-full h-full object-cover" loading="lazy">
                 </div>
             </div>
-            <div class="lg:col-span-6 space-y-4 anim-reveal-right">
+            <div class="lg:col-span-6 space-y-4 reveal-text">
                 <span class="inline-block text-[#C75B39] font-semibold tracking-widest text-[10px] uppercase bg-[#C75B39]/10 px-3 py-1 rounded-full">
                     <i class="fa-solid fa-book-open mr-1"></i> Our Story
                 </span>
@@ -135,31 +188,32 @@
                     Today we're a full multi-cuisine restaurant with open-air garden seating, private bamboo cabins, and a banquet hall for the town's celebrations.
                 </p>
                 <div class="pt-2">
-                    <a href="menu.html" class="inline-flex items-center gap-2 text-[#C75B39] font-bold text-sm">
-                        Explore the menu <i class="fa-solid fa-arrow-right text-xs"></i>
+                    <a href="menu.html" class="inline-flex items-center gap-2 text-[#C75B39] font-bold text-sm group">
+                        Explore the menu <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ================= WHY CHOOSE US ================= -->
     <section id="why-choose-us" class="py-14 sm:py-20 bg-[#F5F2EA] px-5 sm:px-6 border-y border-[#EAE6DF]">
-        <div class="max-w-7xl mx-auto text-center mb-10 anim-reveal-up">
+        <div class="max-w-7xl mx-auto text-center mb-10 reveal-text">
             <span class="text-[#C75B39] font-bold tracking-widest text-[10px] uppercase">The Unifood Standard</span>
             <h2 class="font-['Playfair_Display'] text-2xl sm:text-4xl md:text-5xl font-bold text-[#2C3A2B] mt-2">Why Dine With Us?</h2>
         </div>
         <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-            <div class="bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm anim-reveal-up">
+            <div class="why-card bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm">
                 <div class="w-11 h-11 rounded-2xl bg-[#3A4D39]/10 flex items-center justify-center text-[#3A4D39] text-lg mb-4"><i class="fa-solid fa-pepper-hot"></i></div>
                 <h3 class="font-['Playfair_Display'] text-base sm:text-lg font-bold mb-2 text-[#2C3A2B]">100% Authentic Spices</h3>
                 <p class="text-xs sm:text-sm text-[#7C7973] leading-relaxed">Hand-ground masalas prepared fresh every morning — no premixes.</p>
             </div>
-            <div class="bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm anim-reveal-up">
+            <div class="why-card bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm">
                 <div class="w-11 h-11 rounded-2xl bg-[#C75B39]/10 flex items-center justify-center text-[#C75B39] text-lg mb-4"><i class="fa-solid fa-clock-rotate-left"></i></div>
                 <h3 class="font-['Playfair_Display'] text-base sm:text-lg font-bold mb-2 text-[#2C3A2B]">Slow-Cooked Heritage</h3>
                 <p class="text-xs sm:text-sm text-[#7C7973] leading-relaxed">Wood-fired steam dum techniques for true native textures.</p>
             </div>
-            <div class="bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm anim-reveal-up">
+            <div class="why-card bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm">
                 <div class="w-11 h-11 rounded-2xl bg-amber-100 flex items-center justify-center text-amber-800 text-lg mb-4"><i class="fa-solid fa-wheat-awn"></i></div>
                 <h3 class="font-['Playfair_Display'] text-base sm:text-lg font-bold mb-2 text-[#2C3A2B]">Elite Basmati Selection</h3>
                 <p class="text-xs sm:text-sm text-[#7C7973] leading-relaxed">Long-grain aged rice for pristine aroma on every serving.</p>
@@ -167,11 +221,11 @@
         </div>
     </section>
 
-    <!-- AMBIANCE — only 2 slides: Bamboo Huts + Banquet Hall -->
+    <!-- ================= AMBIANCE (2 slides) ================= -->
     <section id="ambiance" class="py-14 sm:py-20 bg-[#FBF9F4] px-5 sm:px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                <div class="lg:col-span-5 space-y-4 anim-reveal-left">
+                <div class="lg:col-span-5 space-y-4 reveal-text">
                     <span class="inline-block text-[#3A4D39] font-bold tracking-widest text-[10px] uppercase bg-[#3A4D39]/10 px-3 py-1 rounded-full">
                         <i class="fa-solid fa-leaf mr-1"></i> Open-Air Dining
                     </span>
@@ -197,10 +251,9 @@
                     </div>
                 </div>
 
-                <div class="lg:col-span-7 relative group anim-reveal-right">
+                <div class="lg:col-span-7 relative group reveal-image">
                     <div class="w-full h-[260px] sm:h-[400px] rounded-3xl overflow-hidden border-4 sm:border-8 border-white shadow-2xl relative bg-[#2C3A2B]">
 
-                        <!-- Slide 1: Bamboo Huts -->
                         <div class="slider-slide absolute inset-0 opacity-100 transition-opacity duration-1000">
                             <img src="photo5.jpeg" alt="Premium Bamboo Huts" class="w-full h-full object-cover" loading="lazy">
                             <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/85 to-transparent p-4 pt-12">
@@ -209,7 +262,6 @@
                             </div>
                         </div>
 
-                        <!-- Slide 2: Banquet Hall -->
                         <div class="slider-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
                             <img src="photo1.jpeg" alt="Banquet Hall" class="w-full h-full object-cover" loading="lazy">
                             <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/85 to-transparent p-4 pt-12">
@@ -233,8 +285,9 @@
         </div>
     </section>
 
+    <!-- ================= REVIEWS ================= -->
     <section id="testimonials" class="py-14 sm:py-20 bg-[#F5F2EA] px-5 sm:px-6 border-y border-[#EAE6DF]">
-        <div class="max-w-7xl mx-auto text-center mb-10 anim-reveal-up">
+        <div class="max-w-7xl mx-auto text-center mb-10 reveal-text">
             <span class="text-[#C75B39] font-bold tracking-widest text-[10px] uppercase">Guest Reviews</span>
             <h2 class="font-['Playfair_Display'] text-2xl sm:text-4xl md:text-5xl font-bold text-[#2C3A2B] mt-2">What Our Customers Say</h2>
             <div class="flex items-center justify-center gap-2 mt-3">
@@ -246,7 +299,7 @@
         <div class="max-w-5xl mx-auto relative">
             <div class="overflow-hidden">
                 <div id="testimonial-track" class="flex transition-transform duration-500 ease-in-out gap-4" style="transform: translateX(0%);">
-                    <div class="w-full md:w-[calc(50%-8px)] shrink-0 bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm">
+                    <div class="review-card w-full md:w-[calc(50%-8px)] shrink-0 bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm">
                         <div class="text-amber-500 text-sm mb-3">★★★★★</div>
                         <p class="text-sm text-[#5C5A54] leading-relaxed italic">"The Mattbor Biryani here is hands down the best in town! Long grains, super aromatic, meat just melts."</p>
                         <div class="flex items-center gap-3 mt-4 pt-4 border-t border-[#EAE6DF]">
@@ -254,7 +307,7 @@
                             <div><p class="text-xs font-bold text-[#2C3A2B]">Rahul K.</p><p class="text-[10px] text-[#7C7973]">Local Guide</p></div>
                         </div>
                     </div>
-                    <div class="w-full md:w-[calc(50%-8px)] shrink-0 bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm">
+                    <div class="review-card w-full md:w-[calc(50%-8px)] shrink-0 bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm">
                         <div class="text-amber-500 text-sm mb-3">★★★★★</div>
                         <p class="text-sm text-[#5C5A54] leading-relaxed italic">"We booked a private bamboo hut for a family gathering. The open-air garden vibe made it extra special."</p>
                         <div class="flex items-center gap-3 mt-4 pt-4 border-t border-[#EAE6DF]">
@@ -262,7 +315,7 @@
                             <div><p class="text-xs font-bold text-[#2C3A2B]">Anitha Reddy</p><p class="text-[10px] text-[#7C7973]">Verified Customer</p></div>
                         </div>
                     </div>
-                    <div class="w-full md:w-[calc(50%-8px)] shrink-0 bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm">
+                    <div class="review-card w-full md:w-[calc(50%-8px)] shrink-0 bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm">
                         <div class="text-amber-500 text-sm mb-3">★★★★★</div>
                         <p class="text-sm text-[#5C5A54] leading-relaxed italic">"Mandi spreads here are phenomenal — authentic spice levels matching Hyderabad's elite spots."</p>
                         <div class="flex items-center gap-3 mt-4 pt-4 border-t border-[#EAE6DF]">
@@ -270,7 +323,7 @@
                             <div><p class="text-xs font-bold text-[#2C3A2B]">Vikram Singh</p><p class="text-[10px] text-[#7C7973]">Food Blogger</p></div>
                         </div>
                     </div>
-                    <div class="w-full md:w-[calc(50%-8px)] shrink-0 bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm">
+                    <div class="review-card w-full md:w-[calc(50%-8px)] shrink-0 bg-white p-5 sm:p-7 rounded-3xl border border-[#EAE6DF] shadow-sm">
                         <div class="text-amber-500 text-sm mb-3">★★★★★</div>
                         <p class="text-sm text-[#5C5A54] leading-relaxed italic">"Changed the food standard in Mahbubnagar. Extremely clean and pristine flavors."</p>
                         <div class="flex items-center gap-3 mt-4 pt-4 border-t border-[#EAE6DF]">
@@ -291,9 +344,10 @@
         </div>
     </section>
 
+    <!-- ================= FIND US ================= -->
     <section id="find-us" class="py-14 sm:py-20 bg-[#FBF9F4] px-5 sm:px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div class="lg:col-span-5 space-y-4 anim-reveal-left">
+            <div class="lg:col-span-5 space-y-4 reveal-text">
                 <span class="inline-block text-[#3A4D39] font-bold tracking-widest text-[10px] uppercase bg-[#3A4D39]/10 px-3 py-1 rounded-full">
                     <i class="fa-solid fa-map-pin mr-1"></i> Visit Us
                 </span>
@@ -329,7 +383,7 @@
                     <i class="fa-solid fa-diamond-turn-right"></i> Open in Maps
                 </a>
             </div>
-            <div class="lg:col-span-7 anim-reveal-right">
+            <div class="lg:col-span-7 reveal-image">
                 <div class="w-full h-[280px] sm:h-[400px] rounded-3xl overflow-hidden border-4 border-white shadow-xl bg-stone-200">
                     <iframe src="https://maps.google.com/maps?q=Unifood%20Multi%20Cuisine%20Restaurant,%20Bhoothpur%20Road,%20Christianpally,%20Mahbubnagar&t=&z=15&ie=UTF8&iwloc=&output=embed"
                             class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
@@ -338,9 +392,10 @@
         </div>
     </section>
 
+    <!-- ================= ORDER CTA ================= -->
     <section class="px-5 sm:px-6 pb-14 sm:pb-20">
-        <div class="max-w-4xl mx-auto relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#3A4D39] to-[#1F2A1E] p-6 sm:p-10 text-white shadow-2xl">
-            <div class="absolute -right-8 -top-8 w-40 h-40 rounded-full bg-[#C75B39]/20 blur-2xl"></div>
+        <div id="order-cta" class="max-w-4xl mx-auto relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#3A4D39] to-[#1F2A1E] p-6 sm:p-10 text-white shadow-2xl">
+            <div class="absolute -right-8 -top-8 w-40 h-40 rounded-full bg-[#C75B39]/20 blur-2xl pointer-events-none"></div>
             <div class="relative text-center sm:text-left">
                 <p class="text-[10px] uppercase tracking-[0.25em] text-[#EEA47F] font-bold">Hungry Now?</p>
                 <h3 class="font-['Playfair_Display'] text-xl sm:text-3xl font-bold mt-2 leading-snug">Fresh from our wok, to your table.</h3>
@@ -354,6 +409,7 @@
         </div>
     </section>
 
+    <!-- ================= FOOTER ================= -->
     <footer class="bg-[#2C3A2B] text-white pt-10 sm:pt-14 pb-8 px-5 sm:px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 pb-8 border-b border-white/10">
             <div>
@@ -379,6 +435,7 @@
         document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('year').textContent = new Date().getFullYear();
 
+            /* ================= DRAWER ================= */
             const hamburger = document.getElementById('hamburger-btn');
             const drawer = document.getElementById('mobile-drawer');
             const overlay = document.getElementById('mobile-overlay');
@@ -387,38 +444,182 @@
                 drawer.classList.remove('translate-x-full');
                 overlay.classList.remove('opacity-0', 'pointer-events-none');
                 hamburger.setAttribute('aria-expanded', 'true');
-                document.body.style.overflow = 'hidden';
+                document.body.classList.add('menu-open');
             };
             const closeDrawer = () => {
                 drawer.classList.add('translate-x-full');
                 overlay.classList.add('opacity-0', 'pointer-events-none');
                 hamburger.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
+                document.body.classList.remove('menu-open');
             };
             hamburger?.addEventListener('click', openDrawer);
             closeBtn?.addEventListener('click', closeDrawer);
             overlay?.addEventListener('click', closeDrawer);
             document.querySelectorAll('.drawer-link').forEach(l => l.addEventListener('click', closeDrawer));
             document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
-            window.addEventListener('pageshow', () => { document.body.style.overflow = ''; });
+            window.addEventListener('pageshow', () => { document.body.classList.remove('menu-open'); });
 
-            if (window.gsap && window.ScrollTrigger) {
-                gsap.registerPlugin(ScrollTrigger);
-                gsap.to("#hero-bg", { scale: 1, duration: 2.4, ease: "power2.out" });
-                gsap.from("#hero-content > *", { opacity: 0, y: 30, duration: 0.9, stagger: 0.12, ease: "power3.out", delay: 0.2 });
-                gsap.to("#hero-bg", {
-                    yPercent: 15, ease: "none",
-                    scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true }
+            /* ================= GSAP ================= */
+            gsap.registerPlugin(ScrollTrigger);
+
+            /* ---------- 1. Hero text line-by-line reveal ---------- */
+            const heroLines = document.querySelectorAll('.hero-line-inner');
+            gsap.set(heroLines, { yPercent: 110 });
+            gsap.to(heroLines, {
+                yPercent: 0,
+                duration: 1.1,
+                stagger: 0.15,
+                ease: "expo.out",
+                delay: 0.3
+            });
+
+            /* ---------- 2. Hero badge + sub + CTA fade up ---------- */
+            gsap.from([".hero-badge", ".hero-sub", ".hero-cta"], {
+                opacity: 0,
+                y: 30,
+                duration: 0.9,
+                stagger: 0.15,
+                ease: "power3.out",
+                delay: 0.7
+            });
+
+            /* ---------- 3. Hero image: slow continuous ken-burns + scroll parallax ---------- */
+            gsap.fromTo("#hero-bg",
+                { scale: 1.18 },
+                { scale: 1, duration: 2.4, ease: "power2.out" }
+            );
+            gsap.to("#hero-bg", {
+                yPercent: 20,
+                ease: "none",
+                scrollTrigger: { trigger: "#hero", start: "top top", end: "bottom top", scrub: true }
+            });
+
+            /* ---------- 4. Scroll progress bar ---------- */
+            gsap.to("#scroll-progress", {
+                scaleX: 1,
+                ease: "none",
+                scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 0.3 }
+            });
+
+            /* ---------- 5. Section header reveal (clip + slide) ---------- */
+            document.querySelectorAll(".reveal-text").forEach(el => {
+                gsap.from(el, {
+                    opacity: 0,
+                    y: 40,
+                    duration: 0.9,
+                    ease: "power3.out",
+                    scrollTrigger: { trigger: el, start: "top 85%", once: true }
+                });
+            });
+
+            /* ---------- 6. Image reveal: clip-path from bottom ---------- */
+            document.querySelectorAll(".reveal-image").forEach(el => {
+                gsap.fromTo(el,
+                    { clipPath: "inset(100% 0% 0% 0%)", y: 30 },
+                    {
+                        clipPath: "inset(0% 0% 0% 0%)",
+                        y: 0,
+                        duration: 1.2,
+                        ease: "expo.out",
+                        scrollTrigger: { trigger: el, start: "top 85%", once: true }
+                    }
+                );
+            });
+
+            /* ---------- 7. Counter animation on stats ---------- */
+            document.querySelectorAll(".counter").forEach(el => {
+                const target = parseFloat(el.dataset.target);
+                const decimal = parseInt(el.dataset.decimal || 0);
+                const obj = { val: 0 };
+                gsap.to(obj, {
+                    val: target,
+                    duration: 1.8,
+                    ease: "power2.out",
+                    scrollTrigger: { trigger: el, start: "top 90%", once: true },
+                    onUpdate: () => {
+                        el.textContent = decimal ? obj.val.toFixed(decimal) : Math.floor(obj.val);
+                    }
+                });
+            });
+
+            /* ---------- 8. Quick stat tiles stagger ---------- */
+            gsap.from(".quick-stat", {
+                opacity: 0,
+                y: 30,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "back.out(1.4)",
+                scrollTrigger: { trigger: "#quick", start: "top 85%", once: true }
+            });
+
+            /* ---------- 9. Why-choose cards cascade with 3D tilt ---------- */
+            gsap.from(".why-card", {
+                opacity: 0,
+                y: 60,
+                rotateX: -15,
+                transformPerspective: 800,
+                duration: 0.9,
+                stagger: 0.12,
+                ease: "power3.out",
+                scrollTrigger: { trigger: "#why-choose-us", start: "top 80%", once: true }
+            });
+
+            /* ---------- 10. Review cards slide in from right ---------- */
+            gsap.from(".review-card", {
+                opacity: 0,
+                x: 60,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "power3.out",
+                scrollTrigger: { trigger: "#testimonials", start: "top 80%", once: true }
+            });
+
+            /* ---------- 11. Order CTA pop-in ---------- */
+            gsap.from("#order-cta", {
+                opacity: 0,
+                y: 60,
+                scale: 0.95,
+                duration: 0.9,
+                ease: "back.out(1.4)",
+                scrollTrigger: { trigger: "#order-cta", start: "top 85%", once: true }
+            });
+
+            /* ---------- 12. Infinite marquee ---------- */
+            const marquee = document.getElementById("marquee-track");
+            if (marquee) {
+                gsap.to(marquee, {
+                    xPercent: -50,
+                    duration: 25,
+                    ease: "none",
+                    repeat: -1
                 });
             }
 
-            if (window.ScrollReveal) {
-                ScrollReveal().reveal('.anim-reveal-up', { origin: 'bottom', distance: '40px', duration: 800, interval: 100 });
-                ScrollReveal().reveal('.anim-reveal-left', { origin: 'left', distance: '40px', duration: 800 });
-                ScrollReveal().reveal('.anim-reveal-right', { origin: 'right', distance: '40px', duration: 800 });
+            /* ---------- 13. Magnetic buttons (desktop only) ---------- */
+            if (window.matchMedia("(hover: hover)").matches) {
+                document.querySelectorAll(".magnetic-btn").forEach(btn => {
+                    btn.addEventListener("mousemove", (e) => {
+                        const rect = btn.getBoundingClientRect();
+                        const x = e.clientX - rect.left - rect.width / 2;
+                        const y = e.clientY - rect.top - rect.height / 2;
+                        gsap.to(btn, { x: x * 0.25, y: y * 0.35, duration: 0.4, ease: "power2.out" });
+                    });
+                    btn.addEventListener("mouseleave", () => {
+                        gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: "elastic.out(1, 0.4)" });
+                    });
+                });
             }
 
-            /* AMBIANCE SLIDER — only 2 slides */
+            /* ---------- 14. Hero subtle tilt on mouse move (desktop) ---------- */
+            if (window.matchMedia("(hover: hover)").matches) {
+                document.getElementById("hero").addEventListener("mousemove", (e) => {
+                    const x = (e.clientX / window.innerWidth - 0.5) * 15;
+                    const y = (e.clientY / window.innerHeight - 0.5) * 15;
+                    gsap.to("#hero-bg", { x: -x, y: -y, duration: 1, ease: "power2.out", overwrite: "auto" });
+                });
+            }
+
+            /* ---------- 15. Ambient slider auto-cycle ---------- */
             let currentSlideIndex = 0;
             const slides = document.querySelectorAll('.slider-slide');
             const dotsContainer = document.getElementById('slider-dots');
@@ -453,6 +654,7 @@
             window.jumpToSlide = function (i) { currentSlideIndex = i; updateSliderUI(); };
             setInterval(() => shiftSlide(1), 4500);
 
+            /* ---------- 16. Testimonial slider ---------- */
             let reviewIdx = 0;
             window.shiftReview = function (dir) {
                 const track = document.getElementById('testimonial-track');

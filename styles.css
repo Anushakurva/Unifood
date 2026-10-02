@@ -1,4 +1,4 @@
-/* ================= ROCK-SOLID HORIZONTAL OVERFLOW FIX ================= */
+/* ================= HORIZONTAL OVERFLOW FIX ================= */
 html {
     overflow-x: clip;
     overflow-y: auto;
@@ -20,54 +20,19 @@ body {
 }
 body.menu-open { overflow: hidden; }
 
-/* ================= LENIS SMOOTH SCROLL ================= */
+/* ================= LENIS ================= */
 html.lenis { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
 .lenis.lenis-stopped { overflow: hidden; }
 
-/* ================= CUSTOM CURSOR ================= */
-.cursor-dot,
-.cursor-ring {
-    position: fixed;
-    top: 0; left: 0;
-    pointer-events: none;
-    z-index: 9999;
-    will-change: transform;
-    border-radius: 50%;
-}
-.cursor-dot {
-    width: 6px; height: 6px;
-    background: #C75B39;
-    transform: translate(-50%, -50%);
-    margin-left: -3px; margin-top: -3px;
-}
-.cursor-ring {
-    width: 36px; height: 36px;
-    border: 1.5px solid rgba(199, 91, 57, 0.55);
-    transform: translate(-50%, -50%);
-    margin-left: -18px; margin-top: -18px;
-    transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
-}
-.cursor-ring.hovering {
-    width: 60px; height: 60px;
-    background: rgba(199, 91, 57, 0.15);
-    border-color: #C75B39;
-    margin-left: -30px; margin-top: -30px;
-}
-@media (hover: none) {
-    .cursor-dot, .cursor-ring { display: none !important; }
-}
-
 /* ================= HERO ================= */
 .hero-vignette {
     background: radial-gradient(ellipse at 50% 45%, transparent 45%, rgba(0,0,0,0.5) 100%);
 }
-.hero-curtain {
-    will-change: transform;
-}
+.hero-curtain { will-change: transform; }
 
-/* ================= STICKY STACK CARDS ================= */
+/* ================= STICKY STACK ================= */
 .stack-container {
     position: relative;
     display: flex;
@@ -84,7 +49,7 @@ html.lenis { height: auto; }
 .scrollbar-none::-webkit-scrollbar { display: none; }
 .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* ================= DRAWER LINKS ================= */
+/* ================= DRAWER ================= */
 .drawer-link {
     display: flex;
     align-items: center;
